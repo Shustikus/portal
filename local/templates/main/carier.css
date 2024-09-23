@@ -1,0 +1,478 @@
+/******* MEDIA */
+.main-slider {
+  height: auto !important;
+  padding-bottom: 0 !important;
+  max-height: inherit;
+}
+.tour-announce__3d-image-item {
+	max-width: 100%;
+}
+@media (min-width: 1900px) {
+  .main-slider {
+    min-height: 1070px;
+  }
+}
+.main-slider__canvas {
+  width: 100%;
+  height: 100%;
+}
+.main-slider-slide {
+  position: relative;
+}
+.main-slider-slide__content {
+  padding-bottom: 150px;
+}
+@media (min-width: 1200px) {
+  .main-slider-slide__fact {
+    margin-top: 97px;
+    /*width: 40%;*/
+  }
+}
+.main-slider-slide__fact-wrap {
+  margin-bottom: 26px;
+}
+@media (min-width: 990px) {
+  .main-slider-slide__title {
+    margin-top: 32px;
+  }
+}
+.main-slider-slide__title:first-child {
+  padding-top: 4.5rem;
+}
+.main-slider-slide__actions {
+  max-width: 567px;
+}
+@media (min-width: 990px) {
+  .main-slider-slide__actions {
+    margin-top: 32px !important;
+  }
+}
+.main-slider:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+}
+
+.video_banner__text {
+  font-size: 22px;
+  line-height: 32px;
+}
+.video_banner__bottom__text {
+  z-index: 2;
+  position: absolute;
+  background-color: white;
+  width: 74%;
+  /*height: 180px;*/
+  max-height: 16.66667vh;
+  height: 9.33333vw;
+  bottom: 0;
+  left: 0;
+  color: #5B5B5B;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  width: calc(75% - 1.5rem);
+  min-width: calc(75% - 1.5rem);
+  max-height: 16.66667vh;
+}
+@media (max-width: 990px) {
+  .video_banner__bottom__text {
+    height: 100px;
+  }
+  .block-slider__slide {
+	  margin-bottom: 0;
+  }
+}
+@media (max-width: 640px) {
+  .video_banner__bottom__text {
+	height: 4rem;
+	width: 100%;
+	padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .main-slider-info .main-slider-info__title.text-default {
+	height: unset !important;
+  }
+}
+.video_banner .factor__number {
+  margin-bottom: 0;
+}
+.video_banner video {
+  object-fit: cover;
+  height: 100%;
+}
+
+
+.b-profsouz__list {
+	padding-left: 0;
+}
+@media (min-width: 1600px) {
+  .b-profsouz {
+    padding-bottom: 88px;
+  }
+}
+@media (min-width: 1600px) {
+  .b-profsouz-left {
+    margin-top: 65px !important;
+  }
+}
+.b-profsouz-right {
+  padding: 20px 0 0 0 !important;
+}
+@media (min-width: 1600px) {
+  .b-profsouz-right {
+    padding: 68px 132px 0 0 !important;
+  }
+}
+@media (min-width: 1600px) {
+  .b-profsouz__list {
+    padding: 0 84px 0 30px;
+  }
+}
+@media (min-width: 1600px) {
+  .b-profsouz__list li {
+    margin-bottom: 52px !important;
+  }
+}
+@media (min-width: 1600px) {
+  .b-profsouz__list li:before {
+    top: 1px;
+    width: 21px;
+    height: 21px;
+  }
+}
+@media (min-width: 1600px) {
+  .b-profsouz__list li:after {
+    top: 7px;
+    left: 5px;
+    width: 11px;
+    height: 10px;
+  }
+}
+@media (min-width: 1600px) {
+  .b-profsouz__desc {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  h2.b-profsouz__title {
+    font-size: 53px;
+    margin-bottom: 41px !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .b-vacancies {
+    padding-top: 171px;
+    padding-bottom: 23px;
+  }
+}
+@media (min-width: 1600px) {
+  .b-vacancies__desc {
+    padding-right: 68px;
+    margin-top: 56px;
+    margin-bottom: 11px !important;
+  }
+}
+@media (max-width: 784px) {
+	.block-slider__slide-content-wrap {
+		padding-bottom: 0 !important;
+	}
+}
+@media (max-width: 767px) {
+  .b-vacancies__desc {
+    width: 100% !important;
+  }
+}
+@media (max-width: 640px) {
+  .block-slider__slide-content-wrap {
+	  margin-bottom: 35px;
+  }
+}
+@media (min-width: 1600px) {
+  .b-vacancies__desc .user-text {
+    font-size: 20px;
+  }
+}
+.b-vacancies__more {
+  margin-top: 0;
+}
+
+.block-text__left {
+  margin-top: 25px;
+}
+@media (min-width: 990px) {
+  .block-text__right {
+    padding: 36px 135px 0 30px;
+  }
+}
+@media (min-width: 1600px) {
+  .block-text__right .user-text {
+    font-size: 21px;
+    line-height: 1.5;
+  }
+}
+.block-text__title {
+  margin-bottom: 25px !important;
+}
+.block-text__actions.block-text__actions--desktop {
+  margin-top: 0 !important;
+}
+.block-text__actions.block-text__actions--desktop .text-small {
+  font-size: 18px;
+}
+
+@media (min-width: 990px) {
+  .tour-announce__left {
+    width: 44%;
+    display: block;
+  }
+}
+@media (min-width: 990px) {
+  .tour-announce__right {
+    width: 58%;
+  }
+}
+@media (min-width: 1600px) {
+  .tour-announce__right {
+    padding-top: 91px;
+    padding-left: 163px;
+  }
+}
+.tour-announce__right .btn {
+  margin-top: 0;
+  min-width: auto;
+}
+@media (min-width: 990px) {
+  .tour-announce__right .btn {
+    padding: 17px 33px 17px 29px;
+  }
+}
+.tour-announce__right .btn .btn__text {
+  letter-spacing: -0.7px;
+}
+.tour-announce__3d-image {
+  display: block;
+  margin-left: 0;
+}
+.tour-announce__3d-image-wrap img {
+	max-width: 100%;
+	width: 100% !important;
+  object-fit: cover;
+}
+.tour-announce__lead {
+  font-size: 25px;
+  margin-bottom: 28px;
+}
+.tour-announce .gray-bg .tour-announce__text {
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 32px;
+}
+
+.block-slider__slide-content-title {
+  margin-bottom: 18px;
+ /* margin-top: 46px;*/
+}
+.block-slider__pagination {
+	bottom: 0;
+}
+.block-slider .nav-arrows {
+	bottom: 0;
+}
+@media (min-width: 1600px) {
+  .block-slider__slide-content-text h4 {
+    -webkit-line-clamp: 6;
+    max-height: 10.1rem;
+  }
+}
+.block-slider__slide-content-text h4.text {
+  font-size: 23px;
+  line-height: 31px;
+}
+/*.block-slider__pagination {
+  bottom: 34px;
+}
+.block-slider .nav-arrows {
+  bottom: 19px;
+.block-slider__slide-content-text {
+  margin-top: 7px;
+  margin-left: 4px;
+}
+}*/
+
+.factor__number:not(:last-child) {
+  margin-right: -2px;
+}
+.factor__number-adornment, .factor__number-value {
+  font-size: 48px;
+}
+.factor__suffix {
+  margin-bottom: 13px;
+}
+.factor__text {
+  font-size: 16px;
+}
+
+.b-reviews {
+  padding-top: 0 !important;
+  padding-bottom: 37px !important;
+}
+
+.sois_block_05 .card__inner__text {
+  transition: 1s;
+  width: 100%;
+}
+
+@media (min-width: 990px) {
+  .block_09 .slider-tech__card.animate.col-6 {
+    width: 50%;
+    margin-bottom: 3px;
+  }
+}
+
+/******* MODAL REVIEW */
+.modal__content .vacancy_accordeon {
+  padding-right: 0;
+}
+.modal__content .vacancy_accordeon .tech-list__wrap {
+  margin-right: 0;
+  margin-left: 0;
+}
+.modal__content .vacancy-btn .btn__icon {
+  width: 15px;
+  height: 15px;
+}
+.modal__content .vacancy-btn .btn__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/******* BUTTONS */
+.btn.has-icon .btn__icon {
+  margin-left: 0.75rem;
+  margin-right: 0;
+}
+
+/******* CARD */
+.card .list {
+  max-width: 300px;
+  height: 100%;
+  padding: 30px;
+}
+@media (min-width: 576px) {
+  .card .list {
+    max-width: 491px;
+    padding: 30px 3rem;
+  }
+}
+@media (min-width: 990px) {
+  .card .list {
+    padding: 3rem;
+  }
+}
+.card .list li {
+  font-size: 13px;
+  line-height: 18px;
+}
+@media (min-width: 1600px) {
+  .card .list li {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+@media (max-width: 639.98px) {
+  #aggregates .card__img {
+    padding-top: 0;
+  }
+	.tour-announce__3d-image {
+		height: 290px;
+	}
+	.tour-announce__3d-image img.sois_02 {
+		width: 100%;
+	}
+}
+@media (max-width: 576px) {
+  .sois_block_05 .card__img img {
+    object-fit: cover;
+  }
+
+  .sois_block_05 .carousel__slide .card__img {
+    height: 23.625rem;
+  }
+}
+/******* INTERES */
+.b-interes {
+  padding-bottom: 114px;
+}
+
+/******* AGREGATES */
+#aggregates {
+  margin-bottom: 54px !important;
+}
+
+.b-agregates-col--middle {
+  padding: 8px 0 0 14px;
+}
+
+.b-agregates-col--middle .user-text {
+  font-size: 19px;
+}
+
+.b-agregates-col--last {
+  padding: 19px 0 0 0;
+}
+
+/******* CARD LINK */
+@media (min-width: 640px) {
+  .card-link__content {
+    padding: 42px 46px 42px 53px;
+  }
+}
+
+.card-link__wrap {
+  height: 100%;
+}
+
+@media (min-width: 640px) {
+  .b-card-items {
+    margin-bottom: 34px !important;
+  }
+}
+
+/******* QUEST */
+.b-quest {
+  padding-bottom: 230px;
+}
+
+h2.b-quest__but {
+  margin-bottom: 40px !important;
+}
+
+@media (min-width: 990px) {
+  .b-job {
+    padding-bottom: 0;
+  }
+}
+/******* CARD LINK */
+.card-link .card-link__icon {
+  position: absolute;
+  right: 30px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+@media (max-width: 768px) {
+  .card-link .card-link__icon {
+    right: 10px;
+  }
+  .mfp-wrap {
+	  height:100vh!important;
+}

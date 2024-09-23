@@ -1,0 +1,34 @@
+.qr-btn {
+    justify-content: center;
+    display: flex;
+    margin-top: 10px;
+    border: none;
+    padding-left: 0;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    align-items: center;
+
+}
+
+.qr-btn img {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.qr-btn span {
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-decoration: underline;
+    color: #db0029;
+}
+
+#loadingMessage {
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #7d7d7d;
+    margin-top: 15px;
+}

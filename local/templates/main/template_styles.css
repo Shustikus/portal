@@ -1,0 +1,275 @@
+html {}
+
+.video-block--full-page-width .plyr__video-wrapper.plyr__video-embed,
+.video-block--full-page-width .plyr__video-wrapper.plyr__video-wrapper--fixed-ratio {
+    max-width: 100%;
+    height: 87vh;
+    max-height: calc(100vw/1.899);
+    padding-bottom: 0 !important;
+}
+
+@media (min-width: 991px) {
+    .hero__title {
+        width: 74.333%;
+    }
+    .plyr__video-embed, .plyr__video-wrapper--fixed-ratio {
+        padding-bottom: 47.25% !important;
+    }
+}
+
+/*dealers-map-adaptive*/
+.dealers-map-adaptive .RT_form__field {
+    position: relative;
+    width: 100%;
+    margin-right: 0;
+}
+.dealers-map-adaptive .map-dealers-list {
+    overflow-y: auto;
+}
+.dealers-map-adaptive  .RT_field--white .RT_input__field {
+    margin-right: 3rem;
+}
+@media (max-width: 991px) {
+    .dealers-map-adaptive  .RT_field--white .RT_input__field {
+        margin-right: 0rem;
+    }
+    .dealers-map-adaptive .pb-md-80.pb-40 {
+        padding-bottom: 0 !important;
+    }
+    .dealers-map-adaptive .RT_input {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .dealers-map-adaptive .RT_location-input__icon {
+        top: 20px;
+        bottom: auto;
+    }
+    .dealers-map-adaptive .RT_field--white .RT_input__field {
+        border-bottom: 1px solid #fff;
+        color: #fff;
+    }
+    .dealers-map-adaptive .wrap-pl-1.wrap-pr-1 {
+        order: -1;
+        position: static !important;
+    }
+    .dealers-map-adaptive .RT_input >button {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 15px;
+    }
+    .dealers-map-adaptive .map-dealers-list {
+        width: 100% !important;
+        position: static !important;
+        order: 3;
+        padding-right: 1rem;
+    }
+    .dealers-map-adaptive .map-dealers-list-item {
+        padding: 1.2rem 1.5rem;
+        margin-bottom: 2px;
+        border-bottom: 1px solid rgba(16, 16, 16, .4);
+    }
+    .dealers-map-adaptive .map-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 639.98px) {
+    .dealers-map-adaptive .RT_location-input__icon {
+        top: 20px;
+        bottom: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .dealers-map-adaptive .dealer-map__content.wait-for-load {
+        height: 80vw;
+    }
+    .map-container__item, .dealer-map__content, #rt-yandex-map {
+        max-height: 93vw;
+        height: 93vw !important;
+    }
+}
+
+
+
+/**/
+.table-second-wrap {
+    overflow-x: auto;
+}
+table.table-second {
+    --bs-table-bg: transparent;
+    --bs-table-striped-color: #212529;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #212529;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #212529;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    width: auto;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+    margin-left: 2px;
+}
+table.table-second th {
+    text-align: left;
+}
+
+table.table-second caption {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 126.4%;
+    text-align: left;
+    margin-bottom: 26px;
+}
+table.table-second > tbody {
+    vertical-align: inherit;
+}
+table.table-second > thead {
+    vertical-align: bottom;
+}
+table.table-second > :not(:last-child) > :last-child > * {
+    border-bottom-color: var(--color-main);
+}
+table.table-second > :not(caption) > * {
+    border-width: 1px;
+}
+table.table-second > :not(caption) > * > * {
+    border-width: 1px;
+}
+table.table-second th {
+
+}
+table.table-second td {
+    border: 1px solid #E1E3E9;
+}
+
+.table.table-second td:first-child, .table.table-second th:first-child, .user-text table.table-second td:first-child, .user-text table.table-second th:first-child {
+    padding-left: 1rem;
+
+}
+
+.table.table-second tbody tr:nth-child(2n+1), .user-text table.table-second tbody tr:nth-child(2n+1) {
+    background-color: #fff;
+}
+
+.table.table-second tbody td, .user-text table.table-second tbody td {
+    height: 1.5rem;
+    font-size: 0.8rem;
+    vertical-align: middle;
+}
+.table.table-second td, .table.table-second th, .user-text table.table-second td, .user-text table.table-second th {
+    padding: 0.5rem;
+}
+.table.table-second thead th, .user-text table.table-second thead th {
+    height: 2.25rem;
+    font-size: 0.8rem;
+}
+.block-slider .table-second-wrap {
+    display: none;
+}
+
+.block-slider ul {
+    margin: 0;
+    padding: 0;
+}
+
+.user-text ul li {
+    margin-bottom: 0.4rem;
+}
+.user-text ul li ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+}
+.user-text ul li ul li {
+    padding-left: 1.075rem;
+}
+.user-text ul li ul li::before {
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    opacity: 0.7;
+    top: 0.535rem;
+}
+
+@media (max-width: 640px) {
+    .user-text ul li ul li::before {
+        top: 0.335rem;
+    }
+    .map-dealers-list-item {
+        padding: 1rem !important;
+    }
+    .dealer-info__contact .icon {
+        display: none;
+    }
+    .dealer-info__tag {
+        font-size: 12px !important;
+    }
+    .dealer-info__contacts {
+        padding-right: 0 !important;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 990px) {
+    .main-slider-slide__title {
+        font-size: 3rem;
+    }
+}
+
+
+/**/
+.product-cards-list__content .tabs-list__wrap > a.tabs-list__el {
+    flex: 0 0 auto
+}
+
+.header-langs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-left: 16px;
+}
+
+.header-langs__link {
+    font-size: .75rem;
+    line-height: 15px;
+
+    color: rgba(16, 16, 16, .4) !important;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: color;
+    -o-transition-property: color;
+    transition-property: color;
+}
+.header-langs__link:hover {
+    color: #101010 !important;
+}
+.header-langs--mob {
+    margin-left: 0 !important;
+    margin-top: 2rem;
+}
+
+.is-white .header-langs__link {
+    color: white !important;
+}
+.is-white .header-langs__link:hover {
+    color: #101010 !important;
+}
+
+
+
+/**/
+
+.card-news__image-wrapper .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}

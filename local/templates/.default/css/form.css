@@ -1,0 +1,16 @@
+/**/
+.form-v{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    
+}
+@media(max-width:760px){
+    .form-v{
+        flex-wrap: wrap;
+    } 
+    .form-v .form-layout__item{
+        width: 100%;
+        max-width: 100%;
+    }
+}
