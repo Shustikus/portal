@@ -39,7 +39,7 @@
 }
 
 @media(min-width: 990px){
-    
+
     .events-list__col:nth-child(-n+2) .card__info {
 		margin-bottom: 0;
 	}
@@ -63,5 +63,14 @@
     .user-text > h4 {
         margin-top: 1.5rem;
         margin-bottom: 1rem;
+    }
+}
+.header .logo-white > div > img:first-child, .header .logo-red > div > img:first-child {
+    max-height: 42px;
+}
+
+@media (min-width: 992px) {
+    .header .logo-white > div > img:first-child, .header .logo-red > div > img:first-child {
+        max-height: 64px;
     }
 }
