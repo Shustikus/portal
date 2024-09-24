@@ -12,9 +12,9 @@
 		<meta property="og:image:height" content="395" />
 		<meta name="ahrefs-site-verification" content="b5053f3ed0723b575994c27e4a9a7be1a4787788d4648db11875a86401389033" />
 
-		<!--	<link rel="apple-touch-icon" sizes="180x180" href="/dist/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/dist/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/dist/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/dist/favicon-16x16.png">-->
+        <link rel="icon" type="image/png" sizes="16x16" href="/dist/favicon-16x16.png">
 		<link rel="manifest" href="dist/site.webmanifest" />
 		<link rel="mask-icon" href="dist/safari-pinned-tab.svg" color="#5bbad5" />
 		<meta name="msapplication-TileColor" content="#ff941a" />
@@ -103,7 +103,7 @@
 		<script src="jquery-2.2.4.min.js"></script>
 		<script src="bitrix/js/main/pageobject/pageobject.min.js?1608969311570"></script>
 		<script src="bitrix/js/main/core/core_window.min.js?170905409876324"></script>
-		
+
 
 		<script src="dist/prog/app.js?16195292056929"></script>
 		<script src="local/templates/.default/script.js?170928678026229"></script>
@@ -189,16 +189,20 @@
 				<script>
 					window.locationName = "Ростовская область";
 				</script>
-				
+
 				<div class="header-wrapper wrapper wrap-pl-1 wrap-pr-1">
 					<div class="header__top header-top">
 						<div class="header-top__left">
 							<div class="header-top__client-location header-top__item">
 								<span class="n-h link-action header__link link-action--line-animate-in" data-modal="" data-effect="mfp-move-from-left">
-									
+
 									<span class="link-action__text">Официальный дилер</span>
-									<img class="w-logo" src="images/rsm-logo-text.svg" alt="">
-									<img class="r-logo" src="images/rsm-logo-text-red.svg" alt="">
+									<a href="https://rostselmash.com/" target="_blank">
+										<div>
+											<img class="w-logo" src="images/rsm-logo-text.svg" alt="">
+											<img class="r-logo" src="images/rsm-logo-text-red.svg" alt="">
+										</div>
+									</a>
 								</span>
 							</div>
 							<style>
@@ -214,31 +218,29 @@
 							</style>
 						</div>
 						<div class="header-top__right">
-							<a href="#" class="link-action header-top__item">
+							<a href="/about" class="link-action header-top__item">
 								<span class="link-action__text">О дилере</span>
 							</a>
-							<a href="#" class="link-action header-top__item">
+							<a href="https://blog.rostselmash.com" class="link-action header-top__item">
 								<span class="link-action__text">Блог Ростсельмаш</span>
 							</a>
-							
-							<a href="#" class="link-action header-top__item">
+
+							<a href="/contacts" class="link-action header-top__item">
 								<span class="link-action__text">Контакты</span>
 							</a>
 							
 						</div>
 					</div>
 					<div class="header__wrap">
-						<a class="header__logo">
+						<a class="header__logo" href="/">
 							<span class="logo-white" style="display: none">
 								<div class="n-logo-t">
 									<img src="images/logo-d.png" alt="">
-									<img src="images/1640060147.svg" alt="">
 								</div>
 							</span>
 							<span class="logo-red" style="display: none;">
 								<div class="n-logo-t">
 									<img src="images/logo-d.png" alt="">
-									<img src="images/1640060146-black.png" alt="">
 								</div>
 							</span>
 						</a>
@@ -261,11 +263,12 @@
 								</li>
 							</ul>
 							<div class="header-nav__search-box" data-search-box="https://rostselmash.com/search/serch-ajax.php">
-								<form action="https://rostselmash.com/search/" name="search-box" id="search-box">
+								<div id="search-box">
+									<form action="https://rostselmash.com/search/" name="search-box">
 									<div class="field">
 										<div class="control">
 											<div class="input-shell">
-												<input id="search-box-input" name="q" class="input input--default" placeholder="Введите поисковый запрос" type="text" autocomplete="off" data-search-box-field="" />
+												<input id="search-box-input" name="q" class="input input--default" placeholder="Введите поисковый запрос" type="text" autocomplete="off" data-search-box-field="" value="" size="40" maxlength="50"/>
 											</div>
 										</div>
 									</div>
@@ -277,15 +280,26 @@
 											</svg>
 										</i>
 									</button>
-									<input type="submit" class="hidden" />
+									<input type="submit" class="hidden" name="s" value="Поиск"/>
 								</form>
-								<div class="header__search-box-results" data-search-box-results="">
-									<div class="search-box-result-list"></div>
+									<div class="header__search-box-results" data-search-box-results="">
+										<div class="search-box-result-list"></div>
+									</div>
 								</div>
+								<script>
+									BX.ready(function() {
+										new JCUserTitleSearch({
+											'AJAX_PAGE': '/',
+											'CONTAINER_ID': 'search-box',
+											'INPUT_ID': 'search-box-input',
+											'MIN_QUERY_LEN': 2
+										});
+									});
+								</script>
 							</div>
 							<ul class="header-nav__menu">
 								<li class="header-nav__item text-default">
-									<a href="products/index.htm" class="header-nav__link header-nav__link--level-0" data-submenu-id="1">
+									<a href="/products" class="header-nav__link header-nav__link--level-0" data-submenu-id="1">
 										Сельхозтехника
 										<span class="header-nav__link-arrow">
 											<svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -1484,7 +1498,7 @@
 											<li class="menu__item menu__item--level-1">
 												<a href="spare-parts/checking-originality-parts/index.htm" class="menu__link menu__link--level-1 text-default">Проверка оригинальности деталей</a>
 											</li>
-											
+
 										</ul>
 									</li>
 									<li class="menu__item menu__item--level-0">
@@ -1522,7 +1536,7 @@
 											</li>
 										</ul>
 									</li>
-									
+
 								</ul>
 							</div>
 							<div class="menu__bottom bg-gray">
@@ -2381,7 +2395,7 @@
 									</div>
 
 								</div>
-								
+
 							</div>
 						</div>
 					</div>
@@ -2959,11 +2973,11 @@
 						</div>
 						<div class="footer__actions">
 							<ul class="footer__action-list">
-								
+
 								<li class="footer__action">
 									<a href="https://agrotronic.rostselmash.com/" class="text-link text-default">Вход в РСМ Агротроник</a>
 								</li>
-								
+
 							</ul>
 						</div>
 						<div class="footer__nav">
@@ -2998,13 +3012,13 @@
 								<li class="footer__nav-item">
 									<a href="financing/specials/index.htm" class="footer__nav-item-link" data-link-animate="primary">Акции</a>
 								</li>
-								
+
 								<li class="footer__nav-item">
 									<a href="https://blog.rostselmash.com/" class="footer__nav-item-link" data-link-animate="primary">Блог Ростсельмаш</a>
 								</li>
 							</ul>
 						</div>
-						
+
 						<div class="footer__address">
 							<ul class="footer__address-list">
 								<li class="footer__address-item">
@@ -3018,7 +3032,7 @@
 								</li>
 							</ul>
 						</div>
-						
+
 						<div class="footer__policy">
 							<ul class="footer__policy-items">
 								<li class="footer__policy-item">
@@ -3545,7 +3559,7 @@
 				</div>
 			</div>
 
-			
+
 
 		<!-- test -->
 		<div itemscope="" itemtype="https://schema.org/Organization">
@@ -3608,6 +3622,6 @@
 			}
 		</script>
 
-		
+
 	</body>
 </html>

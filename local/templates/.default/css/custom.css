@@ -781,3 +781,12 @@ blockquote.hilight {
     margin-bottom: 4rem;
 }
 
+.header .logo-white > div > img:first-child, .header .logo-red > div > img:first-child {
+    max-height: 42px;
+}
+
+@media (min-width: 992px) {
+    .header .logo-white > div > img:first-child, .header .logo-red > div > img:first-child {
+        max-height: 64px;
+    }
+}
