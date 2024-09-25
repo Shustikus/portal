@@ -1,0 +1,23 @@
+{
+  "name": "portal",
+  "version": "1.0.0",
+  "main": "jquery-2.2.4.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "fs": "^0.0.1-security",
+    "nodemon": "^3.1.7",
+    "path": "^0.12.7"
+  }
+}
