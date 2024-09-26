@@ -37,12 +37,26 @@ app.use(async (req, res, next) => {
 
 // Главная страница
 app.get('/', (req, res) => {
-    res.render('index', {feedData: req.feedData});
+    res.render('index', {
+        feedData: req.feedData,
+        rootPath: '/'
+    });
+});
+
+// Страница "О дилере"
+app.get('/about', (req, res) => {
+    res.render('about', {
+        feedData: req.feedData,
+        rootPath: '/'
+    });
 });
 
 // Страница "Точное земледелие"
 app.get('/electronic-systems', (req, res) => {
-    res.render('tocnoe-zemledelie', {feedData: req.feedData});
+    res.render('tocnoe-zemledelie', {
+        feedData: req.feedData,
+        rootPath: '/'
+    });
 });
 
 // Прокси-маршрут для поиска по запросу
