@@ -126,8 +126,6 @@
 		<script data-skip-moving="true" src="dist/js/vendors~index.chunk.js?16116541111101440" defer=""></script>
 		<script data-skip-moving="true" src="dist/js/jquery.inputmask.js?1675926446117099" defer=""></script>
 		<script data-skip-moving="true" src="dist/js/owl.carousel.js?152423053089992" defer=""></script>
-		<script src="vue@3.4.21/dist/vue.global.js"></script>
-		<script src="vue@3.4.21/dist/vue-router.global.js"></script>
 		<script>
 			$(document).ready(function () {
 			    var im = new Inputmask("+7 (999) 999 99 99");
@@ -220,17 +218,17 @@
 							</style>
 						</div>
 						<div class="header-top__right">
-							<a href="/about" class="link-action header-top__item">
+							<a href="/about/" class="link-action header-top__item">
 								<span class="link-action__text">О дилере</span>
 							</a>
 							<a href="https://blog.rostselmash.com" class="link-action header-top__item">
 								<span class="link-action__text">Блог Ростсельмаш</span>
 							</a>
 
-							<a href="/contacts" class="link-action header-top__item">
+							<a href="/contacts/" class="link-action header-top__item">
 								<span class="link-action__text">Контакты</span>
 							</a>
-							
+
 						</div>
 					</div>
 					<div class="header__wrap">
@@ -314,7 +312,7 @@
 							</div>
 							<ul class="header-nav__menu">
 								<li class="header-nav__item text-default">
-									<a href="/products" class="header-nav__link header-nav__link--level-0" data-submenu-id="1">
+									<a href="/products/" class="header-nav__link header-nav__link--level-0" data-submenu-id="1">
 										Сельхозтехника
 										<span class="header-nav__link-arrow">
 											<svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -324,7 +322,7 @@
 									</a>
 								</li>
 								<li class="header-nav__item text-default">
-									<a href="/electronic-systems" class="header-nav__link header-nav__link--level-0" data-submenu-id="13">
+									<a href="/electronic-systems/" class="header-nav__link header-nav__link--level-0" data-submenu-id="13">
 										Точное земледелие
 										<span class="header-nav__link-arrow">
 											<svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -334,7 +332,7 @@
 									</a>
 								</li>
 								<li class="header-nav__item text-default">
-									<a href="/spare-parts" class="header-nav__link header-nav__link--level-0" data-submenu-id="20">
+									<a href="/spare-parts/" class="header-nav__link header-nav__link--level-0" data-submenu-id="20">
 										Запчасти и сервис
 										<span class="header-nav__link-arrow">
 											<svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -344,12 +342,12 @@
 									</a>
 								</li>
 								<li class="header-nav__item text-default">
-									<a href="/specials" class="header-nav__link header-nav__link--level-0">
+									<a href="/specials/" class="header-nav__link header-nav__link--level-0">
 										Акции
 									</a>
 								</li>
 								<li class="header-nav__item text-default">
-									<a href="/finance" class="header-nav__link header-nav__link--level-0" data-submenu-id="21">
+									<a href="/finance/" class="header-nav__link header-nav__link--level-0" data-submenu-id="21">
 										Финансирование
 										<span class="header-nav__link-arrow">
 											<svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -359,7 +357,7 @@
 									</a>
 								</li>
 								<li class="header-nav__item text-default">
-									<a href="/where-buy" class="header-nav__link header-nav__link--level-0">
+									<a href="/where-buy/" class="header-nav__link header-nav__link--level-0">
 										Где купить
 									</a>
 								</li>
@@ -373,7 +371,7 @@
 								<% Object.values(feedData.catalog.sections).forEach((section) => { %>
 									<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
 										<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-											<a href="products/<%= section.code %>/" class="header-nav__submenu-link header-nav__submenu-link--level-1" data-submenu-id="<%= counter %>">
+											<a href="/products/<%= section.code %>/" class="header-nav__submenu-link header-nav__submenu-link--level-1" data-submenu-id="<%= counter %>">
 												<%= section.name %>
 											</a>
 										</li>
@@ -399,7 +397,7 @@
 										<% if (elements.length > 0) { %>
 											<% elements.forEach((element) => { %>
 												<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-													<a href="products/<%= sectionCode %>/<%= element.code %>/" class="header-nav__submenu-link header-nav__submenu-link--level-2">
+													<a href="/products/<%= sectionCode %>/<%= element.code %>/" class="header-nav__submenu-link header-nav__submenu-link--level-2">
 														<%= element.name %>
 													</a>
 												</li>
@@ -414,7 +412,7 @@
 								<% let counter = 14; %>
 								<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
 										<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-											<a href="electronic-systems/<%= section.code %>/" class="header-nav__submenu-link header-nav__submenu-link--level-1" data-submenu-id="<%= counter %>">
+											<a href="/electronic-systems/<%= section.code %>/" class="header-nav__submenu-link header-nav__submenu-link--level-1" data-submenu-id="<%= counter %>">
 												<%= section.name %>
 											</a>
 										</li>
@@ -439,7 +437,7 @@
 										<% if (elements.length > 0) { %>
 											<% elements.forEach((element) => { %>
 												<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-													<a href="electronic-systems/<%= sectionCode %>/<%= element.code %>/" class="header-nav__submenu-link header-nav__submenu-link--level-2">
+													<a href="/electronic-systems/<%= sectionCode %>/<%= element.code %>/" class="header-nav__submenu-link header-nav__submenu-link--level-2">
 														<%= element.name %>
 													</a>
 												</li>
@@ -451,60 +449,60 @@
 						<% }); %>
 						<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="20">
 							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="spare-parts/spares/index.htm" class="header-nav__submenu-link header-nav__submenu-link--level-1">
+								<a href="/services/spares/" class="header-nav__submenu-link header-nav__submenu-link--level-1">
 									Оригинальные запчасти и сервис
 								</a>
 							</li>
 							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="qr/index.htm" class="header-nav__submenu-link header-nav__submenu-link--level-1">
+								<a href="/services/request/" class="header-nav__submenu-link header-nav__submenu-link--level-1">
 									Заявка на ремонт
 								</a>
 							</li>
 							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="spare-parts/checking-originality-parts/index.htm" class="header-nav__submenu-link header-nav__submenu-link--level-1">
+								<a href="https://rostselmash.com/spare-parts/checking-originality-parts/" class="header-nav__submenu-link header-nav__submenu-link--level-1">
 									Проверка оригинальности деталей
 								</a>
 							</li>
 							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="spare-parts/g-profi-oil/index.htm" class="header-nav__submenu-link header-nav__submenu-link--level-1">
+								<a href="/services/g-profi-oil/" class="header-nav__submenu-link header-nav__submenu-link--level-1">
 									Масло Ростсельмаш G-PROFI
 								</a>
 							</li>
 						</ul>
 						<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="21">
 							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="financing/rsm_finance/index.htm" class="header-nav__submenu-link header-nav__submenu-link--level-1">
+								<a href="/finances/leasing-rostselmash/" class="header-nav__submenu-link header-nav__submenu-link--level-1">
 									Программа лизинга Ростсельмаш Финанс
 								</a>
 							</li>
 							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="financing/leasing/index.htm" class="header-nav__submenu-link header-nav__submenu-link--level-1">
+								<a href="/finances/leasing/" class="header-nav__submenu-link header-nav__submenu-link--level-1">
 									Лизинг
 								</a>
 							</li>
 							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="financing/lending/index.htm" class="header-nav__submenu-link header-nav__submenu-link--level-1">
+								<a href="/finances/credit/" class="header-nav__submenu-link header-nav__submenu-link--level-1">
 									Кредитование
 								</a>
 							</li>
 							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="financing/insurance/index.htm" class="header-nav__submenu-link header-nav__submenu-link--level-1">
+								<a href="/finances/insurance/" class="header-nav__submenu-link header-nav__submenu-link--level-1">
 									Страхование
 								</a>
 							</li>
 							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="financing/specials/index.htm" class="header-nav__submenu-link header-nav__submenu-link--level-1">
+								<a href="/specials/" class="header-nav__submenu-link header-nav__submenu-link--level-1">
 									Акции
 								</a>
 							</li>
 						</ul>
 						<ul class="header-nav__submenu header-nav__submenu--level-2 header-nav__submenu--default is-open" data-animate="">
 							<li class="header-nav__submenu-item header-nav__submenu-item--default">
-								<a href="company/rostselmash-book-of-records/index.htm" class="header-nav__submenu-link">Посмотреть рекорды Ростсельмаш</a>
+								<a href="https://rostselmash.com/company/rostselmash-book-of-records/" class="header-nav__submenu-link">Посмотреть рекорды Ростсельмаш</a>
 								<p class="text-mute">Каждый год - новый рекорд</p>
 							</li>
 							<li class="header-nav__submenu-item header-nav__submenu-item--default">
-								<a href="company/rostselmash-book-of-records/torum-785-camyy-moshchnyy-zernouborochnyy-kombayn-strany/index.htm" class="header-nav__submenu-link">TORUM 785 - cамый мощный зерноуборочный комбайн страны</a>
+								<a href="https://rostselmash.com/company/rostselmash-book-of-records/torum-785-camyy-moshchnyy-zernouborochnyy-kombayn-strany/" class="header-nav__submenu-link">TORUM 785 - cамый мощный зерноуборочный комбайн страны</a>
 								<p class="text-mute"></p>
 							</li>
 						</ul>
