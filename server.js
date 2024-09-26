@@ -50,6 +50,13 @@ app.get('/about', (req, res) => {
         rootPath: '/'
     });
 });
+// Страница "Контакты"
+app.get('/contacts', (req, res) => {
+    res.render('contacts', {
+        feedData: req.feedData,
+        rootPath: '/'
+    });
+});
 
 // Страница "Точное земледелие"
 app.get('/electronic-systems', (req, res) => {
