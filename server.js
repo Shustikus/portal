@@ -50,6 +50,7 @@ app.get('/about', (req, res) => {
         rootPath: '/'
     });
 });
+
 // Страница "Контакты"
 app.get('/contacts', (req, res) => {
     res.render('contacts', {
@@ -61,6 +62,46 @@ app.get('/contacts', (req, res) => {
 // Страница "Точное земледелие"
 app.get('/electronic-systems', (req, res) => {
     res.render('tocnoe-zemledelie', {
+        feedData: req.feedData,
+        rootPath: '/'
+    });
+});
+
+// Страница "Продукты"
+app.get('/products', (req, res) => {
+    res.render('products', {
+        feedData: req.feedData,
+        rootPath: '/'
+    });
+});
+
+// Страница "Запчасти и сервис"
+app.get('/services', (req, res) => {
+    res.render('spare-parts', {
+        feedData: req.feedData,
+        rootPath: '/'
+    });
+});
+
+// Страница "Акции"
+app.get('/specials', (req, res) => {
+    res.render('specials', {
+        feedData: req.feedData,
+        rootPath: '/'
+    });
+});
+
+// Страница "Финансирование"
+app.get('/finance', (req, res) => {
+    res.render('finance', {
+        feedData: req.feedData,
+        rootPath: '/'
+    });
+});
+
+// Страница "Где купить"
+app.get('/where-buy', (req, res) => {
+    res.render('where-buy', {
         feedData: req.feedData,
         rootPath: '/'
     });
