@@ -348,9 +348,9 @@
 							</a>
 						</li>
 					</ul>
-					<div class="header-nav__search-box" data-search-box="http://localhost:3000/api/search">
+					<div class="header-nav__search-box" data-search-box="<%= apiUrl %>/api/search">
 						<div id="search-box">
-							<form id="search-form" action="http://localhost:3000/api/search" method="GET">
+							<form id="search-form" action="<%= apiUrl %>/api/search" method="GET">
 								<div class="field">
 									<div class="control">
 										<div class="input-shell">
@@ -382,7 +382,7 @@
 								const query = document.getElementById('search-box-input').value;
 
 								try {
-									const response = await fetch(`http://localhost:3000/api/search?q=${encodeURIComponent(query)}`);
+									const response = await fetch(`<%= apiUrl %>/api/search?q=${encodeURIComponent(query)}`);
 									const data = await response.json();
 
 									// Обрабатываем и отображаем результаты

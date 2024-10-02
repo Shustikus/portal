@@ -23,12 +23,12 @@ app.use('/upload', express.static(path.join(__dirname, 'portal', 'upload')));
 const UPLOAD_DIR = path.join(__dirname, 'portal', 'upload');
 fs.mkdirSync(UPLOAD_DIR, {recursive: true});
 
-// Middleware для получения фида и сохранения изображений
+// Middleware для получения фида
 app.use(async (req, res, next) => {
     try {
         const response = await axios.get('https://rostselmash.com/feed/for-dealers/file.json');
         req.feedData = response.data; // Сохраняем данные в объект запроса
-        await saveImages(req.feedData); // Сохраняем изображения
+        req.apiUrl = 'http://localhost:3000'; // Установите API_URL
     } catch (error) {
         console.error('Ошибка при получении фида:', error);
     }
@@ -39,7 +39,8 @@ app.use(async (req, res, next) => {
 app.get('/', (req, res) => {
     res.render('index', {
         feedData: req.feedData,
-        rootPath: '/'
+        rootPath: '/',
+        apiUrl: req.apiUrl
     });
 });
 
@@ -47,7 +48,8 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         feedData: req.feedData,
-        rootPath: '/'
+        rootPath: '/',
+        apiUrl: req.apiUrl
     });
 });
 
@@ -55,7 +57,8 @@ app.get('/about', (req, res) => {
 app.get('/contacts', (req, res) => {
     res.render('contacts', {
         feedData: req.feedData,
-        rootPath: '/'
+        rootPath: '/',
+        apiUrl: req.apiUrl
     });
 });
 
@@ -63,7 +66,8 @@ app.get('/contacts', (req, res) => {
 app.get('/electronic-systems', (req, res) => {
     res.render('tocnoe-zemledelie', {
         feedData: req.feedData,
-        rootPath: '/'
+        rootPath: '/',
+        apiUrl: req.apiUrl
     });
 });
 
@@ -71,7 +75,8 @@ app.get('/electronic-systems', (req, res) => {
 app.get('/products', (req, res) => {
     res.render('products', {
         feedData: req.feedData,
-        rootPath: '/'
+        rootPath: '/',
+        apiUrl: req.apiUrl
     });
 });
 
@@ -79,7 +84,8 @@ app.get('/products', (req, res) => {
 app.get('/services', (req, res) => {
     res.render('spare-parts', {
         feedData: req.feedData,
-        rootPath: '/'
+        rootPath: '/',
+        apiUrl: req.apiUrl
     });
 });
 
@@ -87,7 +93,8 @@ app.get('/services', (req, res) => {
 app.get('/specials', (req, res) => {
     res.render('specials', {
         feedData: req.feedData,
-        rootPath: '/'
+        rootPath: '/',
+        apiUrl: req.apiUrl
     });
 });
 
@@ -95,7 +102,8 @@ app.get('/specials', (req, res) => {
 app.get('/finance', (req, res) => {
     res.render('finance', {
         feedData: req.feedData,
-        rootPath: '/'
+        rootPath: '/',
+        apiUrl: req.apiUrl
     });
 });
 
@@ -103,7 +111,8 @@ app.get('/finance', (req, res) => {
 app.get('/where-buy', (req, res) => {
     res.render('where-buy', {
         feedData: req.feedData,
-        rootPath: '/'
+        rootPath: '/',
+        apiUrl: req.apiUrl
     });
 });
 
@@ -122,12 +131,21 @@ app.get('/api/search', async (req, res) => {
 
 // Функция для сохранения изображений
 async function saveImages(data) {
-    const $ = cheerio.load(data);
-    const imgPromises = $('img').map(async (index, element) => {
+    const $ = cheerio.load(data); // Загружаем HTML в cheerio
+    const imgElements = $('img'); // Находим все <img> элементы
+
+    // Проверяем, что imgElements является массивом
+    if (!imgElements.length) {
+        console.error('Ожидались изображения, но ничего не найдено.');
+        return;
+    }
+
+    // Создаем массив промисов для загрузки и сохранения всех изображений
+    const imgPromises = imgElements.map(async (index, element) => {
         const imgUrl = $(element).attr('src');
         if (imgUrl && imgUrl.startsWith('/upload')) {
             const fullUrl = `https://rostselmash.com${imgUrl}`;
-            return saveImage(fullUrl);
+            return await saveImage(fullUrl);
         }
     }).get();
 
