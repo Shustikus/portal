@@ -116,6 +116,42 @@ app.get('/where-buy', (req, res) => {
     });
 });
 
+// Страница "Лизинг"
+app.get('/finance/lizing', (req, res) => {
+    res.render('lizing', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
+// Страница "Кредитование"
+app.get('/finance/credit', (req, res) => {
+    res.render('kreditovanie', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
+// Страница "Страхование"
+app.get('/finance/insurance', (req, res) => {
+    res.render('sterahovanie', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
+// Страница "Страхование"
+app.get('/finance/leasing-rostselmash', (req, res) => {
+    res.render('rsm-finance', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
 // Прокси-маршрут для поиска по запросу
 app.get('/api/search', async (req, res) => {
     const query = req.query.q;
