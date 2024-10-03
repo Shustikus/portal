@@ -117,7 +117,7 @@ app.get('/where-buy', (req, res) => {
 });
 
 // Страница "Лизинг"
-app.get('/finance/lizing', (req, res) => {
+app.get('/finance/leasing', (req, res) => {
     res.render('lizing', {
         feedData: req.feedData,
         rootPath: '/',
@@ -143,7 +143,7 @@ app.get('/finance/insurance', (req, res) => {
     });
 });
 
-// Страница "Страхование"
+// Страница "Программа лизинга Ростсельмаш Финанс"
 app.get('/finance/leasing-rostselmash', (req, res) => {
     res.render('rsm-finance', {
         feedData: req.feedData,
