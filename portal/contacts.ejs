@@ -1448,12 +1448,23 @@
 <div class="hero pb-56">
 	<div class="hero__inner wrapper wrap-pl-1 wrap-pr-1">
 		<nav class="breadcrumbs" aria-label="breadcrumb" data-animate>
-			<ul class="breadcrumbs__list text-default" itemscope itemtype="https://schema.org/BreadcrumbList">
-				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-					<a href="/" class="breadcrumbs__text breadcrumbs__link text-lead" itemprop="item">
+			<ul class="breadcrumbs__list text-default" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+				<li class="breadcrumbs__crumb" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+					<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/" title="Главная" itemprop="item">
 						<span itemprop="name">Главная</span>
 					</a>
-					<meta itemprop="position" content="1" />
+					<meta itemprop="position" content="1">
+				</li>
+				<li class="breadcrumbs__crumb" id="bx_breadcrumb_1" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/about/" title="О компании" itemprop="item">
+						<span itemprop="name">О компании</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</li>
+				<li class="breadcrumbs__crumb">
+					<div class="breadcrumbs__text text-lead">
+						<span itemprop="name">Контакты</span>
+					</div>
 				</li>
 			</ul>
 		</nav>
@@ -1467,7 +1478,7 @@
 		margin-top: 0 !important;
 	}
 </style>
-<div class="map-box map-box--outline" data-map-box-contacts data-map-network data-url="local/templates/.default/components/bitrix/news.list/map-countries-box/contactsMapData_s1.json">
+<div class="map-box map-box--outline" data-map-box-contacts data-map-network data-url="/local/templates/.default/components/bitrix/news.list/map-countries-box/contactsMapData_s1.json">
 	<div class="map-box__container" data-animate>
 		<div class="map-box__frame map-box__frame--bottom" id="rt-yandex-map-contacts"></div>
 
@@ -1476,23 +1487,23 @@
 				Контактные данные
 			</div>
 			<div class="map-box__bottom-adress text-default">
-				Компания РОСТСЕЛЬМАШ <br />
-				344029, г. Ростов-на-Дону, <br />
-				ул. Менжинского, 2
+				Компания ООО «СмолАгроСнаб» <br />
+				214022, г. Смоленск, <br />
+				п. Красный Бор, 430 км
 			</div>
 			<div class="map-box__bottom-contacts text-default">
 				<div class="map-box__bottom-contact">
-					<a href="tel:88002506004" class="text-link text-default text-link--white">8 800 250-60-04</a>
+					<a href="tel:+74812355234" class="text-link text-default text-link--white">+7 (4812) 355-234</a>
 				</div>
 				<div class="map-box__bottom-contact">
-					<a href="mailto:rostselmash@oaorsm.ru" class="text-link text-default text-link--white">rostselmash@oaorsm.ru</a>
+					<a href="mailto:info@smolagrosnab.ru" class="text-link text-default text-link--white">info@smolagrosnab.ru</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="mt-96 mt-lg-128 wrap-pl-1 wrap-pr-1">
+<div class="mt-96 mt-lg-128 wrap-pl-1 wrap-pr-1 pb-80">
 	<div class="contacts-table">
 		<div class="contacts-table__top">
 			<div class="contacts-table__heading h2">
@@ -1516,7 +1527,10 @@
 						</div>
 						<div class="contacts-table__list">
 							<div class="contacts-table__contact-link">
-								<a href="tel:+78002506004" class="text-link text-default">+7-800-250-60-04</a>
+								<a href="tel:+79101121523" class="text-link text-default">+7 (910) 112-15-23</a>
+							</div>
+							<div class="contacts-table__label mt-16">
+								<a href="mailto:rsm_service@bk.ru" class="text-link text-default">rsm_service@bk.ru</a>
 							</div>
 						</div>
 					</div>
@@ -1524,441 +1538,7 @@
 			</div>
 			<div class="contacts-table__row">
 				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Южный регион</div>
-					<div class="text-lead">Краснодарский край, Республика Адыгея, Ростовская область</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Отдел продаж
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552138" class="text-link text-default">+7-863-255-21-38</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79188539297" class="text-link text-default">+7-918-853-92-97</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552200432" class="text-link text-default">+7-863-255-22-00 доб. 432 (Клевер)</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Сервис
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503372" class="text-link text-default">+7-863-250-33-72</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Запчасти
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+786325521974622" class="text-link text-default">+7-863-255-21-97, доб. 46-22</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Северо-Кавказский регион</div>
-					<div class="text-lead">
-						Республика Дагестан, Республика Ингушетия, Кабардино-Балкарская Республика, Республика Карачаево-Черкесия, Республика Северная Осетия-Алания, Ставропольский край, Чеченская республика
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Отдел продаж
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552104" class="text-link text-default">+7-863-255-21-04</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79895150841" class="text-link text-default">+7-989-515-08-41</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552200432" class="text-link text-default">+7-863-255-22-00 доб. 432 (Клевер)</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Сервис
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503372" class="text-link text-default">+7-863-250-33-72</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Запчасти
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+786325521974622" class="text-link text-default">+7-863-255-21-97, доб. 46-22</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Поволжский регион</div>
-					<div class="text-lead">Астраханская область, Волгоградская область, Республика Калмыкия, Самарская область, Саратовская область, Пензенская область, Республика Башкортостан, Республика Мордовия</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Отдел продаж
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552109" class="text-link text-default">+7-863-255-21-09</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79185031155" class="text-link text-default">+7-918-503-11-55</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552200319" class="text-link text-default">+7-863-255-22-00 (доб. 319) (Клевер)</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Сервис
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503372" class="text-link text-default">+7-863-250-33-72</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Запчасти
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552103387" class="text-link text-default">+7-863-255-21-03, доб. 387</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Черноземный регион</div>
-					<div class="text-lead">Белгородская область, Воронежская область, Курская область, Липецкая область, Орловская область, Тамбовская область</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Отдел продаж
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552123" class="text-link text-default">+7-863-255-21-23</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79185200332" class="text-link text-default">+7-918-520-03-32</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79888984826" class="text-link text-default">+7-988-898-48-26</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552200546" class="text-link text-default">+7 863 255-22-00 доб. 546 (Клевер)</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Сервис
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503372" class="text-link text-default">+7-863-250-33-72</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Запчасти
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+786325521394511" class="text-link text-default">+7-863-255-21-39, доб. 4511</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Центральный регион</div>
-					<div class="text-lead">
-						Архангельская область, Владимирская область, Вологодская область, Ивановская область, Кировская область, Костромская область, Республика Марий Эл, Нижегородская область, Чувашская Республика, Ярославская
-						область, Республика Татарстан, Ульяновская область
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Отдел продаж
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503323" class="text-link text-default">+7-863-250-33-23</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79185200332" class="text-link text-default">+7-918-520-03-32</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79198801151" class="text-link text-default">+7-919-880-11-51</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552200252" class="text-link text-default">+7 863 255-22-00 доб. 252 (Клевер)</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Сервис
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503372" class="text-link text-default">+7-863-250-33-72</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Запчасти
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+786325521394511" class="text-link text-default">+7-863-255-21-39, доб. 4511</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Северо-Западный регион</div>
-					<div class="text-lead">
-						Брянская область, Калининградская область, Калужская область, Республика Карелия, Ленинградская область, Москва и Московская область, Мурманская область, Новгородская область, Псковская область, Рязанская
-						область, Санкт-Петербург, Смоленская область, Тверская область, Тульская область
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Отдел продаж
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552123" class="text-link text-default">+7-863-255-21-23</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79185200332" class="text-link text-default">+7-918-520-03-32</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79885705280" class="text-link text-default">+7-988-570-52-80</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552200252" class="text-link text-default">+7 863 255-22-00 доб. 252 (Клевер)</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Сервис
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503372" class="text-link text-default">+7-863-250-33-72</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Запчасти
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+786325521394511" class="text-link text-default">+7-863-255-21-39, доб. 4511</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Уральский регион</div>
-					<div class="text-lead">Республика Коми, Курганская область, Оренбургская область, Пермский край, Свердловская область, Тюменская область, Удмуртская Республика, Челябинская область</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Отдел продаж
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552279" class="text-link text-default">+7-863-255-22-79</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79188507885" class="text-link text-default">+7-918-85-078-85 </a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552200257" class="text-link text-default">+7-863-255-22-00 доб. 257 (Клевер)</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Сервис
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503372" class="text-link text-default">+7-863-250-33-72</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Запчасти
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552103305" class="text-link text-default">+7-863-255-21-03, доб. 305</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Сибирский регион</div>
-					<div class="text-lead">Республика Алтай, Алтайский край, Кемеровская область, Красноярский край, Новосибирская область, Омская область, Томская область, Республика Тыва, Республика Хакасия</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Отдел продаж
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552167" class="text-link text-default">+7-863-255-21-67</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79188908040" class="text-link text-default">+7-918-890-80-40 </a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552200221" class="text-link text-default">+7 863 255-22-00 доб. 221 (Клевер)</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Сервис
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503372" class="text-link text-default">+7-863-250-33-72</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Запчасти
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552150315" class="text-link text-default">+7-863-255-21-50, доб. 315</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Дальневосточный регион</div>
-					<div class="text-lead">
-						Амурская область, Республика Бурятия, Еврейская АО, Забайкальский край, Иркутская область, Камчатский край, Магаданская область, Приморский край, Республика Саха (Якутия), Сахалинская область, Хабаровский
-						край, Чукотский АО
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Отдел продаж
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552048" class="text-link text-default">+7-863-255-20-48</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79604497722" class="text-link text-default">+7-960-449-77-22</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552200238" class="text-link text-default">+7 863 255-22-00 доб. 238 (Клевер)</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Сервис
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503372" class="text-link text-default">+7-863-250-33-72</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Запчасти
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552150315" class="text-link text-default">+7-863-255-21-50, доб. 315</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Казахстан</div>
+					<div class="h4">Отдел продаж техники</div>
 				</div>
 				<div class="contacts-table__cell">
 					<div class="contacts-table__contact">
@@ -1967,19 +1547,16 @@
 						</div>
 						<div class="contacts-table__list">
 							<div class="contacts-table__contact-link">
-								<a href="tel:+77172273060" class="text-link text-default">+7-717-227-30-60 (офис Астана)</a>
+								<a href="tel:+79107873505" class="text-link text-default">+7 (910) 787-35-05</a>
 							</div>
 							<div class="contacts-table__contact-link">
-								<a href="tel:+77172277060" class="text-link text-default">+7-717-227-70-60 (офис Астана)</a>
+								<a href="tel:+79107852705" class="text-link text-default">+7 (910) 785-27-05</a>
 							</div>
 							<div class="contacts-table__contact-link">
-								<a href="tel:+77710582288" class="text-link text-default">+7-771-058-22-88 (офис Астана)</a>
+								<a href="tel:+79517017900" class="text-link text-default">+7 (951) 701-79-00</a>
 							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632525704481" class="text-link text-default">+7 863 252-57-04 доб. 481 (Клевер)</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632525704457" class="text-link text-default">+7 863 252-57-04 доб. 457 (Клевер)</a>
+							<div class="contacts-table__label mt-16">
+								<a href="mailto:denbulko@bk.ru" class="text-link text-default">denbulko@bk.ru</a>
 							</div>
 						</div>
 					</div>
@@ -1987,7 +1564,7 @@
 			</div>
 			<div class="contacts-table__row">
 				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Экспорт</div>
+					<div class="h4">Отдел сервиса</div>
 				</div>
 				<div class="contacts-table__cell">
 					<div class="contacts-table__contact">
@@ -1996,28 +1573,10 @@
 						</div>
 						<div class="contacts-table__list">
 							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552304" class="text-link text-default">+7-863-255-23-04</a>
+								<a href="tel:+79101121523" class="text-link text-default">+7 (910) 112-15-23</a>
 							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79185423507" class="text-link text-default">+7-918-542-35-07</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632525704430" class="text-link text-default">+7-863-252-57-04 доб. 430 (Клевер)</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632543611347" class="text-link text-default">+7 863 254-36-11 доб. 347 (Клевер)</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							E-mail
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:" class="text-link text-default">MalykhinAA@oaorsm.ru </a>
+							<div class="contacts-table__label mt-16">
+								<a href="mailto:ivanov@smolagrosnab.ru" class="text-link text-default">ivanov@smolagrosnab.ru</a>
 							</div>
 						</div>
 					</div>
@@ -2025,7 +1584,7 @@
 			</div>
 			<div class="contacts-table__row">
 				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел продаж - Республика Беларусь</div>
+					<div class="h4">Отдел запасных частей</div>
 				</div>
 				<div class="contacts-table__cell">
 					<div class="contacts-table__contact">
@@ -2034,276 +1593,10 @@
 						</div>
 						<div class="contacts-table__list">
 							<div class="contacts-table__contact-link">
-								<a href="tel:+79885501744" class="text-link text-default">+7-988-550-17-44</a>
+								<a href="tel:+79107859505" class="text-link text-default">+7 (910) 785-95-05</a>
 							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79185423507" class="text-link text-default">+7-918-542-35-07</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632525704457" class="text-link text-default">+7-863-252-57-04 доб. 457 (Клевер)</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632525704268" class="text-link text-default">+7 863 252-57-04 доб. 268 (Клевер)</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632525704481" class="text-link text-default">+7 863 252-57-04 доб. 481 (Клевер)</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Отдел Международных перевозок</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Телефон
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503953" class="text-link text-default">+7 863 250 39 53</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Механическая обработка</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Телефон
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78633057882" class="text-link text-default">+7-863-305-78-82</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							E-mail
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="mailto:info@morsm.ru" class="text-link text-default">info@morsm.ru</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Тендеры и закупки</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Телефон
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78002506004" class="text-link text-default">+7-(800)-250-60-04</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503693" class="text-link text-default">+7-(863)-250-36-93</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Сервисное обслуживание техники</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Телефон
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503372" class="text-link text-default">+7-863-250-33-72</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							E-mail
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="mailto:warranty@oaorsm.ru" class="text-link text-default">warranty@oaorsm.ru</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Продажа запасных частей</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Телефон
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552103" class="text-link text-default">+7-863-255-21-03</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552139" class="text-link text-default">+7-863-255-21-39</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503706" class="text-link text-default">+7-863-250-37-06</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Факс
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552107" class="text-link text-default">+7 863 255-21-07</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							E-mail
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="mailto:zapchasti@oaorsm.ru" class="text-link text-default">zapchasti@oaorsm.ru</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Продажа навесной и прицепной техники</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Телефон
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552200" class="text-link text-default">+7-863-255-22-00</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632552002" class="text-link text-default">+7-863-255-20-02</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Горячая линия службы сервиса
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632524003" class="text-link text-default">+7-863-252-40-03</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Отдел экспорта
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632543611" class="text-link text-default">+7-863-254-36-11</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							E-mail
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="mailto:Kv815640@oaorsm.ru" class="text-link text-default">Kv815640@oaorsm.ru</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">СМИ</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Телефон
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78632503280" class="text-link text-default">+7-863-250-32-80</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79185554927" class="text-link text-default">+7-918-555-49-27</a>
-							</div>
-						</div>
-					</div>
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Телефон горячей линии
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+78002506004" class="text-link text-default">+7-800-250-60-04</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							E-mail
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="mailto:pressa@oaorsm.ru" class="text-link text-default">pressa@oaorsm.ru</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contacts-table__row">
-				<div class="contacts-table__cell contacts-table__cell-heading">
-					<div class="h4">Кадры</div>
-				</div>
-				<div class="contacts-table__cell">
-					<div class="contacts-table__contact">
-						<div class="contacts-table__label text-default text-mute">
-							Телефон
-						</div>
-						<div class="contacts-table__list">
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79185555571" class="text-link text-default">+7-918-555-55-71</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79885731010" class="text-link text-default">+7-988-573-10-10</a>
-							</div>
-							<div class="contacts-table__contact-link">
-								<a href="tel:+79885721010" class="text-link text-default">+7-988-572-10-10</a>
+							<div class="contacts-table__label mt-16">
+								<a href="mailto:gurchenkov@smolagrosnab.ru" class="text-link text-default">gurchenkov@smolagrosnab.ru</a>
 							</div>
 						</div>
 					</div>
@@ -2319,7 +1612,7 @@
 		FORM_SEND_SUCCESS: 'Форма успешно отправлена',
 	});
 </script>
-<div class="mt-96 mt-lg-128">
+<!-- <div class="mt-96 mt-lg-128">
 	<div class="appointment-form appointment-form--light">
 		<div class="wrapper wrap-pl-1 wrap-pr-1">
 			<div class="appointment-form__head">
@@ -2482,10 +1775,7 @@
 	<a href="#modal-form-succes" class="btn btn--primary btn--hover-primary" data-modal data-effect="mfp-fade-in-up">
 		<span class="btn__text">Форма успешно отправленаTEST</span>
 	</a>
-</div>
-
-
-
+</div> -->
 	<footer class="footer">
 		<div class="footer__contacts">
 			<div class="footer__contacts-wrapper wrapper wrap-pr-1 wrap-pl-1">
