@@ -107,7 +107,7 @@ app.get('/services/request/', (req, res) => {
     });
 });
 
-// Страница "Заявка на ремонт"
+// Страница "Масло Ростсельмаш G-PROFI"
 app.get('/services/g-profi-oil/', (req, res) => {
     res.render('g-profi-oil', {
         feedData: req.feedData,
@@ -173,6 +173,24 @@ app.get('/finance/insurance', (req, res) => {
 // Страница "Программа лизинга Ростсельмаш Финанс"
 app.get('/finance/leasing-rostselmash', (req, res) => {
     res.render('rsm-finance', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
+// Страница "Политика конфиденциальности"
+app.get('/policy', (req, res) => {
+    res.render('policy', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
+// Страница "Пользовательское соглашение"
+app.get('/terms-of-use', (req, res) => {
+    res.render('terms-of-use', {
         feedData: req.feedData,
         rootPath: '/',
         apiUrl: req.apiUrl
