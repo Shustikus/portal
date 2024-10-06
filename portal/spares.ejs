@@ -267,7 +267,7 @@
 <div class="progress-load"></div>
 <div class="preloader">
 	<div class="header-overlay"></div>
-	<header class="header js-header" data-scroll-lock-fill-gap="">
+	<header class="header js-header is-white" data-scroll-lock-fill-gap="">
 		<script>
 			window.locationName = "Ростовская область";
 		</script>
@@ -281,11 +281,25 @@
 									<span class="link-action__text">Официальный дилер</span>
 									<a href="https://rostselmash.com/" target="_blank">
 										<div>
+											<img class="w-logo" src="/images/rsm-logo-text.svg" alt="">
 											<img class="r-logo" src="/images/rsm-logo-text-red.svg" alt="">
 										</div>
 									</a>
 								</span>
 					</div>
+					<style>
+						.r-logo {
+							display: none;
+						}
+
+						.is-menu-open .r-logo {
+							display: block;
+						}
+
+						.is-menu-open .w-logo {
+							display: none;
+						}
+					</style>
 				</div>
 				<div class="header-top__right">
 					<a href="/about/" class="link-action header-top__item">
@@ -448,93 +462,93 @@
 			<div class="header-nav__dropdown">
 				<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="1">
 					<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-						<% let counter = 2; %>
-						<% Object.values(feedData.catalog.sections).forEach((section) => { %>
-							<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
-								<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-									<a href="/products/<%= section.code %>/"
-									   class="header-nav__submenu-link header-nav__submenu-link--level-1"
-									   data-submenu-id="<%= counter %>">
-										<%= section.name %>
-									</a>
-								</li>
-								<% counter++; %>
-							<% } %>
-						<% }); %>
+					<% let counter = 2; %>
+					<% Object.values(feedData.catalog.sections).forEach((section) => { %>
+					<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
+					<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
+						<a href="/products/<%= section.code %>/"
+						   class="header-nav__submenu-link header-nav__submenu-link--level-1"
+						   data-submenu-id="<%= counter %>">
+							<%= section.name %>
+						</a>
+					</li>
+					<% counter++; %>
+					<% } %>
+					<% }); %>
 					<% } %>
 				</ul>
 				<%
 				const sectionIds = ["15", "105", "164", "166", "171", "221", "173", "168", "174", "175", "176"];
 				%>
 				<% sectionIds.forEach((sectionId, index) => { %>
-					<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 2 %>"
-						data-animate="">
-						<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-							<%
-								const section = feedData.catalog.sections[sectionId];
-								const sectionCode = section ? section.code : '';
-							%>
-							<% if (feedData.catalog.elements) { %>
-								<%
-									const elements = Object.values(feedData.catalog.elements).filter(element => element.section_id === sectionId);
-								%>
-								<% if (elements.length > 0) { %>
-									<% elements.forEach((element) => { %>
-										<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-											<a href="/products/<%= sectionCode %>/<%= element.code %>/"
-											   class="header-nav__submenu-link header-nav__submenu-link--level-2">
-												<%= element.name %>
-											</a>
-										</li>
-									<% }); %>
-								<% } %>
-							<% } %>
-						<% } %>
-					</ul>
+				<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 2 %>"
+					data-animate="">
+					<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
+					<%
+					const section = feedData.catalog.sections[sectionId];
+					const sectionCode = section ? section.code : '';
+					%>
+					<% if (feedData.catalog.elements) { %>
+					<%
+					const elements = Object.values(feedData.catalog.elements).filter(element => element.section_id === sectionId);
+					%>
+					<% if (elements.length > 0) { %>
+					<% elements.forEach((element) => { %>
+					<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
+						<a href="/products/<%= sectionCode %>/<%= element.code %>/"
+						   class="header-nav__submenu-link header-nav__submenu-link--level-2">
+							<%= element.name %>
+						</a>
+					</li>
+					<% }); %>
+					<% } %>
+					<% } %>
+					<% } %>
+				</ul>
 				<% }); %>
 				<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="13">
 					<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-						<% let counter = 14; %>
-						<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
-							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="/electronic-systems/<%= section.code %>/"
-								   class="header-nav__submenu-link header-nav__submenu-link--level-1"
-								   data-submenu-id="<%= counter %>">
-									<%= section.name %>
-								</a>
-							</li>
-							<% counter++; %>
-						<% }); %>
+					<% let counter = 14; %>
+					<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
+					<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
+						<a href="/electronic-systems/<%= section.code %>/"
+						   class="header-nav__submenu-link header-nav__submenu-link--level-1"
+						   data-submenu-id="<%= counter %>">
+							<%= section.name %>
+						</a>
+					</li>
+					<% counter++; %>
+					<% }); %>
 					<% } %>
 				</ul>
 				<%
 				const secondSectionIds = ["185", "186", "187", "188", "740", "741"];
 				%>
 				<% secondSectionIds.forEach((sectionId, index) => { %>
-					<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 14 %>"
-						data-animate="">
-						<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-							<%
-								const section = feedData['electronic-systems'].sections[sectionId];
-								const sectionCode = section ? section.code : '';
-							%>
-							<% if (feedData['electronic-systems'].elements) { %>
-								<%
-									const elements = Object.values(feedData['electronic-systems'].elements).filter(element => element.section_id === sectionId);
-								%>
-								<% if (elements.length > 0) { %>
-									<% elements.forEach((element) => { %>
-										<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-											<a href="/electronic-systems/<%= sectionCode %>/<%= element.code %>/"
-											   class="header-nav__submenu-link header-nav__submenu-link--level-2">
-												<%= element.name %>
-											</a>
-										</li>
-									<% }); %>
-								<% } %>
-							<% } %>
-						<% } %>
-					</ul>
+				<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 14 %>"
+					data-animate="">
+					<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
+					<%
+					const section = feedData['electronic-systems'].sections[sectionId];
+					const sectionCode = section ? section.code : '';
+					%>
+					<% if (feedData['electronic-systems'].elements) { %>
+					<%
+					const elements = Object.values(feedData['electronic-systems'].elements).filter(element => element.section_id === sectionId);
+					%>
+					<% if (elements.length > 0) { %>
+					<% elements.forEach((element) => { %>
+					<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
+						<a href="/electronic-systems/<%= sectionCode %>/<%= element.code %>/"
+						   class="header-nav__submenu-link header-nav__submenu-link--level-2">
+							<%= element.name %>
+						</a>
+					</li>
+					<% }); %>
+					<% } %>
+					<% } %>
+					<% } %>
+				</ul>
 				<% }); %>
 				<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="20">
 					<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
@@ -1209,16 +1223,16 @@
 										<a href="/products/" class="menu__link menu__link--heading h4">Техника</a>
 									</li>
 									<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-										<% Object.values(feedData.catalog.sections).forEach((section) => { %>
-											<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
-												<li class="menu__item menu__item--level-1">
-													<a href="/products/<%= section.code %>/"
-													   class="menu__link menu__link--level-1 text-default">
-														<%= section.name %>
-													</a>
-												</li>
-											<% } %>
-										<% }); %>
+									<% Object.values(feedData.catalog.sections).forEach((section) => { %>
+									<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
+									<li class="menu__item menu__item--level-1">
+										<a href="/products/<%= section.code %>/"
+										   class="menu__link menu__link--level-1 text-default">
+											<%= section.name %>
+										</a>
+									</li>
+									<% } %>
+									<% }); %>
 									<% } %>
 								</ul>
 							</li>
@@ -1234,14 +1248,14 @@
 											земледелие</a>
 									</li>
 									<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-										<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
-											<li class="menu__item menu__item--level-1">
-												<a href="/electronic-systems/<%= section.code %>/"
-												   class="menu__link menu__link--level-1 text-default">
-													<%= section.name %>
-												</a>
-											</li>
-										<% }); %>
+									<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
+									<li class="menu__item menu__item--level-1">
+										<a href="/electronic-systems/<%= section.code %>/"
+										   class="menu__link menu__link--level-1 text-default">
+											<%= section.name %>
+										</a>
+									</li>
+									<% }); %>
 									<% } %>
 								</ul>
 							</li>
@@ -1429,308 +1443,1351 @@
 			</div>
 		</div>
 	</div>
+<style>
+	.block-text__wrapper {
+		padding-top: 2rem;
+	}
 
+	.main-slider-slide__content .main-slider-slide__main .main-slider-slide__fact {
+		width: 40% !important;
+	}
+</style>
+<link rel="stylesheet" data-template-style="true" href="/redizine/spares-custom.css" />
+<link rel="stylesheet" data-template-style="true" href="/redizine/spares-style.css" />
+<script src="/redizine/jquery.sticky-kit.js"></script>
+<script src="/redizine/spares-custom2.js"></script>
 
-<div class="hero pb-56">
-	<div class="hero__inner wrapper wrap-pl-1 wrap-pr-1">
-		<nav class="breadcrumbs" aria-label="breadcrumb" data-animate>
-			<ul class="breadcrumbs__list text-default" itemscope itemtype="https://schema.org/BreadcrumbList">
-				<li class="breadcrumbs__crumb" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-					<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/" title="Главная" itemprop="item">
-						<span itemprop="name">Главная</span>
-					</a>
-					<meta itemprop="position" content="1" />
-				</li>
-				<li class="breadcrumbs__crumb">
-					<div class="breadcrumbs__text text-lead">
-						<span itemprop="name">Запчасти и сервис</span>
+<div class="hero-main video_banner">
+	<div class="hero-main__wrap">
+		<div>
+			<canvas class="main-slider__canvas main-slider__canvas--loaded" width="1377" height="100%"></canvas>
+			<div class="main-slider__slides">
+				<div class="main-slider__slides-overlay"></div>
+
+				<div class="video-start-btn video-btn" style="display: none;">
+					<svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M69 40L-3.75206e-06 79.8372L-2.69386e-07 0.162827L69 40Z" fill="white" fill-opacity="0.6"></path>
+					</svg>
+				</div>
+
+				<div class="video-stop-btn video-btn hidden">
+					<img src="/images/pause_01.svg" alt="" />
+				</div>
+
+				<div class="video-cont-btn video-btn hidden">
+					<svg width="69" height="80" viewBox="0 0 69 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M69 40L-3.75206e-06 79.8372L-2.69386e-07 0.162827L69 40Z" fill="white" fill-opacity="0.6"></path>
+					</svg>
+				</div>
+
+				<div class="video-background" style="overflow: hidden">
+					<div class="video-foreground" style="display: block;">
+						<video style="filter: brightness(70%);" autoplay="autoplay" src="/videos/video.mp4" preload="auto" muted="muted" playsinline="" loop="loop" width="100%" height="auto">
+							<!--                                <source src="-->
+							<!--/img/drbndf.mp4" type="video/mp4"></source>-->
+						</video>
+						<!--							<iframe id="video" width="100%" height="510" src="https://www.youtube.com/embed/v05A7GCTTa0?modestbranding=1&controls=0&showinfo=0&rel=0&loop=1&enablejsapi=1&autoplay=1" frameborder="0" allowfullscreen></iframe>-->
 					</div>
-				</li>
-			</ul>
-		</nav>
+				</div>
 
-		<h1 class="hero__title h2">Запчасти и Сервис</h1>
-	</div>
-</div>
-
-<div class="py-80 wrap-pl-1 wrap-pr-1">
-	<div class="tech-cards-list">
-		<div class="tech-cards-list__wrap">
-			<div class="tech-cards-list__content">
-				<div class="tech-cards-list__row">
-					<div class="tech-cards-list__col">
-						<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-							<a href="/services/spares/" class="card__inner">
-								<div class="card__img">
-									<img
-										class="image is-lazy isItemProp"
-										src="/images/d890e65ed9d54e777b59e3c4c396e53e.jpg"
-										data-src="images/d890e65ed9d54e777b59e3c4c396e53e.jpg"
-										itemprop="contentUrl"
-										data-srcset="/images/d890e65ed9d54e777b59e3c4c396e53e.jpg"
-										alt="image"
-									/>
+				<div data-id="0" id="vidtop-content" data-src="" class="main-slider-slide active">
+					<div class="main-slider-slide__content">
+						<div class="main-slider-slide__main">
+							<div class="main-slider-slide__title h2">
+								<!--                                -->
+								Оригинальные запасные части и сервисное обслуживание
+							</div>
+							<div class="main-slider-slide__actions">
+								<div class="main-slider-slide__action">
+									<p class="user-text video_banner__text">
+										<!--                                        -->
+									</p>
+									<p>
+										<a href="https://pp.rostselmash.com/ru/" class="btn btn--primary btn--hover-gray" target="_blank"><span class="btn__text">Онлайн-каталог запчастей</span></a>
+									</p>
 								</div>
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__title text-lead" data-animate-lines itemprop="name">Оригинальные запчасти и сервис</div>
+							</div>
+						</div>
+						<div class="main-slider-slide__fact flex flex-wrap col-6 space-between">
+							
+							<div class="main-slider-slide__fact-wrap">
+								<div class="factor animate" data-viewport-trigger="" data-animate="">
+									<div class="factor__head">
+										<span class="factor__number">
+											<span class="factor__number-value animate" data-counter="" data-counter-separator=" ">100</span>
+										</span>
+										<span class="factor__suffix">
+											<span style="display: none;">100</span>
+											<span class="factor__number-value" style="margin-left: 16px;">%</span>
+										</span>
+									</div>
+									<div class="factor__text text-default animate" data-animate="fade-in-up" data-animate-delay="1">
+										Обеспеченность <br />
+										запасными запчастями
 									</div>
 								</div>
-							</a>
-						</div>
-					</div>
-					<div class="tech-cards-list__col">
-						<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-							<a href="/services/request" class="card__inner">
-								<div class="card__img">
-									<img
-										class="image is-lazy isItemProp"
-										src="/images/3aab8c75f5336a605c00c3fa19c85554.jpg"
-										data-src="/images/3aab8c75f5336a605c00c3fa19c85554.jpg"
-										itemprop="contentUrl"
-										data-srcset="/images/3aab8c75f5336a605c00c3fa19c85554.jpg"
-										alt="image"
-									/>
-								</div>
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__title text-lead" data-animate-lines itemprop="name">Заявка на ремонт</div>
+							</div>
+
+							<div class="main-slider-slide__fact-wrap col-6">
+								<div class="factor animate" data-viewport-trigger="" data-animate="">
+									<div class="factor__head">
+										<span class="factor__number">
+											<span class="factor__number-value animate" data-counter="" data-counter-separator=" ">24</span><span class="factor__number-value" style="margin-left:2px; margin-right: 2px;">/</span>
+											<span class="factor__number-value animate" data-counter="" data-counter-separator=" ">7</span>
+										</span>
+										<span class="factor__suffix"> <span style="display: none;">40</span> <span style="display: none;">7</span></span>
+									</div>
+									<div class="factor__text text-default animate" data-animate="fade-in-up" data-animate-delay="1">
+										Круглосуточная <br />
+										поддержка
 									</div>
 								</div>
-							</a>
-						</div>
-					</div>
-					<div class="tech-cards-list__col">
-						<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-							<a href="https://rostselmash.com/spare-parts/checking-originality-parts/" class="card__inner">
-								<div class="card__img">
-									<img
-										class="image is-lazy isItemProp"
-										src="/images/a5ab08481dc1ab372a46d8508706204e.jpg"
-										data-src="/images/a5ab08481dc1ab372a46d8508706204e.jpg"
-										itemprop="contentUrl"
-										data-srcset="/images/a5ab08481dc1ab372a46d8508706204e.jpg"
-										alt="image"
-									/>
-								</div>
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__title text-lead" data-animate-lines itemprop="name">Проверка оригинальности деталей</div>
+							</div>
+							<div class="main-slider-slide__fact-wrap">
+								<div class="factor animate" data-viewport-trigger="" data-animate="">
+									<div class="factor__head">
+										<span class="factor__number">
+											<span class="factor__number-value animate" data-counter="" data-counter-separator=" ">12</span>
+										</span>
+										<span class="factor__suffix"> <span style="display: none;">12</span> </span>
+									</div>
+									<div class="factor__text text-default animate" data-animate="fade-in-up" data-animate-delay="1">
+										Месяцев гарантии на <br />
+										запчасти
 									</div>
 								</div>
-							</a>
+							</div>
 						</div>
 					</div>
-					<div class="tech-cards-list__col">
-						<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-							<a href="/services/g-profi-oil/" class="card__inner">
-								<div class="card__img">
-									<img
-										class="image is-lazy isItemProp"
-										src="/images/c95df8de461b86443753c72b4150452e.jpg"
-										data-src="/images/c95df8de461b86443753c72b4150452e.jpg"
-										itemprop="contentUrl"
-										data-srcset="/images/c95df8de461b86443753c72b4150452e.jpg"
-										alt="image"
-									/>
-								</div>
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__title text-lead" data-animate-lines itemprop="name">Масло Ростсельмаш G-Profi</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
+					<br />
+				</div>
+			</div>
+
+			
+			<div class="main-slider-controls">
+				<div class="main-slider-info">
+					<div style="z-index:10" class="main-slider-info__title text-default">Агротехника Профессионалов</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+<style>
+	@media (min-width: 1600px) {
 
+		.main-slider-slide__fact {
+			margin-top: 97px;
+			width: 40%;
+		}
+	}
 
-	<footer class="footer">
-		<div class="footer__contacts">
-			<div class="footer__contacts-wrapper wrapper wrap-pr-1 wrap-pl-1">
-				<ul class="footer__contacts-list">
-					<li class="footer__contacts-item" data-animate="">
-						<span class="footer__contacts-item-label text-default">Горячая линия</span>
-						<a class="footer__contacts-item-link" href="tel:+74812420520" data-link-animate="">+7 (4812) 420-520</a>
-					</li>
-					<li class="footer__contacts-write-us" data-animate="" data-animate-delay="2">
-						<a href="#write_us" class="btn btn--empty btn--hover-white btn--large" data-modal="" data-effect="mfp-move-from-left">
-							<span class="btn__text btn__text--small">Напишите нам</span>
-						</a>
-					</li>
-				</ul>
-				<ul class="footer__contacts-social footer__social-list" data-animate="" data-animate-sequence="">
-					<li class="footer__social-item">
-						<a href="https://vk.com/smolagrosnab" target="_blank" class="footer__social-link footer__social-link--vk" aria-label="VK">
-							<svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path
-										fill-rule="evenodd"
-										clip-rule="evenodd"
-										d="M21.9 7.7L22 7.8C22.2 8.2 21.6 9.2 20.4 10.7C20.2 11 20 11.2 19.7 11.6C19.4 11.9 19.2 12.2 19.1 12.3C19 12.4 18.9 12.6 18.8 12.8C18.7 13 18.6 13.1 18.7 13.2C18.7 13.3 18.8 13.4 18.8 13.5C18.9 13.7 19 13.9 19.2 14C19.4 14.1 19.6 14.3 19.8 14.5C19.8 14.5 19.8 14.5 19.9 14.5C20.9 15.4 21.5 16.1 21.9 16.7C21.9 16.7 21.9 16.8 22 16.8C22 16.9 22 16.9 22.1 17.1C22.1 17.2 22.1 17.3 22.1 17.4C22.1 17.5 22 17.6 21.8 17.7C21.7 17.8 21.4 17.8 21.2 17.8H18.5C18.3 17.8 18.1 17.8 17.9 17.7C17.7 17.6 17.5 17.6 17.4 17.5L17.2 17.4C17 17.3 16.7 17 16.5 16.8C16.2 16.5 16 16.3 15.8 16C15.6 15.8 15.4 15.6 15.2 15.4C15 15.2 14.8 15.2 14.6 15.2C14.6 15.2 14.6 15.2 14.5 15.2C14.5 15.2 14.4 15.3 14.3 15.3C14.2 15.4 14.1 15.5 14.1 15.6C14 15.7 14 15.9 13.9 16.1C13.8 16.3 13.8 16.6 13.8 16.9C13.8 17 13.8 17.1 13.8 17.2C13.8 17.3 13.7 17.3 13.7 17.4V17.5C13.6 17.6 13.4 17.7 13.1 17.7H11.8C11.3 17.7 10.8 17.7 10.3 17.5C9.8 17.4 9.3 17.2 8.9 17C8.5 17 8.1 16.8 7.8 16.6C7.5 16.4 7.3 16.2 7.1 16L6.8 15.8C6.8 15.7 6.7 15.6 6.5 15.5C6.4 15.3 6.2 15 5.8 14.5C5.4 14.1 5.1 13.6 4.7 13C4.3 12.5 3.9 11.8 3.4 10.9C2.9 10 2.5 9.1 2.1 8.2C2 8.1 2 8 2 7.9C2 7.8 2 7.8 2 7.7V7.6C2.1 7.5 2.3 7.4 2.6 7.4H5.5C5.6 7.4 5.7 7.4 5.7 7.5C5.8 7.5 5.8 7.6 5.9 7.6H6C6.1 7.7 6.2 7.8 6.2 8C6.3 8.3 6.5 8.7 6.7 9C6.9 9.4 7 9.7 7.1 9.8L7.3 10.1C7.5 10.5 7.7 10.8 7.9 11.1C8.1 11.4 8.3 11.6 8.4 11.8C8.5 12 8.7 12.2 8.8 12.2C9 12.3 9.1 12.4 9.2 12.4C9.3 12.4 9.4 12.4 9.5 12.3C9.5 12.3 9.5 12.3 9.6 12.2C9.6 12.2 9.7 12.1 9.7 12C9.8 11.9 9.8 11.7 9.8 11.5C9.8 11.3 9.9 11 9.9 10.7C9.9 10.4 9.9 9.9 9.9 9.4C9.9 9.1 9.9 8.9 9.8 8.7C9.8 8.5 9.7 8.3 9.7 8.2H9.6C9.4 8 9.1 7.8 8.7 7.8C8.6 7.8 8.6 7.7 8.8 7.6C8.8 7.4 9 7.3 9.1 7.2C9.5 7.1 10.3 7 11.6 7C12.2 7 12.6 7.1 13 7.1C13.1 7.1 13.3 7.2 13.3 7.2C13.4 7.3 13.5 7.3 13.5 7.4C13.5 7.5 13.6 7.6 13.6 7.7C13.6 7.8 13.6 8 13.6 8.2C13.6 8.4 13.6 8.6 13.6 8.8C13.6 9 13.6 9.2 13.6 9.5C13.6 9.8 13.6 10.1 13.6 10.3C13.6 10.4 13.6 10.5 13.6 10.7C13.6 10.9 13.6 11.1 13.6 11.2C13.6 11.3 13.6 11.4 13.6 11.6C13.6 11.8 13.7 11.9 13.7 12C13.8 12.1 13.8 12.2 13.9 12.2C14 12.2 14 12.2 14.1 12.2C14.2 12.2 14.3 12.2 14.4 12.1C14.5 12 14.7 11.9 14.8 11.8C14.9 11.7 15.1 11.4 15.3 11.1C15.5 10.8 15.8 10.4 16 10C16.4 9.3 16.8 8.6 17.1 7.7C17.1 7.6 17.2 7.6 17.2 7.5L17.3 7.4H17.4C17.4 7.4 17.4 7.4 17.5 7.4C17.6 7.4 17.7 7.4 17.7 7.4H20.7C21 7.4 21.2 7.4 21.4 7.4C21.8 7.6 21.9 7.6 21.9 7.7Z"
-								></path>
-							</svg>
-							<span class="footer__social-text">VK</span>
-						</a>
-					</li>
-					<!-- <li class="footer__social-item">
-                        <a href="https://www.youtube.com/channel/UCv1vcgXvau6uKSg6rDAGlzg" target="_blank" class="footer__social-link footer__social-link--youtube" aria-label="Youtube">
-                            <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
-                                    d="M19.9103 4.46645C20.819 4.7177 21.5356 5.45318 21.7802 6.38624C22.2348 8.09051 22.2173 11.6429 22.2173 11.6429C22.2173 11.6429 22.2173 15.1773 21.7804 16.8817C21.5356 17.8146 20.8192 18.5502 19.9103 18.8013C18.2499 19.25 11.6087 19.25 11.6087 19.25C11.6087 19.25 4.98472 19.25 3.30705 18.7836C2.39812 18.5323 1.68166 17.7967 1.4369 16.8638C1 15.1773 1 11.625 1 11.625C1 11.625 1 8.09051 1.4369 6.38624C1.68149 5.45335 2.4156 4.69975 3.30688 4.44867C4.96724 4 11.6085 4 11.6085 4C11.6085 4 18.2499 4 19.9103 4.46645ZM14.9239 11.625L9.61957 14.6087V8.6413L14.9239 11.625Z"
-                                ></path>
-                            </svg>
-                            <span class="footer__social-text">Youtube</span>
-                        </a>
-                    </li>
-                    <li class="footer__social-item">
-                        <a href="https://rutube.ru/channel/24612214/" target="_blank" class="footer__social-link footer__social-link--rutube" aria-label="Rutube">
-                            <svg
-                                version="1.1"
-                                id="Layer_1"
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                x="3px"
-                                y="3px"
-                                width="24"
-                                viewbox="-8 0 34 27"
-                                enable-background="new 0 0 24 24"
-                                xml:space="preserve"
-                            >
-                                <path
-                                    fill="#efeff2"
-                                    d="M19.958,21.79l-5.13-7.54c2.31-1.34,3.7-3.65,3.7-6.46c0-4.65-3.62-7.58-9.03-7.58h-9.5v21.54h5.42V15.5
-h4.16l4.12,6.25v0.04H19.958z M9.448,10.69h-3.99V4.9h3.99c2.06,0,3.7,1.09,3.7,2.85C13.148,9.55,11.548,10.69,9.448,10.69z"
-                                ></path>
-                            </svg>
-                            <span class="footer__social-text">Rutube</span>
-                        </a>
-                    </li>
-                    <li class="footer__social-item">
-                        <a href="https://t.me/rostselmash_official" target="_blank" class="footer__social-link footer__social-link--telegram" aria-label="Telegram">
-                            <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M9.84784 14.5451L9.517 19.0122C9.99034 19.0122 10.1953 18.817 10.4412 18.5827L12.6604 16.5467L17.2588 19.7794C18.1022 20.2306 18.6964 19.993 18.9239 19.0346L21.9423 5.45712L21.9431 5.45632C22.2106 4.25952 21.4923 3.79153 20.6706 4.08512L2.9285 10.6059C1.71764 11.0571 1.73598 11.7051 2.72267 11.9987L7.25861 13.3531L17.7947 7.02431C18.2905 6.70911 18.7414 6.88351 18.3705 7.19871L9.84784 14.5451Z"
-                                    fill="#efeff2"
-                                ></path>
-                            </svg>
-                            <span class="footer__social-text">Telegram</span>
-                        </a>
-                    </li>
-                    <li class="footer__social-item">
-                        <a href="https://ok.ru/rostselmash" target="_blank" class="footer__social-link footer__social-link--ok" aria-label="Ok">
-                            <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M6.18415 12.7341C5.67332 13.7383 6.25331 14.2183 7.57663 15.0383C8.70162 15.7333 10.2558 15.9874 11.2541 16.0891C10.8449 16.4824 12.7199 14.6791 7.31997 19.8732C6.17498 20.9707 8.0183 22.7315 9.16245 21.6574L12.2599 18.6699C13.4457 19.8107 14.5824 20.9041 15.3574 21.6616C16.5024 22.7399 18.3449 20.9941 17.2124 19.8774C17.1274 19.7966 13.0149 15.8516 13.2657 16.0933C14.2766 15.9916 15.8074 15.7224 16.9191 15.0424L16.9182 15.0416C18.2415 14.2175 18.8215 13.7383 18.3182 12.7341C18.014 12.1641 17.194 11.6875 16.1024 12.5116C16.1024 12.5116 14.6282 13.6408 12.2508 13.6408C9.87245 13.6408 8.39913 12.5116 8.39913 12.5116C7.3083 11.6833 6.48498 12.1641 6.18415 12.7341Z"
-                                ></path>
-                                <path
-                                    d="M12.2488 12.1182C15.1471 12.1182 17.5138 9.85327 17.5138 7.06496C17.5138 4.26498 15.1471 2 12.2488 2C9.34968 2 6.98303 4.26498 6.98303 7.06496C6.98303 9.85327 9.34968 12.1182 12.2488 12.1182ZM12.2488 4.56581C13.673 4.56581 14.8346 5.6833 14.8346 7.06496C14.8346 8.43494 13.673 9.55243 12.2488 9.55243C10.8247 9.55243 9.66301 8.43494 9.66301 7.06496C9.66218 5.68247 10.8238 4.56581 12.2488 4.56581Z"
-                                ></path>
-                            </svg>
-                            <span class="footer__social-text">Ok</span>
-                        </a>
-                    </li> -->
-				</ul>
-			</div>
-		</div>
-		<div class="footer__main">
-			<div class="footer__main-grid wrapper wrap-pl-1 wrap-pr-1">
-				<div class="footer__logo">
-							<span class="footer__logo-wrapper">
-								<div class="n-logo-t">
-									<img src="/images/logo-d.png" alt="">
-									<!--	<img src="/images/1640060147.svg" alt=""> -->
+	.main-slider-info__title text-default {
+		position: relative;
+		z-index: 3;
+	}
+
+	.main-slider-slide__fact-wrap {
+		margin-bottom: 2rem;
+	}
+
+	.main-slider-slide__fact-wrap:nth-of-type(even) {
+		width: 200px;
+	}
+
+	.video_banner {
+		position: relative;
+	}
+
+	.video-background {
+		background-color: #000;
+		/*background-image: url('../local/templates/main/img/video_bg.jpg') !important;*/
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		background-size: cover;
+	}
+
+	.video-foreground,
+	.video-background iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.video-foreground {
+		display: none;
+	}
+
+	.video-btn {
+		position: absolute;
+		top: 37%;
+		left: 50%;
+		margin-left: -15px;
+		margin-top: -11px;
+		cursor: pointer;
+		z-index: 7;
+	}
+
+	.video-start-btn {
+		z-index: 7;
+	}
+
+	.video-stop-btn {
+		width: 70px;
+		height: 80px;
+		z-index: 6;
+	}
+
+	.video-cont-btn {
+		z-index: 5;
+	}
+
+	.video-btn.hidden {
+		display: none;
+	}
+
+	#vidtop-content {
+		top: 0;
+	}
+
+	.video_banner video {
+			height: 140%;
+			margin-top: -200px;
+		}
+
+	
+	@media (max-width: 1360px) {
+		.video_banner__bottom {
+			height: 100px;
+		}
+
+		.main-slider-slide__title + .main-slider-slide__actions {
+			margin-top: 2rem;
+		}
+	}
+
+	@media (max-width: 1340px) {
+		.main-slider-slide__main {
+			width: 76%;
+		}
+	}
+
+	@media (max-width: 1290px) {
+		.main-slider-slide__actions.col-6 {
+			width: 64%;
+		}
+
+		.main-slider-slide__title + .main-slider-slide__actions {
+			margin-top: 17px;
+		}
+
+		.video_banner__text {
+			font-size: 18px;
+		}
+	}
+
+	@media (max-width: 1199px) {
+		.main-slider-slide__main {
+			width: 68%;
+		}
+	}
+
+	@media (max-width: 1094px) {
+		.video_banner__bottom {
+			height: 77px;
+		}
+
+		.video_banner__text {
+			line-height: 28px;
+		}
+	}
+
+	@media (max-width: 991px) {
+		#vidtop-content .main-slider-slide__fact {
+			display: none;
+		}
+
+		.video_banner__bottom {
+			height: 95px;
+		}
+
+		.video_banner video {
+			height: 140%;
+			margin-top: -100px;
+		}
+	}
+
+	@media (max-width: 989px) {
+		.video_banner__bottom {
+			padding-left: 2rem;
+			height: 74px;
+		}
+	}
+
+	@media (max-width: 359px) {
+		.video_banner__bottom {
+			height: 54px;
+		}
+	}
+
+	.tabs .swiper-pagination {
+		display:none !important;
+	}
+	.swiper-wrapper .card__info {
+		background: white !important;
+	}
+	.card__title.text-lead.animate {
+		background: white !important;
+	}
+</style>
+<style>
+	   .text-image {
+		   max-width: 100%;
+	   }
+
+	   img.sois_02 {
+		   height: 100%;
+		   width: auto;
+	   }
+
+	   @media (max-width: 822px) {
+		   img.sois_02 {
+			   max-width: 100%;
+		   }
+	   }
+	.content-width-slider__title{display:none;}
+</style>
+
+<div class="wrapper pt-md-64 pb-md-80 pb-40">
+	<div class="content-wrapper wrap-pl-1 wrap-pr-1 content-wrapper--no-photo content-wrapper__before-full">
+		<div class="content content__grid-aside content__user-text-wrap--author">
+			<div class="content__main-content">
+				<div class="content__user-text-wrap">
+					<div class="content__user-text user-text text-default mt-0">
+						<h1 class="block-slider__title block-slider__title--gap-sm h2">Запчасти для сельхозтехники: трактора, комбайны, навесное оборудование</h1>
+						<p>
+							Главная задача сервисных центров Ростсельмаш – обеспечить максимально эффективную работу Вашей техники в течение гарантийного и постгарантийного периода.
+						</p>
+						<p>
+							Квалифицированные сотрудники наших сервисных центров проведут плановое техническое обслуживание, диагностику, дефектовку и ремонт Вашей машины. Так Вы снимите нагрузку с ваших работников, оставив им
+							только ежедневное обслуживание техники, и будете уверены в качестве проведенных работ.
+						</p>
+						<p>
+							Ростсельмаш придерживается строгих стандартов качества не только к производимой технике, но и к запасным частям. Каждый этап от проектирования до производства и хранения проходит строгий контроль
+							качества.
+						</p>
+						<p>
+							Чтобы все механизмы работали слажено, они должны идеально соотноситься между собой и соответствовать машине, на которую они устанавливаются. Этого можно добиться только с оригинальными деталями.
+							Сервисные центры Ростсельмаш гарантируют качество и оригинальность своевременно поставляемых запасных частей, а также оперативность технических работ.
+						</p>
+						<p>
+							Полагаясь на нас и приобретая оригинальные запасные части Ростсельмаш, Вы получаете высокую производительность Ваших машин.
+						</p>
+						<div class="block-slider__image-main">
+							<img src="/images/1.png" alt="" />
+						</div>
+					</div>
+
+					<div class="content__user-text user-text text-default mt-0">
+						<h2 class="block-slider__title block-slider__title--gap-sm h2">
+							Преимущества сервиса <br />
+							и запасных частей
+						</h2>
+						<p>
+							Уникальное преимущество Ростсельмаш – разветвленная дилерская и сервисная сеть. Все сервисные центры осуществляют свою деятельность по единому стандарту Ростсельмаш и соответствуют следующим
+							требованиям:
+						</p>
+						<div class="text-2-cols">
+							<div class="text-2-cols__item">
+								<div class="text-2-cols__title">
+									Ремонтная база
 								</div>
-							</span>
+								<div class="text-2-cols__text">
+									Оснащена контрольно-измерительным и универсальным оборудованием в соответствии со стандартами Ростсельмаш
+								</div>
+							</div>
+							<div class="text-2-cols__item">
+								<div class="text-2-cols__title">
+									Услуги
+								</div>
+								<div class="text-2-cols__text">
+									Полный спектр услуг по ремонту техники Ростсельмаш (ремонт топливной аппаратуры, ДВС), проведение экспресс анализа технической жидкости
+								</div>
+							</div>
+							<div class="text-2-cols__item">
+								<div class="text-2-cols__title">
+									Сертифицированные сотрудники
+								</div>
+								<div class="text-2-cols__text">
+									Все сервисные инженеры проходят несколько этапов обучения в «Академии Ростсельмаш», расположенной на базе основной производственной площадки
+								</div>
+							</div>
+							<div class="text-2-cols__item">
+								<div class="text-2-cols__title">
+									Гарантии от производителя
+								</div>
+								<div class="text-2-cols__text">
+									6 месяцев на ремонтные работы, 12 месяцев на запасные части, оригинальность запасных частей и расходных материалов, квалифицированные сотрудники сервиса
+								</div>
+							</div>
+							<div class="text-2-cols__item">
+								<div class="text-2-cols__title">
+									Наличие запасных частей
+								</div>
+								<div class="text-2-cols__text">
+									На складах дилерских центров постоянно поддерживается полный набор запасных частей и расходных материалов
+								</div>
+							</div>
+							<div class="text-2-cols__item">
+								<div class="text-2-cols__title">
+									Штат специалистов
+								</div>
+								<div class="text-2-cols__text">
+									Более 800 человек обученных и сертифицированных Ростсельмаш для ремонта машин и агрегатов производителя
+								</div>
+							</div>
+							<div class="text-2-cols__item">
+								<div class="text-2-cols__title">
+									Мобильный сервис
+								</div>
+								<div class="text-2-cols__text">
+									Более 600 специально оборудованных автомобилей сервиса
+								</div>
+							</div>
+							<div class="text-2-cols__item">
+								<div class="text-2-cols__title">
+									Развитая дилерская сеть
+								</div>
+								<div class="text-2-cols__text">
+									Более 90 дилерских центров
+								</div>
+							</div>
+						</div>
+						<br />
+					</div>
+					<div class="info-block-anim red-bg">
+						<div class="flex flex-wrap space-between">
+							<div class="col-6">
+								<div class="factor animate" data-viewport-trigger="" data-animate="">
+									<div class="factor__head">
+										<span class="factor__number">
+											<span class="factor__number-value animate" data-counter="" data-counter-separator=" ">24</span><span class="factor__number-value" style="margin-left:2px; margin-right: 2px;">/</span>
+											<span class="factor__number-value animate" data-counter="" data-counter-separator=" ">7</span>
+										</span>
+										<span class="factor__suffix"> <span style="display: none;">40</span> <span style="display: none;">7</span></span>
+									</div>
+									<div class="factor__text text-default animate" data-animate="fade-in-up" data-animate-delay="1">
+										Круглосуточная работа всех сервисных центров в сельскохозяйственный сезон
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="factor animate" data-viewport-trigger="" data-animate="">
+									<div class="factor__head">
+										<span class="factor__number">
+											<span class="factor__number-value animate" data-counter="" data-counter-separator=" ">48</span>
+										</span>
+										<span class="factor__suffix"> <span style="display: none;">48</span> </span>
+									</div>
+									<div class="factor__text text-default animate" data-animate="fade-in-up" data-animate-delay="1">
+										Часов на ремонт, не требующий <br />
+										разборки основных узлов
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="factor animate" data-viewport-trigger="" data-animate="">
+									<div class="factor__head">
+										<span class="factor__number">
+											<span class="factor__number-value animate" data-counter="" data-counter-separator=" ">5</span>
+										</span>
+										<span class="factor__suffix"> <span style="display: none;">5</span> </span>
+									</div>
+									<div class="factor__text text-default animate" data-animate="fade-in-up" data-animate-delay="1">
+										Суток при необходимости демонтажа <br />
+										и замены базовых деталей
+									</div>
+								</div>
+							</div>
+
+							<div class="col-6">
+								<div class="factor animate" data-viewport-trigger="" data-animate="">
+									<div class="factor__head">
+										<span class="factor__number">
+											<span class="factor__number-value animate" data-counter="" data-counter-separator=" ">12</span>
+										</span>
+										<span class="factor__suffix"> <span style="display: none;">12</span> </span>
+									</div>
+									<div class="factor__text text-default animate" data-animate="fade-in-up" data-animate-delay="1">
+										Месяцев гарантиина <br />
+										запасные части
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="content__user-text user-text text-default mb-30">
+						<div class="tabs tabs--small">
+							<div class="tabs__wrap">
+								<div class="tabs__head">
+									<div class="tabs-list">
+										<div class="tabs-list__wrap js-tabs-list js-tabs-list-reactivate-sliders">
+											<button class="tabs-list__fade tabs-list__fade--left js-tab-scroll" data-direction="left"></button>
+											<button class="tabs-list__fade tabs-list__fade--right js-tab-scroll" data-direction="right"></button>
+											<button type="button" class="tabs-list__el active" data-tab="" data-hash="sl-0" data-hash-link-slide="0">
+												Транспортер цепной
+											</button>
+											<button type="button" class="tabs-list__el" data-tab="" data-hash="sl-1" data-hash-link-slide="1">
+												Фильтр воздушный
+											</button>
+											<button type="button" class="tabs-list__el" data-tab="" data-hash="sl-2" data-hash-link-slide="2">
+												Опора вала
+											</button>
+											<button type="button" class="tabs-list__el" data-tab="" data-hash="sl-3" data-hash-link-slide="3">
+												Ремень
+											</button>
+											<button type="button" class="tabs-list__el" data-tab="" data-hash="sl-4" data-hash-link-slide="4">
+												Блок шкивов
+											</button>
+											<button type="button" class="tabs-list__el" data-tab="" data-hash="sl-5" data-hash-link-slide="5">
+												Муфта
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="tabs-content-wrap has-slider">
+									<div class="tabs-content">
+										<div class="js-content-with-slider content-width-slider-wrapper swiper-container">
+											<div class="swiper-wrapper">
+												<div class="swiper-slide">
+													<div class="content-width-slider">
+														<div class="content-width-slider__slider">
+															<div class="content-width-slider__slider-img">
+																<img src="/images/o8n74evswhijn9sxf1lk22o8l8yg57hd.png" class="" alt="" />
+															</div>
+														</div>
+														<div class="content-width-slider__content">
+															<div class="content-width-slider__title">
+																АХЦ Б142.03.33.500 транспортер цепной
+															</div>
+															<div class="content-width-slider__text">
+																<p><b>Наименование:</b> АХЦ Б142.03.33.500 транспортер цепной</p>
+																<p><b>Описание:</b> Транспортер наклонной камеры ACROS безбитерная наклонная камера</p>
+																<p><b>Применяемость:</b> ACROS 550/585</p>
+																<p><b>Код продукта для заказа:</b> 102904089</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="content-width-slider">
+														<div class="content-width-slider__slider">
+															<div class="content-width-slider__slider-img">
+																<img src="/images/1qmtj6lr0kyge7ym1c39881fpwegkvdv.png" class="" alt="" />
+															</div>
+														</div>
+														<div class="content-width-slider__content">
+															<div class="content-width-slider__title">
+																Фильтр воздушный
+															</div>
+															<div class="content-width-slider__text">
+																<p><b>Наименование:</b> P788963 фильтр воздушный</p>
+																<p><b>Описание:</b> Фильтр воздушный</p>
+																<p><b>Применяемость:</b> VECTOR-410/420 (с двигателем ЯМЗ-36НД), ACROS-530/560 (с двигателем ЯМЗ-236БК</p>
+																<p><b>Код продукта для заказа:</b> 101333034</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="content-width-slider">
+														<div class="content-width-slider__slider">
+															<div class="content-width-slider__slider-img">
+																<img src="/images/erm7xp3mbhqqemhzns3lhms6y6mtu9np.png" class="" alt="" />
+															</div>
+														</div>
+														<div class="content-width-slider__content">
+															<div class="content-width-slider__title">
+																Опора вала
+															</div>
+															<div class="content-width-slider__text">
+																<p><b>Наименование:</b> 2071741 опора промежуточная</p>
+																<p><b>Описание:</b> Подшипник с фланцем на 4 болта к тракторам моделей 2000-2335, 2375, 2425 и моделей HHT-435, 485, 535</p>
+																<p><b>Применяемость:</b> Тракторы серии 2000-2335, 2375, 2425 и моделей HHT-435, 485, 535</p>
+																<p><b>Код продукта для заказа:</b> 103479746</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="content-width-slider">
+														<div class="content-width-slider__slider">
+															<div class="content-width-slider__slider-img">
+																<img src="/images/npr1knm8fgpef4h1nfyutz4o9su10ua6.png" class="" alt="" />
+															</div>
+														</div>
+														<div class="content-width-slider__content">
+															<div class="content-width-slider__title">
+																Ремень
+															</div>
+															<div class="content-width-slider__text">
+																<p><b>Наименование:</b> 6201094 DP ремень</p>
+																<p><b>Описание:</b> Ремень шкива верхнего вала наклонной камеры - Шкив трансмисионного (раздаточного) вала наклонной камеры</p>
+																<p><b>Применяемость:</b> ACROS, VECTOR</p>
+																<p><b>Код продукта для заказа:</b> 103623904</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="content-width-slider">
+														<div class="content-width-slider__slider">
+															<div class="content-width-slider__slider-img">
+																<img src="/images/7hg7fi09tykg2f4p9sb5bbdqiyu1vpzv.png" class="" alt="" />
+															</div>
+														</div>
+														<div class="content-width-slider__content">
+															<div class="content-width-slider__title">
+																Блок шкивов
+															</div>
+															<div class="content-width-slider__text">
+																<p><b>Наименование:</b> 181.03.40.550 блок шкивов</p>
+																<p><b>Описание:</b> Блок шкивов наклонной камеры</p>
+																<p><b>Применяемость:</b> TORUM</p>
+																<p><b>Код продукта для заказа:</b> 101640435</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="content-width-slider">
+														<div class="content-width-slider__slider">
+															<div class="content-width-slider__slider-img">
+																<img src="/images/o21yw32jnkxanaalogxt6luwbtezas13.png" class="" alt="" />
+															</div>
+														</div>
+														<div class="content-width-slider__content">
+															<div class="content-width-slider__title">
+																Муфта
+															</div>
+															<div class="content-width-slider__text">
+																<p><b>Наименование:</b> H6-62-384A муфта разрывная 3/4"</p>
+																<p><b>Описание:</b> Полумуфта БРС наружная Ф резьбы = 26,44 мм</p>
+																<p><b>Применяемость:</b> Тракторы серии 2000, HHT</p>
+																<p><b>Код продукта для заказа:</b> 103244219</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-pagination"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="content__user-text user-text text-default mb-60 mt-0">
+						<h2 class="block-slider__title h2">
+							Последствия приобретения <br />
+							контрафактных запасных частей
+						</h2>
+						<p>
+							У контрафактных запасных частей есть всего 2 преимущества: доступность и низкая цена. Разветвленная сеть сервисных центров, круглосуточно работающих в сезон, делает оригинальные запчасти Ростсельмаш
+							максимально доступными. А значит вопрос только в низкой цене.
+						</p>
+						<p>Цена на деталь напрямую связанна с условиями ее производства и хранения. Покупая запчасти по более низкой цене, Вы берете на себя риски, заложенные в производство таких деталей:</p>
+						<style>
+							ul.custom-style {
+							  width: 100%;
+							  margin: 0 0 0 35px !important;
+							}
+							@media screen and (max-width: 575px) {
+							  ul.custom-style {
+								margin: 0 !important;
+							  }
+							}
+						</style>
+						<ul class="custom-style">
+							<li>некачественный материал</li>
+							<li>исключение из технологического процесса части операций</li>
+							<li>использование примитивного оборудования и инструментов</li>
+							<li>недостаточная квалификация сотрудников изготовителя контрафакта</li>
+						</ul>
+						<p>
+							Повторить в кустарных и полукустарных условиях характеристики оригинальных запчастей попросту невозможно. Экономя на запчастях сейчас, Вы получаете не только короткий срок их службы, но и сокращаете
+							срок работы остальных деталей и самой машины.
+						</p>
+						<p><a href="#form-text-detail-1" data-modal="" data-effect="mfp-move-from-left">Подробнее</a></p>
+					</div>
+
+					<div class="content__user-text user-text text-default mt-0">
+						<div class="tabs tabs--small">
+							<div class="tabs__wrap">
+								<div class="tabs__head">
+									<div class="tabs-list">
+										<div class="tabs-list__wrap js-tabs-list js-tabs-list-reactivate-sliders">
+											<button class="tabs-list__fade tabs-list__fade--left js-tab-scroll" data-direction="left"></button>
+											<button class="tabs-list__fade tabs-list__fade--right js-tab-scroll" data-direction="right"></button>
+											<button type="button" class="tabs-list__el active" data-tab="" data-hash="sl-1-0" data-hash-link-slide="0">
+												Битер отборный
+											</button>
+											<button type="button" class="tabs-list__el" data-tab="" data-hash="sl-1-1" data-hash-link-slide="1">
+												Бичи барабана
+											</button>
+											<button type="button" class="tabs-list__el" data-tab="" data-hash="sl-1-2" data-hash-link-slide="2">
+												Подбарабанье
+											</button>
+											<button type="button" class="tabs-list__el" data-tab="" data-hash="sl-1-3" data-hash-link-slide="3">
+												Шкив ведущего вариатора
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="tabs-content-wrap has-slider">
+									<div class="tabs-content">
+										<div class="js-content-with-slider content-width-slider-wrapper swiper-container">
+											<div class="swiper-wrapper">
+												<div class="swiper-slide">
+													<div class="content-width-slider">
+														<div class="content-width-slider__slider">
+															<div class="content-width-slider__slider-img">
+																<img src="/images/037d2ra8uate1p3dfu1zl35uvydvhop5.jpeg" class="" alt="" />
+															</div>
+														</div>
+														<div class="content-width-slider__content">
+															<div class="content-width-slider__title">
+																Битер отбойный для зерноуборочных комбайнов Ростсельмаш
+															</div>
+															<div class="content-width-slider__text">
+																<p>
+																	<b>Возможные неисправности при использовании альтернативной запасной части:</b>
+																</p>
+																<p>
+																	Разрыв лопасти битера. Выход из строя опоры <br />
+																	с подшипником и отбойного битера с валом.
+																</p>
+																<p>Минимая экономия: <b>52 325 руб.</b></p>
+																<p>
+																	Риски клиента или упущенная выгода: <b>2 969 875 руб.<br /> </b>
+																</p>
+															</div>
+															<div class="content-width-slider__btn">
+																<a target="_blank" href="https://rostselmash.com/spare-parts/spares/biter_acros2024.pdf" class="btn btn--primary btn--hover-white">
+																	<span class="btn__text">Полное сравнение</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="content-width-slider">
+														<div class="content-width-slider__slider">
+															<div class="content-width-slider__slider-img">
+																<img src="/images/l222a491p8q9a00n6oefuxrl743qjnkk.jpeg" class="" alt="" />
+															</div>
+														</div>
+														<div class="content-width-slider__content">
+															<div class="content-width-slider__title">
+																Бичи барабана
+															</div>
+															<div class="content-width-slider__text">
+																<p>
+																	<b>Возможные неисправности при использовании альтернативной запасной части:</b>
+																</p>
+																<p>
+																	Трещины в сварных швах, отклонения от контрольных размеров, <br />
+																	обрыв прутков подбарабанья.
+																</p>
+																<p>Мнимая экономия: <b>37 500 руб.</b></p>
+																<p>
+																	Риски клиента или упущенная выгода: <b>2 167 250 руб.<br /> </b>
+																</p>
+															</div>
+															<div class="content-width-slider__btn">
+																<a target="_blank" href="https://rostselmash.com/spare-parts/spares/bichi_acros2024.pdf" class="btn btn--primary btn--hover-white">
+																	<span class="btn__text">Полное сравнение</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="content-width-slider">
+														<div class="content-width-slider__slider">
+															<div class="content-width-slider__slider-img">
+																<img src="/images/pajvxonzevjszpr8iy6bj878e8b0im5k.jpeg" class="" alt="" />
+															</div>
+														</div>
+														<div class="content-width-slider__content">
+															<div class="content-width-slider__title">
+																Подбарабанье
+															</div>
+															<div class="content-width-slider__text">
+																<p>
+																	<b>Возможные неисправности при использовании альтернативной запасной части:</b>
+																</p>
+																<p>
+																	Трещины в сварных швах, отклонения от контрольных размеров,<br />
+																	обрыв прутков подбарабанья.
+																</p>
+																<p>Минимая экономия: <b>33 295 руб.</b></p>
+																<p>
+																	Риски клиента или упущенная выгода: <b>1 998 879 руб<br /> </b>
+																</p>
+															</div>
+															<div class="content-width-slider__btn">
+																<a target="_blank" href="https://rostselmash.com/spare-parts/spares/podbaraban_acros2024.pdf" class="btn btn--primary btn--hover-white">
+																	<span class="btn__text">Полное сравнение</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="content-width-slider">
+														<div class="content-width-slider__slider">
+															<div class="content-width-slider__slider-img">
+																<img src="/images/6ufui20n8tyrdh0sma3x08poirpj792o.jpeg" class="" alt="" />
+															</div>
+														</div>
+														<div class="content-width-slider__content">
+															<div class="content-width-slider__title">
+																Шкив ведущего вариатора
+															</div>
+															<div class="content-width-slider__text">
+																<p>
+																	<b>Возможные неисправности при использовании альтернативной запасной части:</b>
+																</p>
+																<p>
+																	Трещины в сварных швах, отклонения от контрольных размеров,<br />
+																	обрыв прутков подбарабанья.
+																</p>
+																<p>Минимая экономия: <b>17 200 руб.</b></p>
+																<p>
+																	Риски клиента или упущенная выгода: <b>2 095 020 руб.<br /> </b>
+																</p>
+															</div>
+															<div class="content-width-slider__btn">
+																<a target="_blank" href="https://rostselmash.com/spare-parts/spares/shkiv_acros2024.pdf" class="btn btn--primary btn--hover-white">
+																	<span class="btn__text">Полное сравнение</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-pagination"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="content__user-text user-text text-default equipment__content-wrapper">
+						<h2 class="block-slider__title h2">
+							Электронные системы
+						</h2>
+						<p>Для улучшения качества работы техники советуем использовать данные электронные системы</p>
+						<div class="equipment__content--small equipment__content animate" data-equipment-slider="" data-animate="">
+							<div class="equipment__slider swiper-container" data-slider=" ">
+								<div class="swiper-wrapper">
+									<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
+										<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
+											<div class="equipment__slide swiper-slide">
+												<div class="equipment__inner">
+													<div class="card">
+														<a target="_blank" href="/electronic-systems/<%= section.code %>/" class="card__inner">
+															<div class="card__img">
+																<img class="image" src="<%= section.image %>" alt="<%= section.name %>" />
+															</div>
+															<div class="card__info">
+																<div class="card__info-wrap">
+																	<div class="card__title text-lead animate">
+																		<div>
+																			<div><%= section.name %></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</a>
+													</div>
+												</div>
+											</div>
+										<% }); %>
+									<% } %>
+									<div class="equipment__line" data-line=""></div>
+								</div>
+							</div>
+							<div class="equipment__bottom">
+								<div class="equipment__pagination">
+									<div class="swiper-pagination"></div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="footer__actions">
-					<ul class="footer__action-list">
-						<li class="footer__action">
-							<a href="https://agrotronic.rostselmash.com/" class="text-link text-default">Вход в РСМ Агротроник</a>
-						</li>
-					</ul>
+			</div>
+			<div class="content__aside-content" style="z-index: 100">
+				<script>
+								 $('#sp_region').on('input', function() {
+									 let val = $(this).val();
+									 $.get('form1.php', {'NAME': $(this).val()}, function (data) {
+										 if (data && val) {
+											 $('#control--search-drop-2').html(data).show();
+										 } else {
+											 $('#control--search-drop-2').hide();
+										 }
+									 });
+								 })
+								 $('#control--search-drop-2').on('click', 'a', function (e) {
+									 e.preventDefault();
+									 let text = $(this).text();
+									 let id = $(this).attr('data-id');
+									 $('#control--search-drop-2').hide();
+									 $('#sp_val').val(text.trim());
+									 $('#sp_region').val(text.trim());
+								 })
+
+								 $('#form-search-id').on('input', function () {
+									 let val = $(this).val();
+									 $.get('form1.php', {'NAME': $(this).val()}, function (data) {
+										 if (data && val) {
+											 $('#control--search-drop').html(data).show();
+										 } else {
+											 $('#control--search-drop').hide();
+										 }
+									 });
+									 $('#sp_val').val('');
+								 })
+								 $('#control--search-drop').on('click', 'a', function (e) {
+									 e.preventDefault();
+									 let text = $(this).text();
+									 let id = $(this).attr('data-id');
+									 $('#form-search-id').val(text.trim());
+									 $('#control--search-drop').hide();
+									 $('#sp_val').val(text.trim());
+									 $('#sp_region').val(text.trim());
+
+									 $.get('form2.php', {'ID': id}, function (data) {
+										 $('#control--search-result-id').html(data);
+									 });
+								 })
+
+								 $('#sp-form input').on('input', function () {
+									 let data = $('#sp-form').serializeArray();
+									 let valid = true;
+									 for (let i in data) {
+										 let val = data[i];
+										 if (
+											 val.value === ''
+											 && (
+												 val.name === 'fio'
+												 || val.name === 'PROP_PHONE'
+												 || val.name === 'region'
+												 || val.name === 'email'
+											 )
+										 ) {
+											 valid = false;
+										 }
+									 }
+
+									 if (valid) {
+										 $('#sp-btn').attr('disabled', false);
+									 } else {
+										 $('#sp-btn').attr('disabled', 'disabled');
+									 }
+								 })
+
+								 $('#sp-form').submit(function (e) {
+									 e.preventDefault();
+									 let data = $('#sp-form').serializeArray();
+									 $.post('form3.php', data, function () {
+										 document.getElementById("sp-form").reset();
+										 $('#sp-btn').attr('disabled', 'disabled').text('Отправлено');
+					$("#sp-btn-thanks").click();
+										 setTimeout(function () {
+											 $('#sp-btn').text('Отправить');
+
+										 }, 3000)
+									 });
+								 })
+
+								 $('.tabs-list__el').on('click', function (e) {
+									 e.preventDefault();
+									 let hash = $(this).attr('data-hash');
+									 let parent = $(this).parents('.tabs');
+									 parent.find('.tabs-list__el').removeClass('active')
+									 $(this).addClass('active');
+									 parent.find('.tabs-content__el').hide();
+									 parent.find('[data-hash=' + hash + ']').show();
+								 })
+
+
+								 $(document).ready(function() {
+														 })
+				</script>
+
+				<div class="posstiky">
+					<div class="form-find-center" style="padding-bottom: 24px;">
+						<div class="form-find-center__form">
+							<div>
+								<div>
+									<div class="form-find-center__title form-find-center__title--inner">Отправить заявку</div>
+									<div class="form-find-center__submit">
+										<a href="#write_us" data-modal="" data-effect="mfp-move-from-left">
+											<button style="width: 100%" id="sp-btn" class="btn btn--empty-black btn--hover-primary">
+												<span class="btn__text">Напишите нам</span>
+											</button>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					<!--	<form action="" class="form-find-center__form">
+							<input type="hidden" id="sp_val" name="sp_val" value="" />
+							<div class="form-find-center__title">Найдите свой сервисный центр</div>
+							<div class="form-find-center__descr">Укажите свое местоположение для отображения контактов ближайших сервисных центров</div>
+							<div class="form-find-center__search">
+								<div class="form-layout__field">
+									<div class="field control--search-wrap">
+										<div class="control control--search">
+											<div class="input-shell">
+												<input name="" autocomplete="off" id="form-search-id" class="input input--default" placeholder="Поиск" type="text" />
+											</div>
+											<a class="header-nav__search-link" aria-label="Поиск" data-search-button="">
+												<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<circle cx="9.16667" cy="9.16663" r="6.5" stroke="#101010" stroke-width="2" />
+													<path d="M13.75 13.3334L17.9167 17.5" stroke="#101010" stroke-width="2" />
+												</svg>
+											</a>
+										</div>
+										<div class="field control--search-wrap">
+											<div id="control--search-drop" class="control--search-drop" style="display: none">
+												<div class="control--search-drop-item">
+													<a href="" class="control--search-drop-link">
+														<span class="control--search-drop-name">Московская область</span>
+														<span class="control--search-drop-val">Россия</span>
+													</a>
+												</div>
+												<div class="control--search-drop-item">
+													<a href="" class="control--search-drop-link">
+														<span class="control--search-drop-name">Москва</span>
+														<span class="control--search-drop-val">Россия</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="form-find-center">
+						<form id="sp-form" action="" class="form-find-center__form">
+							<div class="form-layout__field">
+								<div id="control--search-result-id" class="control--search-result">
+									<div class="control--search-result-item">
+										<div class="control--search-result-sub-text">
+											Не выбран регион
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div>
+								<div class="form-find-center__title form-find-center__title--inner">Отправить заявку</div>
+								<div class="form-find-center__inputs">
+									<div class="form-find-center__item">
+										<div class="form-layout__field">
+											<div class="field">
+												<div class="control">
+													<div class="input-shell">
+														<input name="fio" class="input input--default" placeholder="ФИО*" type="text" required="" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-find-center__item">
+										<div class="form-layout__field">
+											<div class="field">
+												<div class="control">
+													<div class="input-shell">
+														<input
+															name="PROP_PHONE"
+															class="input input--default"
+															placeholder="+7 (___) ___ __ __"
+															data-mask-tel=""
+															data-parsley-pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+															type="tel"
+															inputmode="tel"
+															required=""
+															data-parsley-trigger="change"
+															data-initialized-mask=""
+														/>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-find-center__item">
+										<div class="form-layout__field">
+											<div class="field">
+												<div class="control">
+													<div class="input-shell">
+														<input name="region" id="sp_region" class="input input--default" placeholder="Регион*" type="text" required="" autocomplete="off" />
+													</div>
+												</div>
+												<div class="field control--search-wrap">
+													<div id="control--search-drop-2" class="control--search-drop" style="display: none">
+														<div class="control--search-drop-item">
+															<a href="" class="control--search-drop-link">
+																<span class="control--search-drop-name">Московская область</span>
+																<span class="control--search-drop-val">Россия</span>
+															</a>
+														</div>
+														<div class="control--search-drop-item">
+															<a href="" class="control--search-drop-link">
+																<span class="control--search-drop-name">Москва</span>
+																<span class="control--search-drop-val">Россия</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-find-center__item">
+										<div class="form-layout__field">
+											<div class="field">
+												<div class="control">
+													<div class="input-shell">
+														<input name="email" class="input input--default" placeholder="E-mail*" type="email" required="" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-find-center__item">
+										<div class="form-layout__field">
+											<div class="field">
+												<div class="control">
+													<div class="input-shell">
+														<textarea name="comment" class="input input--default" placeholder="Примечание" type="text"></textarea>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-find-center__submit">
+										<button style="width: 100%" type="submit" disabled="" id="sp-btn" class="btn btn--empty-black btn--hover-primary">
+											<span class="btn__text">Отправить</span>
+										</button>
+										<button
+											style="width: 100%; display: none;"
+											id="sp-btn-thanks"
+											disabled=""
+											class="btn btn--empty-black btn--hover-primary"
+											href="#modal-form-thanks"
+											data-modal=""
+											data-effect="mfp-move-from-left"
+										>
+											<span class="btn__text">Отправить</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>-->
+				<div style="width: 100%; height: 10px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Остались вопросы - форма -->
+<div class="modal mfp-with-anim modal--feedback bx-context-toolbar-empty-area mfp-hide" id="modal-form-thanks" title="Двойной щелчок - Редактировать параметры компонента" style="min-height: 12px;">
+	<button title="Close (Esc)" type="button" class="mfp-close">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 18L18.7279 5.27211" stroke-width="2"></path>
+			<path d="M6 5L18.7279 17.7279" stroke-width="2"></path>
+		</svg>
+	</button>
+	<div class="modal__content bg-white">
+		<div class="modal__scroll-wrapper js-perfect-scrollbar ps">
+			<h3 class="modal__head h3">Ваша заявка отправлена</h3>
+			<div class="wrapper_form">
+				<div class="modal__body">
+					<div class="grey-thanks-text">Спасибо за обращение, менеджер свяжется с вами в течении одного рабочего дня</div>
 				</div>
-				<div class="footer__nav">
-					<ul class="footer__nav-list">
-						<li class="footer__nav-item">
-							<a href="/products/" class="footer__nav-item-link" data-link-animate="primary">Техника</a>
-						</li>
-						<li class="footer__nav-item">
-							<a href="/finance/" class="footer__nav-item-link" data-link-animate="primary">Финансирование</a>
-						</li>
-						<li class="footer__nav-item">
-							<a href="/electronic-systems/" class="footer__nav-item-link" data-link-animate="primary">Точное земледелие</a>
-						</li>
-						<li class="footer__nav-item">
-							<a href="/about/" class="footer__nav-item-link" data-link-animate="primary">Компания</a>
-						</li>
-						<li class="footer__nav-item">
-							<a href="/services/request/" class="footer__nav-item-link" data-link-animate="primary">Заявка на ремонт</a>
-						</li>
-						<li class="footer__nav-item">
-							<a href="/services/" class="footer__nav-item-link" data-link-animate="primary">Запчасти и сервис</a>
-						</li>
-						<li class="footer__nav-item">
-							<a href="/contacts/" class="footer__nav-item-link" data-link-animate="primary">Контакты</a>
-						</li>
-						<li class="footer__nav-item">
-							<a href="/about/clients-about-us/" class="footer__nav-item-link" data-link-animate="primary">Клиенты о нас</a>
-						</li>
-						<li class="footer__nav-item">
-							<a href="/specials/" class="footer__nav-item-link" data-link-animate="primary">Акции</a>
-						</li>
-						<li class="footer__nav-item">
-							<a href="https://blog.rostselmash.com/" class="footer__nav-item-link" data-link-animate="primary">Блог Ростсельмаш</a>
-						</li>
-					</ul>
+
+				<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+					<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
 				</div>
-				<div class="footer__address">
-					<ul class="footer__address-list">
-						<li class="footer__address-item">
-							<a href="mailto:denbulko@bk.ru" class="footer__address-item-link" data-link-animate="primary">denbulko@bk.ru</a>
-						</li>
-						<li class="footer__address-item">
-									<span class="footer__address-item-link slide-vertical">
-										Смоленская область, г. Смоленск <br />
-										 п. Красный Бор, д.1Г
-									</span>
-						</li>
-					</ul>
-				</div>
-				<div class="footer__policy">
-					<ul class="footer__policy-items">
-						<li class="footer__policy-item">
-							<a href="/policy/" class="text-link text-default text-small" target="_blank">Политика конфиденциальности</a>
-						</li>
-						<li class="footer__policy-item">
-							<a href="/terms-of-use/" class="text-link text-default text-small" target="_blank">Пользовательское соглашение</a>
-						</li>
-					</ul>
-				</div>
-				<div class="footer__copyrights">
-							<span class="footer__copyrights-text">
-								© 1929–2024 Ростсельмаш.<br />
-								Все права защищены
-							</span>
-				</div>
-				<div class="footer__button-top">
-					<button class="button-top" >
-						<svg viewbox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-							<path transform="rotate(180, 12, 12)" d="m18.7 9.7-6 6c-.2.2-.4.3-.7.3s-.5-.1-.7-.3l-6-6c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l5.3 5.3 5.3-5.3c.4-.4 1-.4 1.4 0s.4 1 0 1.4z"></path>
-						</svg>
-					</button>
+				<div class="ps__rail-y" style="top: 0px; right: 0px;">
+					<div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
 				</div>
 			</div>
 		</div>
-	</footer>
+	</div>
+</div>
+<style>
+	.grey-thanks-text {
+		color: #B5B5B5;
+		max-width: 495px;
+	}
+	.review__head {
+		margin-bottom: 50px;
+	}
 
+	.review__icon {
+		margin-right: 25px;
+		margin-top: -30px;
+	}
 
+	.review__text {
+		margin-bottom: 50px;
+	}
+
+	.review_position {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 26px;
+		color: #5B5B5B;
+		margin-bottom: 20px;
+	}
+
+	.review_name {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 36px;
+		color: #000000;
+	}
+</style>
+<style>
+	.tech-list__toggle {
+		padding-left: 35px;
+	}
+
+	.hide_dop {
+		display: none;
+	}
+
+	.vacancy-btn {
+		margin-top: 15px;
+	}
+</style>
+<style>
+	.block_09 .card-link__content_inner .text {
+		max-width: 500px;
+	}
+
+	.block_09 .card-link__content_inner .h5 {
+		margin-bottom: 23px;
+	}
+
+	.block_09 .card-link__content_inner .red-text {
+		color: #D3013E;
+		font-weight: 500;
+		font-size: 1.125rem;
+		line-height: 1.4;
+	}
+</style>
+
+<style>
+	.block_09 .card-link__content_inner .text {
+		max-width: 520px;
+	}
+
+	.block_09 .card-link__content_inner .h5 {
+		margin-bottom: 19px;
+	}
+
+	.block_09 .card-link__content_inner .red-text {
+		color: #D3013E;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 1.4;
+	}
+
+	body {
+		overflow-x: unset;
+	}
+
+	.form-find-center__form {
+		max-width: 100%;
+	}
+
+	.text-2-cols {
+		max-width: 100%;
+	}
+
+	.text-2-cols__title {
+		font-size: 1.2rem;
+	}
+</style>
+
+<div class="modal mfp-hide mfp-with-anim modal--feedback" id="form-text-detail-1">
+	<button title="Close (Esc)" type="button" class="mfp-close">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 18L18.7279 5.27211" stroke-width="2" />
+			<path d="M6 5L18.7279 17.7279" stroke-width="2" />
+		</svg>
+	</button>
+	<div class="modal__content bg-white">
+		<div class="modal__scroll-wrapper js-perfect-scrollbar">
+			<div class="modal__body">
+				<div class="modal__left content__user-text user-text text-default" style="max-width: 100%; padding-left:20px">
+					<p>
+						Иначе просто не может быть, потому что качественный материал и энергоресурсы для, по сути, розничного покупателя обходятся дороже, чем для крупного производителя. А высокоточное современное оборудование
+						для небольшого цеха просто недоступно из за высокой стоимости. Поэтому, покупая контрафакт, вы сознательно приобретаете продукт заведомо низкого качества и добровольно принимаете на себя все связанные с
+						этим риски. Последствия могут быть разными.
+					</p>
+					<p>
+						Опыт показывает, что срок службы деталей аналогов намного короче, чем оригинальных. Даже если моментальная экономия составит половину от стоимости оригинальной запчасти, хотя это очень редкие случаи, Вы
+						столкнетесь с цепочкой других проблем, которые приведут к большим убыткам:
+					</p>
+					<ol style="max-width: 100%; line-height: 0.7; margin-left: 35px; margin-top: 0;">
+						<li>затрата большего времени на замену</li>
+						<li>простой техники и снижение производительности</li>
+						<li>потери на полях</li>
+						<li>финансовые убытки из-за потерь урожая</li>
+					</ol>
+					<p>
+						В худшем случае приобретение неоригинальной ответственной детали ведет к экономическим потерям, многократно превышающим сэкономленную на ее покупке сумму. Причины таких последствий просты и предсказуемы.
+						Основные недостатки запасных частей «альтернативного производства»:
+					</p>
+					<ul style="width: 100%; margin-left: 35px; margin-top: 0;">
+						<li>не соответствующие требованиям прочностные характеристики;</li>
+						<li>несоблюдение допусков и посадок при изготовлении;</li>
+						<li>нарушение технологии изготовления и обработки.</li>
+					</ul>
+					<p>
+						И любой из них может стать причиной выхода техники из строя. Нужно всегда помнить, что машина – это сложнейшая система. В подавляющем большинстве случаев ее элементы взаимозависимы. Поломка или даже
+						просто небезупречная работа «копеечной» детали выводит из строя намного более дорогой узел, а то и весь агрегат. И это – объективная реальность.
+					</p>
+					<p>
+						Ниже мы привели несколько примеров из нашей практики, когда покупка альтернативной детали обошлась в итоге владельцам техники в разы дороже, чем они заплатили бы за оригинальную запчасть производства
+						Ростсельмаш.
+					</p>
+					<p>Безусловно, после истечения гарантийного срока вы имеете полное право использовать неоригинальные (альтернативные) запасные части.</p>
+					<p>Напомним лишь, что применение подобных изделий в гарантийный период автоматически ведет к снятию машины с гарантии.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 			<script>
 				$(document).ready(function() {
 					$('.button-top').click(function(){
@@ -2293,6 +3350,187 @@ h4.16l4.12,6.25v0.04H19.958z M9.448,10.69h-3.99V4.9h3.99c2.06,0,3.7,1.09,3.7,2.8
 			}
 		</script>
 
-		
+					</div>
+				</div>
+			<footer class="footer">
+		<div class="footer__contacts">
+			<div class="footer__contacts-wrapper wrapper wrap-pr-1 wrap-pl-1">
+				<ul class="footer__contacts-list">
+					<li class="footer__contacts-item" data-animate="">
+						<span class="footer__contacts-item-label text-default">Горячая линия</span>
+						<a class="footer__contacts-item-link" href="tel:+74812420520" data-link-animate="">+7 (4812) 420-520</a>
+					</li>
+					<li class="footer__contacts-write-us" data-animate="" data-animate-delay="2">
+						<a href="#write_us" class="btn btn--empty btn--hover-white btn--large" data-modal="" data-effect="mfp-move-from-left">
+							<span class="btn__text btn__text--small">Напишите нам</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer__contacts-social footer__social-list" data-animate="" data-animate-sequence="">
+					<li class="footer__social-item">
+						<a href="https://vk.com/smolagrosnab" target="_blank" class="footer__social-link footer__social-link--vk" aria-label="VK">
+							<svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M21.9 7.7L22 7.8C22.2 8.2 21.6 9.2 20.4 10.7C20.2 11 20 11.2 19.7 11.6C19.4 11.9 19.2 12.2 19.1 12.3C19 12.4 18.9 12.6 18.8 12.8C18.7 13 18.6 13.1 18.7 13.2C18.7 13.3 18.8 13.4 18.8 13.5C18.9 13.7 19 13.9 19.2 14C19.4 14.1 19.6 14.3 19.8 14.5C19.8 14.5 19.8 14.5 19.9 14.5C20.9 15.4 21.5 16.1 21.9 16.7C21.9 16.7 21.9 16.8 22 16.8C22 16.9 22 16.9 22.1 17.1C22.1 17.2 22.1 17.3 22.1 17.4C22.1 17.5 22 17.6 21.8 17.7C21.7 17.8 21.4 17.8 21.2 17.8H18.5C18.3 17.8 18.1 17.8 17.9 17.7C17.7 17.6 17.5 17.6 17.4 17.5L17.2 17.4C17 17.3 16.7 17 16.5 16.8C16.2 16.5 16 16.3 15.8 16C15.6 15.8 15.4 15.6 15.2 15.4C15 15.2 14.8 15.2 14.6 15.2C14.6 15.2 14.6 15.2 14.5 15.2C14.5 15.2 14.4 15.3 14.3 15.3C14.2 15.4 14.1 15.5 14.1 15.6C14 15.7 14 15.9 13.9 16.1C13.8 16.3 13.8 16.6 13.8 16.9C13.8 17 13.8 17.1 13.8 17.2C13.8 17.3 13.7 17.3 13.7 17.4V17.5C13.6 17.6 13.4 17.7 13.1 17.7H11.8C11.3 17.7 10.8 17.7 10.3 17.5C9.8 17.4 9.3 17.2 8.9 17C8.5 17 8.1 16.8 7.8 16.6C7.5 16.4 7.3 16.2 7.1 16L6.8 15.8C6.8 15.7 6.7 15.6 6.5 15.5C6.4 15.3 6.2 15 5.8 14.5C5.4 14.1 5.1 13.6 4.7 13C4.3 12.5 3.9 11.8 3.4 10.9C2.9 10 2.5 9.1 2.1 8.2C2 8.1 2 8 2 7.9C2 7.8 2 7.8 2 7.7V7.6C2.1 7.5 2.3 7.4 2.6 7.4H5.5C5.6 7.4 5.7 7.4 5.7 7.5C5.8 7.5 5.8 7.6 5.9 7.6H6C6.1 7.7 6.2 7.8 6.2 8C6.3 8.3 6.5 8.7 6.7 9C6.9 9.4 7 9.7 7.1 9.8L7.3 10.1C7.5 10.5 7.7 10.8 7.9 11.1C8.1 11.4 8.3 11.6 8.4 11.8C8.5 12 8.7 12.2 8.8 12.2C9 12.3 9.1 12.4 9.2 12.4C9.3 12.4 9.4 12.4 9.5 12.3C9.5 12.3 9.5 12.3 9.6 12.2C9.6 12.2 9.7 12.1 9.7 12C9.8 11.9 9.8 11.7 9.8 11.5C9.8 11.3 9.9 11 9.9 10.7C9.9 10.4 9.9 9.9 9.9 9.4C9.9 9.1 9.9 8.9 9.8 8.7C9.8 8.5 9.7 8.3 9.7 8.2H9.6C9.4 8 9.1 7.8 8.7 7.8C8.6 7.8 8.6 7.7 8.8 7.6C8.8 7.4 9 7.3 9.1 7.2C9.5 7.1 10.3 7 11.6 7C12.2 7 12.6 7.1 13 7.1C13.1 7.1 13.3 7.2 13.3 7.2C13.4 7.3 13.5 7.3 13.5 7.4C13.5 7.5 13.6 7.6 13.6 7.7C13.6 7.8 13.6 8 13.6 8.2C13.6 8.4 13.6 8.6 13.6 8.8C13.6 9 13.6 9.2 13.6 9.5C13.6 9.8 13.6 10.1 13.6 10.3C13.6 10.4 13.6 10.5 13.6 10.7C13.6 10.9 13.6 11.1 13.6 11.2C13.6 11.3 13.6 11.4 13.6 11.6C13.6 11.8 13.7 11.9 13.7 12C13.8 12.1 13.8 12.2 13.9 12.2C14 12.2 14 12.2 14.1 12.2C14.2 12.2 14.3 12.2 14.4 12.1C14.5 12 14.7 11.9 14.8 11.8C14.9 11.7 15.1 11.4 15.3 11.1C15.5 10.8 15.8 10.4 16 10C16.4 9.3 16.8 8.6 17.1 7.7C17.1 7.6 17.2 7.6 17.2 7.5L17.3 7.4H17.4C17.4 7.4 17.4 7.4 17.5 7.4C17.6 7.4 17.7 7.4 17.7 7.4H20.7C21 7.4 21.2 7.4 21.4 7.4C21.8 7.6 21.9 7.6 21.9 7.7Z"
+								></path>
+							</svg>
+							<span class="footer__social-text">VK</span>
+						</a>
+					</li>
+					<!-- <li class="footer__social-item">
+                        <a href="https://www.youtube.com/channel/UCv1vcgXvau6uKSg6rDAGlzg" target="_blank" class="footer__social-link footer__social-link--youtube" aria-label="Youtube">
+                            <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M19.9103 4.46645C20.819 4.7177 21.5356 5.45318 21.7802 6.38624C22.2348 8.09051 22.2173 11.6429 22.2173 11.6429C22.2173 11.6429 22.2173 15.1773 21.7804 16.8817C21.5356 17.8146 20.8192 18.5502 19.9103 18.8013C18.2499 19.25 11.6087 19.25 11.6087 19.25C11.6087 19.25 4.98472 19.25 3.30705 18.7836C2.39812 18.5323 1.68166 17.7967 1.4369 16.8638C1 15.1773 1 11.625 1 11.625C1 11.625 1 8.09051 1.4369 6.38624C1.68149 5.45335 2.4156 4.69975 3.30688 4.44867C4.96724 4 11.6085 4 11.6085 4C11.6085 4 18.2499 4 19.9103 4.46645ZM14.9239 11.625L9.61957 14.6087V8.6413L14.9239 11.625Z"
+                                ></path>
+                            </svg>
+                            <span class="footer__social-text">Youtube</span>
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a href="https://rutube.ru/channel/24612214/" target="_blank" class="footer__social-link footer__social-link--rutube" aria-label="Rutube">
+                            <svg
+                                version="1.1"
+                                id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                x="3px"
+                                y="3px"
+                                width="24"
+                                viewbox="-8 0 34 27"
+                                enable-background="new 0 0 24 24"
+                                xml:space="preserve"
+                            >
+                                <path
+                                    fill="#efeff2"
+                                    d="M19.958,21.79l-5.13-7.54c2.31-1.34,3.7-3.65,3.7-6.46c0-4.65-3.62-7.58-9.03-7.58h-9.5v21.54h5.42V15.5
+h4.16l4.12,6.25v0.04H19.958z M9.448,10.69h-3.99V4.9h3.99c2.06,0,3.7,1.09,3.7,2.85C13.148,9.55,11.548,10.69,9.448,10.69z"
+                                ></path>
+                            </svg>
+                            <span class="footer__social-text">Rutube</span>
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a href="https://t.me/rostselmash_official" target="_blank" class="footer__social-link footer__social-link--telegram" aria-label="Telegram">
+                            <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.84784 14.5451L9.517 19.0122C9.99034 19.0122 10.1953 18.817 10.4412 18.5827L12.6604 16.5467L17.2588 19.7794C18.1022 20.2306 18.6964 19.993 18.9239 19.0346L21.9423 5.45712L21.9431 5.45632C22.2106 4.25952 21.4923 3.79153 20.6706 4.08512L2.9285 10.6059C1.71764 11.0571 1.73598 11.7051 2.72267 11.9987L7.25861 13.3531L17.7947 7.02431C18.2905 6.70911 18.7414 6.88351 18.3705 7.19871L9.84784 14.5451Z"
+                                    fill="#efeff2"
+                                ></path>
+                            </svg>
+                            <span class="footer__social-text">Telegram</span>
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a href="https://ok.ru/rostselmash" target="_blank" class="footer__social-link footer__social-link--ok" aria-label="Ok">
+                            <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.18415 12.7341C5.67332 13.7383 6.25331 14.2183 7.57663 15.0383C8.70162 15.7333 10.2558 15.9874 11.2541 16.0891C10.8449 16.4824 12.7199 14.6791 7.31997 19.8732C6.17498 20.9707 8.0183 22.7315 9.16245 21.6574L12.2599 18.6699C13.4457 19.8107 14.5824 20.9041 15.3574 21.6616C16.5024 22.7399 18.3449 20.9941 17.2124 19.8774C17.1274 19.7966 13.0149 15.8516 13.2657 16.0933C14.2766 15.9916 15.8074 15.7224 16.9191 15.0424L16.9182 15.0416C18.2415 14.2175 18.8215 13.7383 18.3182 12.7341C18.014 12.1641 17.194 11.6875 16.1024 12.5116C16.1024 12.5116 14.6282 13.6408 12.2508 13.6408C9.87245 13.6408 8.39913 12.5116 8.39913 12.5116C7.3083 11.6833 6.48498 12.1641 6.18415 12.7341Z"
+                                ></path>
+                                <path
+                                    d="M12.2488 12.1182C15.1471 12.1182 17.5138 9.85327 17.5138 7.06496C17.5138 4.26498 15.1471 2 12.2488 2C9.34968 2 6.98303 4.26498 6.98303 7.06496C6.98303 9.85327 9.34968 12.1182 12.2488 12.1182ZM12.2488 4.56581C13.673 4.56581 14.8346 5.6833 14.8346 7.06496C14.8346 8.43494 13.673 9.55243 12.2488 9.55243C10.8247 9.55243 9.66301 8.43494 9.66301 7.06496C9.66218 5.68247 10.8238 4.56581 12.2488 4.56581Z"
+                                ></path>
+                            </svg>
+                            <span class="footer__social-text">Ok</span>
+                        </a>
+                    </li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="footer__main">
+			<div class="footer__main-grid wrapper wrap-pl-1 wrap-pr-1">
+				<div class="footer__logo">
+							<span class="footer__logo-wrapper">
+								<div class="n-logo-t">
+									<img src="/images/logo-d.png" alt="">
+									<!--	<img src="/images/1640060147.svg" alt=""> -->
+								</div>
+							</span>
+				</div>
+				<div class="footer__actions">
+					<ul class="footer__action-list">
+						<li class="footer__action">
+							<a href="https://agrotronic.rostselmash.com/" class="text-link text-default">Вход в РСМ Агротроник</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__nav">
+					<ul class="footer__nav-list">
+						<li class="footer__nav-item">
+							<a href="/products/" class="footer__nav-item-link" data-link-animate="primary">Техника</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="/finance/" class="footer__nav-item-link" data-link-animate="primary">Финансирование</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="/electronic-systems/" class="footer__nav-item-link" data-link-animate="primary">Точное земледелие</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="/about/" class="footer__nav-item-link" data-link-animate="primary">Компания</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="/services/request/" class="footer__nav-item-link" data-link-animate="primary">Заявка на ремонт</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="/services/" class="footer__nav-item-link" data-link-animate="primary">Запчасти и сервис</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="/contacts/" class="footer__nav-item-link" data-link-animate="primary">Контакты</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="/about/clients-about-us/" class="footer__nav-item-link" data-link-animate="primary">Клиенты о нас</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="/specials/" class="footer__nav-item-link" data-link-animate="primary">Акции</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="https://blog.rostselmash.com/" class="footer__nav-item-link" data-link-animate="primary">Блог Ростсельмаш</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__address">
+					<ul class="footer__address-list">
+						<li class="footer__address-item">
+							<a href="mailto:denbulko@bk.ru" class="footer__address-item-link" data-link-animate="primary">denbulko@bk.ru</a>
+						</li>
+						<li class="footer__address-item">
+									<span class="footer__address-item-link slide-vertical">
+										Смоленская область, г. Смоленск <br />
+										 п. Красный Бор, д.1Г
+									</span>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__policy">
+					<ul class="footer__policy-items">
+						<li class="footer__policy-item">
+							<a href="/policy/" class="text-link text-default text-small" target="_blank">Политика конфиденциальности</a>
+						</li>
+						<li class="footer__policy-item">
+							<a href="/terms-of-use/" class="text-link text-default text-small" target="_blank">Пользовательское соглашение</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__copyrights">
+							<span class="footer__copyrights-text">
+								© 1929–2024 Ростсельмаш.<br />
+								Все права защищены
+							</span>
+				</div>
+				<div class="footer__button-top">
+					<button class="button-top" >
+						<svg viewbox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+							<path transform="rotate(180, 12, 12)" d="m18.7 9.7-6 6c-.2.2-.4.3-.7.3s-.5-.1-.7-.3l-6-6c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l5.3 5.3 5.3-5.3c.4-.4 1-.4 1.4 0s.4 1 0 1.4z"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+	</footer>
+		</div>
 	</body>
 </html>

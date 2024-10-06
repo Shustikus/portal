@@ -448,93 +448,93 @@
 			<div class="header-nav__dropdown">
 				<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="1">
 					<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-						<% let counter = 2; %>
-						<% Object.values(feedData.catalog.sections).forEach((section) => { %>
-							<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
-								<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-									<a href="/products/<%= section.code %>/"
-									   class="header-nav__submenu-link header-nav__submenu-link--level-1"
-									   data-submenu-id="<%= counter %>">
-										<%= section.name %>
-									</a>
-								</li>
-								<% counter++; %>
-							<% } %>
-						<% }); %>
+					<% let counter = 2; %>
+					<% Object.values(feedData.catalog.sections).forEach((section) => { %>
+					<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
+					<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
+						<a href="/products/<%= section.code %>/"
+						   class="header-nav__submenu-link header-nav__submenu-link--level-1"
+						   data-submenu-id="<%= counter %>">
+							<%= section.name %>
+						</a>
+					</li>
+					<% counter++; %>
+					<% } %>
+					<% }); %>
 					<% } %>
 				</ul>
 				<%
 				const sectionIds = ["15", "105", "164", "166", "171", "221", "173", "168", "174", "175", "176"];
 				%>
 				<% sectionIds.forEach((sectionId, index) => { %>
-					<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 2 %>"
-						data-animate="">
-						<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-							<%
-								const section = feedData.catalog.sections[sectionId];
-								const sectionCode = section ? section.code : '';
-							%>
-							<% if (feedData.catalog.elements) { %>
-								<%
-									const elements = Object.values(feedData.catalog.elements).filter(element => element.section_id === sectionId);
-								%>
-								<% if (elements.length > 0) { %>
-									<% elements.forEach((element) => { %>
-										<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-											<a href="/products/<%= sectionCode %>/<%= element.code %>/"
-											   class="header-nav__submenu-link header-nav__submenu-link--level-2">
-												<%= element.name %>
-											</a>
-										</li>
-									<% }); %>
-								<% } %>
-							<% } %>
-						<% } %>
-					</ul>
+				<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 2 %>"
+					data-animate="">
+					<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
+					<%
+					const section = feedData.catalog.sections[sectionId];
+					const sectionCode = section ? section.code : '';
+					%>
+					<% if (feedData.catalog.elements) { %>
+					<%
+					const elements = Object.values(feedData.catalog.elements).filter(element => element.section_id === sectionId);
+					%>
+					<% if (elements.length > 0) { %>
+					<% elements.forEach((element) => { %>
+					<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
+						<a href="/products/<%= sectionCode %>/<%= element.code %>/"
+						   class="header-nav__submenu-link header-nav__submenu-link--level-2">
+							<%= element.name %>
+						</a>
+					</li>
+					<% }); %>
+					<% } %>
+					<% } %>
+					<% } %>
+				</ul>
 				<% }); %>
 				<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="13">
 					<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-						<% let counter = 14; %>
-						<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
-							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="/electronic-systems/<%= section.code %>/"
-								   class="header-nav__submenu-link header-nav__submenu-link--level-1"
-								   data-submenu-id="<%= counter %>">
-									<%= section.name %>
-								</a>
-							</li>
-							<% counter++; %>
-						<% }); %>
+					<% let counter = 14; %>
+					<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
+					<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
+						<a href="/electronic-systems/<%= section.code %>/"
+						   class="header-nav__submenu-link header-nav__submenu-link--level-1"
+						   data-submenu-id="<%= counter %>">
+							<%= section.name %>
+						</a>
+					</li>
+					<% counter++; %>
+					<% }); %>
 					<% } %>
 				</ul>
 				<%
 				const secondSectionIds = ["185", "186", "187", "188", "740", "741"];
 				%>
 				<% secondSectionIds.forEach((sectionId, index) => { %>
-					<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 14 %>"
-						data-animate="">
-						<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-							<%
-								const section = feedData['electronic-systems'].sections[sectionId];
-								const sectionCode = section ? section.code : '';
-							%>
-							<% if (feedData['electronic-systems'].elements) { %>
-								<%
-									const elements = Object.values(feedData['electronic-systems'].elements).filter(element => element.section_id === sectionId);
-								%>
-								<% if (elements.length > 0) { %>
-									<% elements.forEach((element) => { %>
-										<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-											<a href="/electronic-systems/<%= sectionCode %>/<%= element.code %>/"
-											   class="header-nav__submenu-link header-nav__submenu-link--level-2">
-												<%= element.name %>
-											</a>
-										</li>
-									<% }); %>
-								<% } %>
-							<% } %>
-						<% } %>
-					</ul>
+				<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 14 %>"
+					data-animate="">
+					<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
+					<%
+					const section = feedData['electronic-systems'].sections[sectionId];
+					const sectionCode = section ? section.code : '';
+					%>
+					<% if (feedData['electronic-systems'].elements) { %>
+					<%
+					const elements = Object.values(feedData['electronic-systems'].elements).filter(element => element.section_id === sectionId);
+					%>
+					<% if (elements.length > 0) { %>
+					<% elements.forEach((element) => { %>
+					<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
+						<a href="/electronic-systems/<%= sectionCode %>/<%= element.code %>/"
+						   class="header-nav__submenu-link header-nav__submenu-link--level-2">
+							<%= element.name %>
+						</a>
+					</li>
+					<% }); %>
+					<% } %>
+					<% } %>
+					<% } %>
+				</ul>
 				<% }); %>
 				<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="20">
 					<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
@@ -1209,16 +1209,16 @@
 										<a href="/products/" class="menu__link menu__link--heading h4">Техника</a>
 									</li>
 									<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-										<% Object.values(feedData.catalog.sections).forEach((section) => { %>
-											<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
-												<li class="menu__item menu__item--level-1">
-													<a href="/products/<%= section.code %>/"
-													   class="menu__link menu__link--level-1 text-default">
-														<%= section.name %>
-													</a>
-												</li>
-											<% } %>
-										<% }); %>
+									<% Object.values(feedData.catalog.sections).forEach((section) => { %>
+									<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
+									<li class="menu__item menu__item--level-1">
+										<a href="/products/<%= section.code %>/"
+										   class="menu__link menu__link--level-1 text-default">
+											<%= section.name %>
+										</a>
+									</li>
+									<% } %>
+									<% }); %>
 									<% } %>
 								</ul>
 							</li>
@@ -1234,14 +1234,14 @@
 											земледелие</a>
 									</li>
 									<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-										<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
-											<li class="menu__item menu__item--level-1">
-												<a href="/electronic-systems/<%= section.code %>/"
-												   class="menu__link menu__link--level-1 text-default">
-													<%= section.name %>
-												</a>
-											</li>
-										<% }); %>
+									<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
+									<li class="menu__item menu__item--level-1">
+										<a href="/electronic-systems/<%= section.code %>/"
+										   class="menu__link menu__link--level-1 text-default">
+											<%= section.name %>
+										</a>
+									</li>
+									<% }); %>
 									<% } %>
 								</ul>
 							</li>
@@ -1429,126 +1429,167 @@
 			</div>
 		</div>
 	</div>
+			
 
-
-<div class="hero pb-56">
-	<div class="hero__inner wrapper wrap-pl-1 wrap-pr-1">
-		<nav class="breadcrumbs" aria-label="breadcrumb" data-animate>
-			<ul class="breadcrumbs__list text-default" itemscope itemtype="https://schema.org/BreadcrumbList">
-				<li class="breadcrumbs__crumb" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-					<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/" title="Главная" itemprop="item">
-						<span itemprop="name">Главная</span>
-					</a>
-					<meta itemprop="position" content="1" />
-				</li>
-				<li class="breadcrumbs__crumb">
-					<div class="breadcrumbs__text text-lead">
-						<span itemprop="name">Запчасти и сервис</span>
-					</div>
-				</li>
-			</ul>
-		</nav>
-
-		<h1 class="hero__title h2">Запчасти и Сервис</h1>
-	</div>
-</div>
-
-<div class="py-80 wrap-pl-1 wrap-pr-1">
-	<div class="tech-cards-list">
-		<div class="tech-cards-list__wrap">
-			<div class="tech-cards-list__content">
-				<div class="tech-cards-list__row">
-					<div class="tech-cards-list__col">
-						<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-							<a href="/services/spares/" class="card__inner">
-								<div class="card__img">
-									<img
-										class="image is-lazy isItemProp"
-										src="/images/d890e65ed9d54e777b59e3c4c396e53e.jpg"
-										data-src="images/d890e65ed9d54e777b59e3c4c396e53e.jpg"
-										itemprop="contentUrl"
-										data-srcset="/images/d890e65ed9d54e777b59e3c4c396e53e.jpg"
-										alt="image"
-									/>
-								</div>
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__title text-lead" data-animate-lines itemprop="name">Оригинальные запчасти и сервис</div>
-									</div>
-								</div>
+<link rel="stylesheet" href="/local/templates/main/css_qr.css">
+         <script>
+            $('.preloader').addClass('bg-gray')
+         </script>
+         <div class="pt-md-160 pt-96 mb-lg-56 mb-md-48 mb-40 wrapper wrap-pl-1 wrap-pr-1">
+            <div class="page-heading">
+				<nav class="breadcrumbs" aria-label="breadcrumb" data-animate="">
+					<ul class="breadcrumbs__list text-default" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+						<li class="breadcrumbs__crumb" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+							<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/" title="Главная" itemprop="item">
+								<span itemprop="name">Главная</span>
 							</a>
-						</div>
-					</div>
-					<div class="tech-cards-list__col">
-						<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-							<a href="/services/request" class="card__inner">
-								<div class="card__img">
-									<img
-										class="image is-lazy isItemProp"
-										src="/images/3aab8c75f5336a605c00c3fa19c85554.jpg"
-										data-src="/images/3aab8c75f5336a605c00c3fa19c85554.jpg"
-										itemprop="contentUrl"
-										data-srcset="/images/3aab8c75f5336a605c00c3fa19c85554.jpg"
-										alt="image"
-									/>
-								</div>
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__title text-lead" data-animate-lines itemprop="name">Заявка на ремонт</div>
-									</div>
-								</div>
+							<meta itemprop="position" content="1"/>
+						</li>
+						<li class="breadcrumbs__crumb" id="bx_breadcrumb_1" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+							<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/services/" title="Запчасти и сервис" itemprop="item">
+								<span itemprop="name">Запчасти и сервис</span>
 							</a>
-						</div>
-					</div>
-					<div class="tech-cards-list__col">
-						<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-							<a href="https://rostselmash.com/spare-parts/checking-originality-parts/" class="card__inner">
-								<div class="card__img">
-									<img
-										class="image is-lazy isItemProp"
-										src="/images/a5ab08481dc1ab372a46d8508706204e.jpg"
-										data-src="/images/a5ab08481dc1ab372a46d8508706204e.jpg"
-										itemprop="contentUrl"
-										data-srcset="/images/a5ab08481dc1ab372a46d8508706204e.jpg"
-										alt="image"
-									/>
-								</div>
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__title text-lead" data-animate-lines itemprop="name">Проверка оригинальности деталей</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="tech-cards-list__col">
-						<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-							<a href="/services/g-profi-oil/" class="card__inner">
-								<div class="card__img">
-									<img
-										class="image is-lazy isItemProp"
-										src="/images/c95df8de461b86443753c72b4150452e.jpg"
-										data-src="/images/c95df8de461b86443753c72b4150452e.jpg"
-										itemprop="contentUrl"
-										data-srcset="/images/c95df8de461b86443753c72b4150452e.jpg"
-										alt="image"
-									/>
-								</div>
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__title text-lead" data-animate-lines itemprop="name">Масло Ростсельмаш G-Profi</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
+							<meta itemprop="position" content="2"/>
+						</li>
+						<li class="breadcrumbs__crumb">
+							<div class="breadcrumbs__text text-lead">
+								<span itemprop="name">Заявка на сервис</span>
+							</div>
+						</li>
+					</ul>
+				</nav>
+               <h1 class="h2 page-heading__title">Оформление заявки на ремонт</h1>
+            </div>
+         </div>
+         <div class="wrapper wrap-pl-1 wrap-pr-1">
+            <div class="product-cards-list">
+               <div class="product-cards-list__wrap">
+                  <div class="product-cards-list__content">
+                     <div class="tabs " data-hash-tabs="">
+                        <div class="tabs__wrap">
+                           <div class="tabs__head">
+                              <div class="tabs-list">
+                                 <div class="tabs-list__wrap js-tabs-list">
+                                    <button class="tabs-list__fade tabs-list__fade--left js-tab-scroll" data-direction="left"></button>
+                                    <button class="tabs-list__fade tabs-list__fade--right js-tab-scroll" data-direction="right"></button>
+                                    <button type="button" class="tabs-list__el active" data-tab="" data-hash="models-zuk">
+                                    Оформление
+                                    </button>
+                                    <button type="button" class="tabs-list__el" data-tab="" data-hash="adapters">
+                                    Проверка
+                                    </button>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tabs-content-wrap">
+                              <div class="tabs-content">
+                                 <div class="tabs-content__el active" data-content="" data-hash="models-zuk" data-animate-repeat="">
+                                    <form action="/services/request/" method="post" class="form form_dark">
+                                       <div class="row">
+                                          <div class="col col--lg-4">
+                                             <div class="control control_b-offset">
+                                                <div class="input-shell">
+                                                   <input
+                                                      name="SERIAL_NUM"
+                                                      class="input input--default not-empty"
+                                                      placeholder="Серийный номер"
+                                                      type="text"
+                                                      required=""
+                                                      value=""
+                                                      >
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col col--lg-4">
+                                             <div class="control control_b-offset">
+                                                <div class="input-shell">
+                                                   <input
+                                                      name="PHONE"
+                                                      class="input input--default not-empty js-mask-tel"
+                                                      type="tel"
+                                                      placeholder="Телефон"
+                                                      value=""
+                                                      required=""
+                                                      >
+                                                </div>
+                                                <div class="control-hint">Номер телефона вводится без кода страны</div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="row">
+                                          <div class="col col--lg-4">
+                                             <div class="control control_b-offset">
+                                                <div class="input-shell">
+                                                   <input
+                                                      name="FIO"
+                                                      class="input input--default"
+                                                      placeholder="ФИО"
+                                                      type="text"
+                                                      required=""
+                                                      >
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col col--lg-4">
+                                             <div class="control control_b-offset">
+                                                <div class="input-shell">
+                                                   <input
+                                                      name="EMAIL"
+                                                      class="input input--default"
+                                                      placeholder="E-mail"
+                                                      type="email"
+                                                      required=""
+                                                      >
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="row">
+                                          <div class="col col--lg-8 col--lg-sm-12">
+                                             <div class="control control_b-offset">
+                                                <div class="input-shell">
+                                                   <textarea
+                                                      name="DESCRIPTION"
+                                                      class="input input--default"
+                                                      placeholder="Описание проблемы"
+                                                      type="text"
+                                                      required=""></textarea>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <button class="btn form-btn form-btn_gray form-btn_t">Отправить заявку</button>
+                                    </form>
+                                 </div>
+                                 <div class="tabs-content__el" data-content="" data-hash="adapters" data-animate-repeat="">
+                                    <form action="/services/request/" method="post" class="form form_dark">
+                                       <div class="row">
+                                          <div class="col col--lg-4">
+                                             <div class="control control_b-offset">
+                                                <div class="input-shell">
+                                                   <input
+                                                      name="BID_NUM"
+                                                      class="input input--default"
+                                                      placeholder="Номер заявки"
+                                                      type="tel"
+                                                      value=""
+                                                      required=""
+                                                      >
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <button class="btn form-btn form-btn_gray form-btn_t">Проверить</button>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
 
 	<footer class="footer">
 		<div class="footer__contacts">
@@ -1729,7 +1770,6 @@ h4.16l4.12,6.25v0.04H19.958z M9.448,10.69h-3.99V4.9h3.99c2.06,0,3.7,1.09,3.7,2.8
 			</div>
 		</div>
 	</footer>
-
 
 			<script>
 				$(document).ready(function() {

@@ -89,6 +89,33 @@ app.get('/services', (req, res) => {
     });
 });
 
+// Страница "Оригинальные запчасти и сервис"
+app.get('/services/spares/', (req, res) => {
+    res.render('spares', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
+// Страница "Заявка на ремонт"
+app.get('/services/request/', (req, res) => {
+    res.render('qr', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
+// Страница "Заявка на ремонт"
+app.get('/services/g-profi-oil/', (req, res) => {
+    res.render('g-profi-oil', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
 // Страница "Акции"
 app.get('/specials', (req, res) => {
     res.render('specials', {
