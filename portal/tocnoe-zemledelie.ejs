@@ -1429,7 +1429,23 @@
 			</div>
 		</div>
 	</div>
-	<div class="pt-md-200 pt-96 wrapper wrap-pl-1 wrap-pr-1 pb-lg-160 pb-96 bg-gray">
+	<div class="pt-md-160 pt-96 wrapper wrap-pl-1 wrap-pr-1 pb-lg-160 pb-96 bg-gray">
+		<nav class="breadcrumbs" aria-label="breadcrumb" data-animate>
+			<ul class="breadcrumbs__list text-default"
+				itemscope itemtype="https://schema.org/BreadcrumbList">
+				<li class="breadcrumbs__crumb" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+					<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/" title="Главная" itemprop="item">
+						<span itemprop="name">Главная</span>
+					</a>
+					<meta itemprop="position" content="1"/>
+				</li>
+				<li class="breadcrumbs__crumb">
+					<div class="breadcrumbs__text text-lead">
+						<span itemprop="name">Точное земледелие</span>
+					</div>
+				</li>
+			</ul>
+		</nav>
 		<h1 class="h2">Точное земледелие</h1>
 	</div>
 <div class="mb-lg-128 mb-md-96 mb-80 wrapper wrap-pl-1 wrap-pr-1">
@@ -1438,166 +1454,36 @@
 			<div class="tech-cards-list__wrap">
 				<div class="tech-cards-list__content">
 					<div class="tech-cards-list__row">
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/electronic-systems/agrotronik-i-agronomicheskie-servisy/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/9zxqha81csceaapdf00z55drdtdj6ggc.jpg"
-											data-src="/images/9zxqha81csceaapdf00z55drdtdj6ggc.jpg"
-											itemprop="contentUrl"
-											alt="РСМ Агротроник и агрономические сервисы"
-										/>
+						<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
+							<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
+								<div class="tech-cards-list__col">
+									<div class="card" itemscope itemtype="http://schema.org/ImageObject">
+										<a href="/electronic-systems/<%= section.code %>/" class="card__inner">
+											<div class="card__img">
+												<img
+														class="image is-lazy isItemProp"
+														src="<%= section.image %>"
+														data-src="<%= section.image %>"
+														itemprop="contentUrl"
+														alt="<%= section.name %>"
+												/>
+											</div>
+											<div class="card__info">
+												<div class="card__info-wrap">
+													<div class="card__title h5" data-animate-lines itemprop="name"><%= section.name %></div>
+												</div>
+											</div>
+										</a>
 									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">РСМ Агротроник и агрономические сервисы</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/electronic-systems/sistemy-identifikatsii-i-kontrolya/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/y60iyceba8gwn5uz6mce27a0e09uv46i.jpg"
-											data-src="/images/y60iyceba8gwn5uz6mce27a0e09uv46i.jpg"
-											itemprop="contentUrl"
-											alt="Системы идентификации"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Системы идентификации</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/electronic-systems/sistemy-avtoupravleniya-mashin/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/beuilat2uqxrwqv36kmnq8triu1eki4n.jpg"
-											data-src="/images/beuilat2uqxrwqv36kmnq8triu1eki4n.jpg"
-											itemprop="contentUrl"
-											alt="Системы автоуправления"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Системы автоуправления</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/electronic-systems/sistemy-povysheniya-effektivnosti-zernouborochnykh-kombaynov/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/3ewp9p9jc0uqrvx7q2tk8w1nvkha006t.jpg"
-											data-src="/images/3ewp9p9jc0uqrvx7q2tk8w1nvkha006t.jpg"
-											itemprop="contentUrl"
-											alt="Системы повышения эффективности зерноуборочных комбайнов"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Системы повышения эффективности зерноуборочных комбайнов</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/electronic-systems/povysheniya-effektivnosti-kormouborochnykh-kombaynov/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/s38xglhm226rlnf1jqi0tkviau26qavo.jpg"
-											data-src="/images/s38xglhm226rlnf1jqi0tkviau26qavo.jpg"
-											itemprop="contentUrl"
-											alt="Системы повышения эффективности кормоуборочных комбайнов"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Системы повышения эффективности кормоуборочных комбайнов</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/electronic-systems/sistemy-povysheniya-effektivnosti-traktorov/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/g3dw4uxnphq4gssjih3chb5f2h4qwr8z.jpg"
-											data-src="/images/g3dw4uxnphq4gssjih3chb5f2h4qwr8z.jpg"
-											itemprop="contentUrl"
-											alt="Системы повышения эффективности тракторов"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Системы повышения эффективности тракторов</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/electronic-systems/rsm-nochnoe-videnie/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/gmv9i39x9hlvd2p31rpa4w3btegju3za.jpg"
-											data-src="/images/gmv9i39x9hlvd2p31rpa4w3btegju3za.jpg"
-											itemprop="contentUrl"
-											alt="РСМ Ночное видение"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">РСМ Ночное видение</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
+								</div>
+							<% }); %>
+						<% } %>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
 <!-- <div class="wrapper wrap-pl-1 wrap-pr-1 mt-negative--top-8">
 	<div class="tabs tabs--small" data-hash-tabs>
 		<div class="tabs__wrap">
@@ -1850,17 +1736,15 @@
 			<div class="slider-tech__head" data-animate>
 				<div class="slider-tech__title h2">Возможно, вас заинтересует</div>
 			</div>
-
 			<div class="slider-tech__content">
 				<div class="slider-tech__swiper-container swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<div class="slider-tech__card" id="bx_3218110189_36" data-animate data-animate-delay="1">
-								<a href="/electronic-systems/" class="card-link">
+								<a href="/finance/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Точное земледелие</div>
-
+											<div class="card-link__text h5">Программы финансирования</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -1872,12 +1756,11 @@
 									</div>
 								</a>
 							</div>
-							<div class="slider-tech__card" id="bx_3218110189_35" data-animate data-animate-delay="2">
-								<a href="/spare-parts/parts-order/" class="card-link">
+							<div class="slider-tech__card" id="bx_3218110189_34" data-animate data-animate-delay="1">
+								<a href="/electronic-systems/agrotronik-i-agronomicheskie-servisy/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Заказ запчастей</div>
-
+											<div class="card-link__text h5">Агротроник</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -1892,11 +1775,10 @@
 						</div>
 						<div class="swiper-slide">
 							<div class="slider-tech__card" id="bx_3218110189_34" data-animate data-animate-delay="1">
-								<a href="/agrotronic/" class="card-link">
+								<a href="/services/request/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Агротроник</div>
-
+											<div class="card-link__text h5">Заявка на сервис</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -1909,11 +1791,10 @@
 								</a>
 							</div>
 							<div class="slider-tech__card" id="bx_3218110189_33" data-animate data-animate-delay="2">
-								<a href="/financing/lending/" class="card-link">
+								<a href="/products/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Программы финансирования</div>
-
+											<div class="card-link__text h5">Сельхозтехника</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

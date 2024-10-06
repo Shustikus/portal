@@ -1429,12 +1429,26 @@
 			</div>
 		</div>
 	</div>
-			
 
-
-<div class="pt-md-200 pt-96 wrapper wrap-pl-1 wrap-pr-1 pb-lg-160 pb-96 bg-gray">
-	<h1 class="h2">Сельхозтехника</h1>
-</div>
+	<div class="pt-md-160 pt-96 wrapper wrap-pl-1 wrap-pr-1 pb-lg-160 pb-96 bg-gray">
+		<nav class="breadcrumbs" aria-label="breadcrumb" data-animate>
+			<ul class="breadcrumbs__list text-default"
+				itemscope itemtype="https://schema.org/BreadcrumbList">
+				<li class="breadcrumbs__crumb" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+					<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/" title="Главная" itemprop="item">
+						<span itemprop="name">Главная</span>
+					</a>
+					<meta itemprop="position" content="1"/>
+				</li>
+				<li class="breadcrumbs__crumb">
+					<div class="breadcrumbs__text text-lead">
+						<span itemprop="name">Сельхозтехника</span>
+					</div>
+				</li>
+			</ul>
+		</nav>
+		<h1 class="h2">Сельхозтехника</h1>
+	</div>
 
 <div class="mb-lg-128 mb-md-96 mb-80 wrapper wrap-pl-1 wrap-pr-1">
 	<div class="mt-lg-96-negative mt-56-negative">
@@ -1442,247 +1456,32 @@
 			<div class="tech-cards-list__wrap">
 				<div class="tech-cards-list__content">
 					<div class="tech-cards-list__row">
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/products/combine/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/ursw8gsgq1rcly62bl0w6z53yklf51h2.jpg"
-											data-src="/images/ursw8gsgq1rcly62bl0w6z53yklf51h2.jpg"
-											itemprop="contentUrl"
-											alt="Зерноуборочные комбайны"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Зерноуборочные комбайны</div>
+						<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
+							<% Object.values(feedData.catalog.sections).forEach((section) => { %>
+								<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
+									<div class="tech-cards-list__col">
+										<div class="card" itemscope itemtype="http://schema.org/ImageObject">
+											<a href="/products/<%= section.code %>/" class="card__inner">
+												<div class="card__img">
+													<img
+															class="image is-lazy isItemProp"
+															src="<%= section.image %>"
+															data-src="<%= section.image %>"
+															itemprop="contentUrl"
+															alt="<%= section.name %>"
+													/>
+												</div>
+												<div class="card__info">
+													<div class="card__info-wrap">
+														<div class="card__title h5" data-animate-lines itemprop="name"><%= section.name %></div>
+													</div>
+												</div>
+											</a>
 										</div>
 									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/products/tractors/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/11atdx35tjyp1ptw5ydp822yyvr9mtmp.webp"
-											data-src="/images/11atdx35tjyp1ptw5ydp822yyvr9mtmp.webp"
-											itemprop="contentUrl"
-											alt="Тракторы"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Тракторы</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/products/forage-harvesters/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/cms1zt96j31m1ufc7z872z4urpo12kjo.jpg"
-											data-src="/images/cms1zt96j31m1ufc7z872z4urpo12kjo.jpg"
-											itemprop="contentUrl"
-											alt="Кормоуборочные комбайны"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Кормоуборочные комбайны</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/products/self-propelled-mowers/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/tjyzppk77q9sbx0dtfz1ffrw87xv1koh.jpg"
-											data-src="/images/tjyzppk77q9sbx0dtfz1ffrw87xv1koh.jpg"
-											itemprop="contentUrl"
-											alt="Самоходные косилки"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Самоходные косилки</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/products/forage-equipment/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/ir7mx27hb6hd5b3n59rfyel9itqjf0wx.jpg"
-											data-src="/images/ir7mx27hb6hd5b3n59rfyel9itqjf0wx.jpg"
-											itemprop="contentUrl"
-											alt="Кормозаготовительная техника"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Кормозаготовительная техника</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/products/posevnaya-tekhnika/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/82zs1tdnvu6dhnp44vo04u1ljtu0bwjn.jpg"
-											data-src="/images/82zs1tdnvu6dhnp44vo04u1ljtu0bwjn.jpg"
-											itemprop="contentUrl"
-											alt="Посевная техника"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Посевная техника</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/products/tillage-machinery/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/8cy2pbrdsbtdwv8hcrgcnfop31pz5n5f.jpg"
-											data-src="/images/8cy2pbrdsbtdwv8hcrgcnfop31pz5n5f.jpg"
-											itemprop="contentUrl"
-											alt="Почвообрабатывающая техника"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Почвообрабатывающая техника</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/products/sprayers/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/p5yekte31t8caai8romuhxly2g6wlums.jpg"
-											data-src="/images/p5yekte31t8caai8romuhxly2g6wlums.jpg"
-											itemprop="contentUrl"
-											alt="Опрыскиватели"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Опрыскиватели</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/products/fertilization/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/sc2jlq4zi88c055awfrhqjwjb3r4tkox.jpg"
-											data-src="/images/sc2jlq4zi88c055awfrhqjwjb3r4tkox.jpg"
-											itemprop="contentUrl"
-											alt="Внесение удобрений"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Внесение удобрений</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/products/grain-processing-equipment/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/1eh76vyjds9rreujragxnpxbco0vl0s6.jpg"
-											data-src="/images/1eh76vyjds9rreujragxnpxbco0vl0s6.jpg"
-											itemprop="contentUrl"
-											alt="Зерноперерабатывающая техника"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Зерноперерабатывающая техника</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="tech-cards-list__col">
-							<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="/products/road-utility-equipment/" class="card__inner">
-									<div class="card__img">
-										<img
-											class="image is-lazy isItemProp"
-											src="/images/xzr05qj2o1c6qjq9n92ojiibnwx4sla2.jpg"
-											data-src="/images/xzr05qj2o1c6qjq9n92ojiibnwx4sla2.jpg"
-											itemprop="contentUrl"
-											alt="Дорожно-коммунальная техника"
-										/>
-									</div>
-
-									<div class="card__info">
-										<div class="card__info-wrap">
-											<div class="card__title h5" data-animate-lines itemprop="name">Дорожно-коммунальная техника</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
+								<% } %>
+							<% }); %>
+						<% } %>
 					</div>
 				</div>
 			</div>
@@ -1695,17 +1494,15 @@
 			<div class="slider-tech__head" data-animate>
 				<div class="slider-tech__title h2">Возможно, вас заинтересует</div>
 			</div>
-
 			<div class="slider-tech__content">
 				<div class="slider-tech__swiper-container swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<div class="slider-tech__card" id="bx_3218110189_36" data-animate data-animate-delay="1">
-								<a href="/electronic-systems/" class="card-link">
+								<a href="/finance/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Точное земледелие</div>
-
+											<div class="card-link__text h5">Программы финансирования</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -1718,11 +1515,10 @@
 								</a>
 							</div>
 							<div class="slider-tech__card" id="bx_3218110189_35" data-animate data-animate-delay="2">
-								<a href="/spare-parts/parts-order/" class="card-link">
+								<a href="/electronic-systems/agrotronik-i-agronomicheskie-servisy/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Заказ запчастей</div>
-
+											<div class="card-link__text h5">Агротроник</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -1737,11 +1533,10 @@
 						</div>
 						<div class="swiper-slide">
 							<div class="slider-tech__card" id="bx_3218110189_34" data-animate data-animate-delay="1">
-								<a href="/agrotronic/" class="card-link">
+								<a href="/services/request/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Агротроник</div>
-
+											<div class="card-link__text h5">Заявка на сервис</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -1754,11 +1549,10 @@
 								</a>
 							</div>
 							<div class="slider-tech__card" id="bx_3218110189_33" data-animate data-animate-delay="2">
-								<a href="/financing/lending/" class="card-link">
+								<a href="/electronic-systems/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Программы финансирования</div>
-
+											<div class="card-link__text h5">Точное земледелие</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
