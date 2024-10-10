@@ -1398,6 +1398,132 @@ DON 680M многофункционален. Он может эффективн�
             },
         }
     },
+    "agrotronik-i-agronomicheskie-servisy": {
+        title: ``,
+        description: ``,
+        fullDescription: ``,
+        descriptionFooter: {
+            description_1: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_2: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_footer: {
+                title: ``,
+                description: ``
+            },
+        }
+    },
+    "sistemy-avtoupravleniya-mashin": {
+        title: ``,
+        description: ``,
+        fullDescription: ``,
+        descriptionFooter: {
+            description_1: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_2: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_footer: {
+                title: ``,
+                description: ``
+            },
+        }
+    },
+    "povysheniya-effektivnosti-kormouborochnykh-kombaynov": {
+        title: ``,
+        description: ``,
+        fullDescription: ``,
+        descriptionFooter: {
+            description_1: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_2: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_footer: {
+                title: ``,
+                description: ``
+            },
+        }
+    },
+    "sistemy-identifikatsii-i-kontrolya": {
+        title: ``,
+        description: ``,
+        fullDescription: ``,
+        descriptionFooter: {
+            description_1: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_2: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_footer: {
+                title: ``,
+                description: ``
+            },
+        }
+    },
+    "sistemy-povysheniya-effektivnosti-traktorov": {
+        title: ``,
+        description: ``,
+        fullDescription: ``,
+        descriptionFooter: {
+            description_1: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_2: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_footer: {
+                title: ``,
+                description: ``
+            },
+        }
+    },
+    "sistemy-povysheniya-effektivnosti-zernouborochnykh-kombaynov": {
+        title: ``,
+        description: ``,
+        fullDescription: ``,
+        descriptionFooter: {
+            description_1: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_2: {
+                title: ``,
+                description: ``,
+                fullDescription: ``
+            },
+            description_footer: {
+                title: ``,
+                description: ``
+            },
+        }
+    },
 };
 
 module.exports = sectionsData;

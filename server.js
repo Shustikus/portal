@@ -199,41 +199,49 @@ app.get('/terms-of-use', (req, res) => {
     });
 });
 
-// Динамическая страница для любого раздела продуктов
-app.get('/products/:sectionCode', (req, res) => {
-    const sectionCode = req.params.sectionCode;  // Получаем динамическую часть URL
+// Динамическая страница для любого раздела продуктов или Точного земледелия
+app.get(['/:category(products|electronic-systems)/:sectionCode'], (req, res) => {
+    const {category, sectionCode} = req.params; // Получаем категорию и код секции из URL
 
-    // Проверяем, что feedData доступен
-    if (req.feedData && req.feedData.catalog && req.feedData.catalog.sections) {
-        // Найдем раздел с таким кодом в feedData
-        const section = Object.values(req.feedData.catalog.sections).find(s => s.code === sectionCode);
+    // Определяем, какой раздел данных использовать
+    const sectionDataPath = category === 'products' ? req.feedData?.catalog?.sections : req.feedData?.['electronic-systems']?.sections;
+    const section = sectionDataPath ? Object.values(sectionDataPath).find(s => s.code === sectionCode) : null;
 
-        if (section) {
-            // Используем данные из sectionsData.js
-            const sectionData = sectionsData[sectionCode];
+    // Если раздел найден
+    if (section) {
+        // Используем данные из sectionsData.js
+        const sectionData = sectionsData[sectionCode];
 
-            // Рендерим страницу с заголовком, описанием и таблицей
-            res.render('combine', {
-                section: section,  // Передаем найденный раздел на страницу
-                sectionCode: sectionCode, // код секции
-                sectionTitle: sectionData.title,  // Заголовок
-                sectionDescription: sectionData.description,  // Описание
-                sectionFullDescription: sectionData.fullDescription,  // Полное описание
-                sectionDescriptionFooter: sectionData.descriptionFooter, // Еще одно описание
-                feedData: req.feedData,
-                rootPath: '/',
-                apiUrl: req.apiUrl
-            });
-        } else {
-            // Если раздел не найден, отправляем 404
-            res.status(404).send('Страница не найдена');
-        }
+        // Определяем, какую страницу рендерить
+        const templateName = category === 'products' ? 'combine' : 'zemledelie';
+
+        // Рендерим страницу
+        res.render(templateName, {
+            section: section,
+            sectionCode: sectionCode,
+            sectionTitle: sectionData?.title || '',
+            sectionDescription: sectionData?.description || '',
+            sectionFullDescription: sectionData?.fullDescription || '',
+            sectionDescriptionFooter: sectionData?.descriptionFooter || '',
+            feedData: req.feedData,
+            rootPath: '/',
+            apiUrl: req.apiUrl
+        });
     } else {
-        // Если feedData не доступен, отправляем 500 или другую ошибку
-        res.status(500).send('Данные недоступны');
+        // Если раздел не найден, отправляем 404
+        res.status(404).send('Страница не найдена');
     }
 });
 
+
+// Страница "Агротроник"
+app.get('/electronic-systems/agrotronik-i-agronomicheskie-servisy/agrotronik', (req, res) => {
+    res.render('agrotronik', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
 // Прокси-маршрут для поиска по запросу
 app.get('/api/search', async (req, res) => {
     const query = req.query.q;
