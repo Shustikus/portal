@@ -265,7 +265,7 @@
 </head>
 <body class="">
 <div class="progress-load"></div>
-<div class="preloader">
+<div class="preloader bg-gray">
 	<div class="header-overlay"></div>
 	<header class="header js-header" data-scroll-lock-fill-gap="">
 		<script>
@@ -467,74 +467,74 @@
 				const sectionIds = ["15", "105", "164", "166", "171", "221", "173", "168", "174", "175", "176"];
 				%>
 				<% sectionIds.forEach((sectionId, index) => { %>
-					<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 2 %>"
-						data-animate="">
-						<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-							<%
-								const section = feedData.catalog.sections[sectionId];
-								const sectionCode = section ? section.code : '';
-							%>
-							<% if (feedData.catalog.elements) { %>
-								<%
-									const elements = Object.values(feedData.catalog.elements).filter(element => element.section_id === sectionId);
-								%>
-								<% if (elements.length > 0) { %>
-									<% elements.forEach((element) => { %>
-										<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-											<a href="/products/<%= sectionCode %>/<%= element.code %>/"
-											   class="header-nav__submenu-link header-nav__submenu-link--level-2">
-												<%= element.name %>
-											</a>
-										</li>
-									<% }); %>
-								<% } %>
-							<% } %>
-						<% } %>
-					</ul>
+				<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 2 %>"
+					data-animate="">
+					<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
+					<%
+					const section = feedData.catalog.sections[sectionId];
+					const sectionCode = section ? section.code : '';
+					%>
+					<% if (feedData.catalog.elements) { %>
+					<%
+					const elements = Object.values(feedData.catalog.elements).filter(element => element.section_id === sectionId);
+					%>
+					<% if (elements.length > 0) { %>
+					<% elements.forEach((element) => { %>
+					<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
+						<a href="/products/<%= sectionCode %>/<%= element.code %>/"
+						   class="header-nav__submenu-link header-nav__submenu-link--level-2">
+							<%= element.name %>
+						</a>
+					</li>
+					<% }); %>
+					<% } %>
+					<% } %>
+					<% } %>
+				</ul>
 				<% }); %>
 				<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="13">
 					<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-						<% let counter = 14; %>
-						<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
-							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="/electronic-systems/<%= section.code %>/"
-								   class="header-nav__submenu-link header-nav__submenu-link--level-1"
-								   data-submenu-id="<%= counter %>">
-									<%= section.name %>
-								</a>
-							</li>
-							<% counter++; %>
-						<% }); %>
+					<% let counter = 14; %>
+					<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
+					<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
+						<a href="/electronic-systems/<%= section.code %>/"
+						   class="header-nav__submenu-link header-nav__submenu-link--level-1"
+						   data-submenu-id="<%= counter %>">
+							<%= section.name %>
+						</a>
+					</li>
+					<% counter++; %>
+					<% }); %>
 					<% } %>
 				</ul>
 				<%
 				const secondSectionIds = ["185", "186", "187", "188", "740", "741"];
 				%>
 				<% secondSectionIds.forEach((sectionId, index) => { %>
-					<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 14 %>"
-						data-animate="">
-						<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-							<%
-								const section = feedData['electronic-systems'].sections[sectionId];
-								const sectionCode = section ? section.code : '';
-							%>
-							<% if (feedData['electronic-systems'].elements) { %>
-								<%
-									const elements = Object.values(feedData['electronic-systems'].elements).filter(element => element.section_id === sectionId);
-								%>
-								<% if (elements.length > 0) { %>
-									<% elements.forEach((element) => { %>
-										<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-											<a href="/electronic-systems/<%= sectionCode %>/<%= element.code %>/"
-											   class="header-nav__submenu-link header-nav__submenu-link--level-2">
-												<%= element.name %>
-											</a>
-										</li>
-									<% }); %>
-								<% } %>
-							<% } %>
-						<% } %>
-					</ul>
+				<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 14 %>"
+					data-animate="">
+					<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
+					<%
+					const section = feedData['electronic-systems'].sections[sectionId];
+					const sectionCode = section ? section.code : '';
+					%>
+					<% if (feedData['electronic-systems'].elements) { %>
+					<%
+					const elements = Object.values(feedData['electronic-systems'].elements).filter(element => element.section_id === sectionId);
+					%>
+					<% if (elements.length > 0) { %>
+					<% elements.forEach((element) => { %>
+					<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
+						<a href="/electronic-systems/<%= sectionCode %>/<%= element.code %>/"
+						   class="header-nav__submenu-link header-nav__submenu-link--level-2">
+							<%= element.name %>
+						</a>
+					</li>
+					<% }); %>
+					<% } %>
+					<% } %>
+					<% } %>
+				</ul>
 				<% }); %>
 				<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="20">
 					<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
@@ -1209,16 +1209,16 @@
 										<a href="/products/" class="menu__link menu__link--heading h4">Техника</a>
 									</li>
 									<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-										<% Object.values(feedData.catalog.sections).forEach((section) => { %>
-											<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
-												<li class="menu__item menu__item--level-1">
-													<a href="/products/<%= section.code %>/"
-													   class="menu__link menu__link--level-1 text-default">
-														<%= section.name %>
-													</a>
-												</li>
-											<% } %>
-										<% }); %>
+									<% Object.values(feedData.catalog.sections).forEach((section) => { %>
+									<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
+									<li class="menu__item menu__item--level-1">
+										<a href="/products/<%= section.code %>/"
+										   class="menu__link menu__link--level-1 text-default">
+											<%= section.name %>
+										</a>
+									</li>
+									<% } %>
+									<% }); %>
 									<% } %>
 								</ul>
 							</li>
@@ -1234,14 +1234,14 @@
 											земледелие</a>
 									</li>
 									<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-										<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
-											<li class="menu__item menu__item--level-1">
-												<a href="/electronic-systems/<%= section.code %>/"
-												   class="menu__link menu__link--level-1 text-default">
-													<%= section.name %>
-												</a>
-											</li>
-										<% }); %>
+									<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
+									<li class="menu__item menu__item--level-1">
+										<a href="/electronic-systems/<%= section.code %>/"
+										   class="menu__link menu__link--level-1 text-default">
+											<%= section.name %>
+										</a>
+									</li>
+									<% }); %>
 									<% } %>
 								</ul>
 							</li>
@@ -1429,312 +1429,646 @@
 			</div>
 		</div>
 	</div>
-	<div class="pt-md-160 pt-96 wrapper wrap-pl-1 wrap-pr-1 pb-lg-160 pb-96 bg-gray">
-		<nav class="breadcrumbs" aria-label="breadcrumb" data-animate>
-			<ul class="breadcrumbs__list text-default"
-				itemscope itemtype="https://schema.org/BreadcrumbList">
-				<li class="breadcrumbs__crumb" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-					<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/" title="Главная" itemprop="item">
-						<span itemprop="name">Главная</span>
-					</a>
-					<meta itemprop="position" content="1"/>
-				</li>
-				<li class="breadcrumbs__crumb">
-					<div class="breadcrumbs__text text-lead">
-						<span itemprop="name">Точное земледелие</span>
-					</div>
-				</li>
-			</ul>
-		</nav>
-		<h1 class="h2">Точное земледелие</h1>
+	<div class="hero pb-24 pb-lg-40" data-breadcrumb-block="">
+		<div class="hero__inner wrapper wrap-pl-1 wrap-pr-1">
+			<nav class="breadcrumbs" aria-label="breadcrumb" data-animate="">
+				<ul class="breadcrumbs__list text-default" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+					<li class="breadcrumbs__crumb" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+						<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/" title="Главная" itemprop="item">
+							<span itemprop="name">Главная</span>
+						</a>
+						<meta itemprop="position" content="1">
+					</li>
+					<li class="breadcrumbs__crumb" id="bx_breadcrumb_1" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+						<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/products/" title="Сельхозтехника" itemprop="item">
+							<span itemprop="name">Сельхозтехника</span>
+						</a>
+						<meta itemprop="position" content="2">
+					</li>
+					<li class="breadcrumbs__crumb">
+						<div class="breadcrumbs__text text-lead">
+							<span itemprop="name"><%= section.name %></span>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<h1 class="hero__title h2"><%= section.name %></h1>
+			<div class="finance">
+				<div class="finance__desc">
+				</div>
+			</div>
+		</div>
 	</div>
-<div class="mb-lg-128 mb-md-96 mb-80 wrapper wrap-pl-1 wrap-pr-1">
-	<div class="mt-lg-96-negative mt-56-negative">
-		<div class="tech-cards-list">
-			<div class="tech-cards-list__wrap">
-				<div class="tech-cards-list__content">
-					<div class="tech-cards-list__row">
-						<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-							<%
-								// Преобразуем объект секций в массив и сортируем его по полю "sort"
-								const sortedSections = Object.values(feedData['electronic-systems'].sections).sort((a, b) => a.sort - b.sort);
-							%>
-							<% sortedSections.forEach((section) => { %>
-								<div class="tech-cards-list__col">
-									<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-										<a href="/electronic-systems/<%= section.code %>/" class="card__inner">
-											<div class="card__img">
-												<img
-														class="image is-lazy isItemProp"
-														src="<%= section.image %>"
-														data-src="<%= section.image %>"
-														itemprop="contentUrl"
-														alt="<%= section.name %>"
-												/>
-											</div>
-											<div class="card__info">
-												<div class="card__info-wrap">
-													<div class="card__title h5" data-animate-lines itemprop="name"><%= section.name %></div>
+<div class="wrapper wrap-pl-1 wrap-pr-1">
+	<div class="product-cards-list">
+		<div class="product-cards-list__wrap">
+			<div class="product-cards-list__content">
+				<div class="tabs " data-hash-tabs>
+					<div class="tabs__wrap">
+						<div class="tabs__head">
+							<div class="tabs-list">
+								<div class="tabs-list__wrap js-tabs-list">
+									<button class="tabs-list__fade tabs-list__fade--left js-tab-scroll" data-direction="left"></button>
+									<button class="tabs-list__fade tabs-list__fade--right js-tab-scroll" data-direction="right"></button>
+
+									<%
+									// Получаем все элементы из feedData
+									const sections = feedData.catalog.sections;
+
+									// Находим выбранную секцию по коду
+									const selectedSection = Object.values(sections).find(section => section.code === sectionCode);
+
+									// Получаем id выбранной секции
+									const targetSectionId = selectedSection ? selectedSection.id : '';
+
+									// Получаем дочерние секции
+									const childSections = Object.values(sections).filter(section => section.parent_id === targetSectionId);
+									%>
+
+									<% if (childSections.length > 0) { %>
+										<button type="button" class="tabs-list__el active" data-tab data-hash="<%= childSections[0].code %>">
+											<%= childSections[0].name %> <!-- Используем имя первой дочерней секции -->
+										</button>
+									<% } %>
+
+									<% if (childSections.length > 1) { %>
+										<button type="button" class="tabs-list__el" data-tab data-hash="<%= childSections[1].code %>">
+											<%= childSections[1].name %> <!-- Используем имя второй дочерней секции -->
+										</button>
+									<% } %>
+									<% if (childSections.length > 2) { %>
+										<button type="button" class="tabs-list__el" data-tab data-hash="<%= childSections[2].code %>">
+											<%= childSections[2].name %> <!-- Используем имя третьий дочерней секции -->
+										</button>
+									<% } %>
+									<a href="https://rostselmash.com/configurator/" target="_blank" class="btn btn--primary btn--hover-gray">
+										<span class="btn__text">Конфигуратор</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="tabs-content-wrap">
+							<div class="tabs-content">
+								<% if (sectionTitle || sectionDescription || sectionFullDescription) { %>
+									<div class="wrapper b-reviews">
+										<div class="block-slider wrapper">
+											<div class="block-slider__slide-content-wrap">
+												<div class="product-description__title h2 animate">
+													<h4 class="block-slider__slide-content-title"><%= sectionTitle %></h4>
+												</div>
+												<div class="block-slider__slide-content-text animate" data-animate="">
+													<h5 class="text user-text">
+														<p><%= sectionDescription %></p>
+													</h5>
+													<div class="full-text"><%- sectionFullDescription %></div>
+													<div style="display: flex; margin-top: 1.5rem; align-items: center">
+														<a href="https://rostselmash.com/configurator/"
+														   style="flex-grow: 0; flex-shrink: 1; width: auto; margin-right: 30px;"
+														   class="configurator-btn-mobile btn btn--small btn--primary btn--hover-gray">
+															<span class="btn__text ">Конфигуратор</span>
+														</a>
+														<div class="block-slider__slide-content-link" style="flex-grow: 1; margin-top: 0;">
+															<a href="#modal--case-3340"
+															   class="text-link reviews_detail text-default text-link--underline user-text"
+															   data-modal="" data-effect="mfp-move-from-left">Читать
+																полностью</a>
+														</div>
+													</div>
 												</div>
 											</div>
-										</a>
+										</div>
 									</div>
+								<% } %>
+								<style>
+									.wrapper .b-reviews {
+										padding-bottom: 50px;
+									}
+
+									.tabs-content {
+										padding-top: 5rem;
+										padding-bottom: 4rem;
+									}
+
+									.tabs__head {
+										margin-bottom: 0 !important;
+									}
+
+									.block-slider__slide-content-wrap {
+										width: 100%;
+										min-height: unset;
+										padding-top: 0;
+									}
+
+									.product-description__head .product-description__title {
+										max-width: 31.25rem;
+									}
+
+									.product-description__title {
+										flex: 1;
+										max-width: 100%;
+										width: 100%;
+									}
+
+									.block-slider__slide-content-text {
+										max-width: 50%;
+										width: 100%;
+									}
+
+									.b-reviews h4 {
+										max-width: 31.25rem;
+										width: 100%;
+										font-size: 52.5px;
+										line-height: 70px;
+										color: #101010;
+									}
+
+									.b-reviews h5 {
+										font-weight: normal;
+										/*font-size: 21px;
+							line-height: 31px;*/
+										color: #101010;
+									}
+
+									.block-slider__slide-content-wrap {
+										display: -webkit-box;
+										display: -ms-flexbox;
+										display: flex;
+										justify-content: space-between;
+									}
+
+									.block-slider__slide-content-text .text p:not(:last-child) {
+										margin-bottom: 20px;
+									}
+
+									@media(max-width: 1550px) {
+
+										.product-description__title,
+										.b-reviews h4 {
+											font-size: 36px;
+											line-height: 45px;
+										}
+									}
+
+									@media(max-width: 1300px) {
+
+										.product-description__title,
+										.b-reviews h4 {
+											font-size: 28px;
+											line-height: 32px;
+										}
+									}
+
+									@media(max-width: 700px) {
+										.tabs-content {
+											padding-top: 2.5rem;
+											padding-bottom: 2.5rem;
+										}
+
+										.block-slider__slide-content-wrap {
+											flex-direction: column;
+										}
+
+										.block-slider__slide-content-text {
+											max-width: 100%;
+											margin-top: 1rem;
+										}
+									}
+
+									@media(max-width: 400px) {
+
+										.product-description__title,
+										.b-reviews h4 {
+											font-size: 20px;
+											line-height: 24px;
+										}
+									}
+								</style>
+									<div class="tabs-content__el active" data-content data-hash="<%= childSections[0].code %>" data-animate-repeat>
+										<div class="product-cards-list__row">
+											<%
+											// Проверяем наличие отфильтрованных элементов
+											const sectionId = [targetSectionId, ...childSections.map(section => section.id)];
+											const filteredElements = Object.values(feedData.catalog.elements).filter(product =>
+													sectionId.includes(product.section_id)
+											);
+
+											if (filteredElements.length > 0) {
+												// Если есть дочерние секции
+											if (childSections.length > 0) {
+												// Выводим первую дочернюю секцию
+												const firstChildSectionId = childSections[0].id;
+												const firstChildElements = filteredElements.filter(product => product.section_id === firstChildSectionId);
+											firstChildElements.forEach(product => { %>
+												<div class="product-cards-list__col">
+													<div class="card" itemscope itemtype="http://schema.org/ImageObject">
+														<a href="/products/<%= childSections[0].code %>/<%= product.code %>/" class="card__inner">
+															<% if (product.record_20_mark) { %>
+																<span class="card__tip text-default">20 лет лидерства</span>
+															<% } %> <!-- Добавляем span, если record_20_mark === true -->
+															<div class="card__img">
+																<img class="image is-lazy isItemProp"
+																	 src="<%= product.image %>"
+																	 data-src="<%= product.image %>"
+																	 itemprop="contentUrl" alt="<%= product.name %>">
+															</div>
+															<div class="card__info">
+																<div class="card__info-wrap">
+																	<div class="card__title h5" data-animate-lines itemprop="name">
+																		<%= product.name %>
+																	</div>
+																</div>
+															</div>
+														</a>
+													</div>
+												</div>
+											<% });
+											}
+											} %>
+										</div>
+									</div>
+
+									<%
+									if (childSections.length > 1) {
+										// Если есть больше одной дочерней секции, выводим вторую дочернюю секцию
+										const secondChildSectionId = childSections[1].id;
+										const secondChildElements = filteredElements.filter(product => product.section_id === secondChildSectionId);
+									%>
+									<div class="tabs-content__el" data-content data-hash="<%= childSections[1].code %>" data-animate-repeat>
+										<div class="product-cards-list__row">
+											<%
+											secondChildElements.forEach(product => { %>
+												<div class="product-cards-list__col">
+													<div class="card" itemscope itemtype="http://schema.org/ImageObject">
+														<a href="/products/<%= childSections[1].code %>/<%= product.code %>/" class="card__inner">
+															<% if (product.record_20_mark) { %>
+																<span class="card__tip text-default">20 лет лидерства</span>
+															<% } %> <!-- Добавляем span, если record_20_mark === true -->
+															<div class="card__img">
+																<img class="image is-lazy isItemProp"
+																	 src="<%= product.image %>"
+																	 data-src="<%= product.image %>"
+																	 itemprop="contentUrl" alt="<%= product.name %>">
+															</div>
+															<div class="card__info">
+																<div class="card__info-wrap">
+																	<div class="card__title h5" data-animate-lines itemprop="name">
+																		<%= product.name %>
+																	</div>
+																</div>
+															</div>
+														</a>
+													</div>
+												</div>
+											<% }); %>
+										</div>
+									</div>
+									<%
+									}
+									%>
+									<%
+									if (childSections.length > 2) {
+										// Если есть больше одной дочерней секции, выводим третью дочернюю секцию
+										const thirdChildSectionId = childSections[2].id;
+										const thirdChildElements = filteredElements.filter(product => product.section_id === thirdChildSectionId);
+									%>
+									<div class="tabs-content__el" data-content data-hash="<%= childSections[2].code %>" data-animate-repeat>
+										<div class="product-cards-list__row">
+											<%
+                                            thirdChildElements.forEach(product => { %>
+												<div class="product-cards-list__col">
+													<div class="card" itemscope itemtype="http://schema.org/ImageObject">
+														<a href="/products/<%= childSections[2].code %>/<%= product.code %>/" class="card__inner">
+															<% if (product.record_20_mark) { %>
+																<span class="card__tip text-default">20 лет лидерства</span>
+															<% } %> <!-- Добавляем span, если record_20_mark === true -->
+															<div class="card__img">
+																<img class="image is-lazy isItemProp"
+																	 src="<%= product.image %>"
+																	 data-src="<%= product.image %>"
+																	 itemprop="contentUrl" alt="<%= product.name %>">
+															</div>
+															<div class="card__info">
+																<div class="card__info-wrap">
+																	<div class="card__title h5" data-animate-lines itemprop="name">
+																		<%= product.name %>
+																	</div>
+																</div>
+															</div>
+														</a>
+													</div>
+												</div>
+											<% }); %>
+										</div>
+									</div>
+									<%
+									}
+									%>
+								<div class="tabs-content__el" data-content data-hash="/configurator/"
+									data-animate-repeat>
 								</div>
-							<% }); %>
-						<% } %>
+
+								<style>
+									.wrapper .b-reviews {
+										padding-top: 50px;
+									}
+
+									.tabs-content {
+										padding-top: 5rem;
+										padding-bottom: 4rem;
+									}
+
+									.tabs__head {
+										margin-bottom: 2.7rem;
+									}
+
+									.block-slider__slide-content-wrap {
+										width: 100%;
+										min-height: unset;
+										padding-top: 0;
+									}
+
+									.product-description__head .product-description__title {
+										max-width: 31.25rem;
+									}
+
+									.product-description__title {
+										flex: 1;
+										max-width: 100%;
+										width: 100%;
+									}
+
+									.block-slider__slide-content-text {
+										max-width: 50%;
+										width: 100%;
+									}
+
+									.b-reviews h4 {
+										max-width: 31.25rem;
+										width: 100%;
+										font-size: 52.5px;
+										line-height: 70px;
+										color: #101010;
+									}
+
+									.b-reviews h5 {
+										font-weight: normal;
+										/*font-size: 21px;
+							line-height: 31px;*/
+										color: #101010;
+									}
+
+									.block-slider__slide-content-wrap {
+										display: -webkit-box;
+										display: -ms-flexbox;
+										display: flex;
+										justify-content: space-between;
+									}
+
+									.block-slider__slide-content-text .text p:not(:last-child) {
+										margin-bottom: 20px;
+									}
+
+									@media(max-width: 1550px) {
+
+										.product-description__title,
+										.b-reviews h4 {
+											font-size: 36px;
+											line-height: 45px;
+										}
+									}
+
+									@media(max-width: 1300px) {
+
+										.product-description__title,
+										.b-reviews h4 {
+											font-size: 28px;
+											line-height: 32px;
+										}
+									}
+
+									@media(max-width: 700px) {
+										.tabs-content {
+											padding-top: 2.5rem;
+											padding-bottom: 2.5rem;
+										}
+
+										.block-slider__slide-content-wrap {
+											flex-direction: column;
+										}
+
+										.block-slider__slide-content-text {
+											max-width: 100%;
+											margin-top: 1rem;
+										}
+									}
+
+									@media(max-width: 400px) {
+
+										.product-description__title,
+										.b-reviews h4 {
+											font-size: 20px;
+											line-height: 24px;
+										}
+									}
+								</style>
+									<% if (sectionDescriptionFooter.description_1 &&
+											sectionDescriptionFooter.description_1.title &&
+											sectionDescriptionFooter.description_1.description &&
+											sectionDescriptionFooter.description_1.fullDescription) { %>
+										<div class="wrapper b-reviews">
+											<div class="block-slider wrapper">
+												<div class="block-slider__slide-content-wrap">
+													<div class="product-description__title h2 animate">
+														<h4 class="block-slider__slide-content-title"><%= sectionDescriptionFooter.description_1.title %></h4>
+													</div>
+													<div class="block-slider__slide-content-text animate" data-animate="">
+														<h5 class="text user-text">
+															<p><%= sectionDescriptionFooter.description_1.description %></p>
+														</h5>
+														<div class="full-text"><%- sectionDescriptionFooter.description_1.fullDescription %></div>
+														<div style="display: flex; margin-top: 1.5rem; align-items: center">
+															<div class="block-slider__slide-content-link" style="flex-grow: 1; margin-top: 0;">
+																<a href="#modal--case-3340"
+																   class="text-link reviews_detail text-default text-link--underline user-text"
+																   data-modal="" data-effect="mfp-move-from-left">Читать
+																	полностью</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									<% } %>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- <div class="wrapper wrap-pl-1 wrap-pr-1 mt-negative--top-8">
-	<div class="tabs tabs--small" data-hash-tabs>
-		<div class="tabs__wrap">
-			<div class="tabs__head">
-				<div class="tabs-list pt-0">
-					<div class="tabs-list__wrap js-tabs-list">
-						<button class="tabs-list__fade tabs-list__fade--left js-tab-scroll" data-direction="left"></button>
-						<button class="tabs-list__fade tabs-list__fade--right js-tab-scroll" data-direction="right"></button>
-						<button type="button" class="tabs-list__el active" data-tab data-hash="tb-n-1">Что такое точное земледелие</button>
-						<button type="button" class="tabs-list__el" data-tab data-hash="tb-n-2">Преимущества</button>
-						<button type="button" class="tabs-list__el" data-tab data-hash="tb-n-3">Принцип работы</button>
-						<button type="button" class="tabs-list__el" data-tab data-hash="tb-n-4">Системы</button>
-					</div>
-				</div>
-			</div>
 
-			<div class="tabs-content-wrap">
-				<div class="tabs-content">
-					<div class="tabs-content__el user-text active" data-content data-hash="tb-n-1" data-animate-repeat>
-						<h3>
-							Системы точного земледелия
-						</h3>
-						<p>Концепция, технологии и системы точного земледелия: что это, в чем суть и выгода; с чего начать и что предлагает Ростсельмаш.</p>
-						<p>
-							Точное земледелие сейчас — это концепция рационального использования всех ресурсов сельскохозяйственного предприятия и оптимизации всех процессов. То есть качественно новый подход к управлению всем
-							хозяйством.
-						</p>
-						<p>
-							Методология точного земледелия сейчас включает множество технологий. Но она начала формирование с приемов дифференцированного внесения удобрений. В этом значении понятие определено в ГОСТ Р
-							56084-2014.
-						</p>
-						<p>
-							Дело в том, что почвы даже в границе одного поля неоднородны, и можно выделить до нескольких зон — элементарных (учетных) участков — с отличающимися показателями. Сами зоны выделяются на основе общей
-							характеристики. Например:
-						</p>
-						<ul>
-							<li>
-								урожайности
-							</li>
-							<li>
-								ахротехнических показателей
-							</li>
-							<li>степени инсоляции</li>
-							<li>влажности и т. д.</li>
-						</ul>
-						<p>
-							Потребности одной культуры в этих зонах могут отличаться. Чтобы обеспечить одинаковое питание растениям в разных участках поля, нужно дифференцировать вносимые дозы удобрений, микроэлементов, воды,
-							СЗР и (или) семенного материала. Эти приемы позволяют выровнять урожайность и повысить продуктивность культуры.
-						</p>
-						<p>
-							Конечно, применять различные агротехнологические схемы внутри полей старались и до возникновения самого понятия точного (координатного) земледелия. Но уровень технологий был недостаточно высок, чтобы
-							выделить элементарные участки. Не было и техники, которая обеспечивала бы качество работ.
-						</p>
-						<p>То же можно сказать и о попытках повышать качество контроля, учета и планирования работ. Они тормозились малой доступностью ЭВМ и ПО.</p>
-						<p>Современный уровень развития глобальных ГИС, технологий ГНСС ГЛОНАСС/GPS и наземных компонентов, информационных систем и техники кардинально изменил ситуацию.</p>
-					</div>
-					<div class="tabs-content__el user-text" data-content data-hash="tb-n-2" data-animate-repeat>
-						<h3>Преимущества перехода к точному земледелию</h3>
-						<p>Выгоды, которые получает сельхозпредприятие от внедрения новой концепции управления, можно рассмотреть в разрезе нескольких критериев оценки.</p>
-						<ol>
-							Повышение качества решений — от агротехнологических до управленческих — за счет их принятия на основании максимально полной и актуальной информации.
-						</ol>
-						<ol>
-							Повышение качества и упрощение контроля всех процессов за счет своевременного получения объективных данных.
-						</ol>
-						<ol>
-							Повышение выхода и (или) качества продукта за счет применения оптимальных для конкретных условий возделывания агротехнологий, использования семенного материала, удобрений, подкормок, СЗР и т. п. в
-							точно рассчитанном объеме на каждом конкретном элементарном участке поля.
-						</ol>
-						<ol>
-							Повышение производительности труда с одновременным снижением нагрузки на каждого сотрудника и (или) снижение затрат на производство за счет высокой степени автоматизации всех процессов, начиная от
-							полевых операций и заканчивая учетом и планированием.
-						</ol>
-						<ol>
-							Восстановление плодородия, повышение качества земель, снижение нагрузки на окружающую среду.
-						</ol>
-					</div>
-					<div class="tabs-content__el user-text" data-content data-hash="tb-n-3" data-animate-repeat>
-						<h3>Принципы работы систем точного земледелия</h3>
-						<p>
-							<b>Системы точного земледелия</b> — это аппаратная часть, программное обеспечение и цифровые сервисы, которые дают возможность реализовать новую концепцию на практике. Это система
-							навигационно-информационного обеспечения координатного земледелия (ГОСТ Р 56412-2015).
-						</p>
-						<p>
-							Точное (координатное) земледелие включает множество технологий. Но все они базируются на том, что любое решение принимается на основании полной, объективной и актуальной информации о каждом объекте —
-							участке поля, агромашине, транспорте, единице оборудования и т. д. При этом все данные об объекте собираются с привязкой к точным навигационным координатам.
-						</p>
-						<p>Все системы точного земледелия можно подразделить на несколько категорий:</p>
-						<ul>
-							<li>информационно-аналитические;</li>
-							<li>управления движением машин;</li>
-							<li>управления механизированным процессом и переменными параметрами операции;</li>
-							<li>мониторинга плодородия почв;</li>
-							<li>телеметрии.</li>
-						</ul>
-						<h3>Информационно-аналитические системы</h3>
-						<p>Задачи:</p>
-						<ul>
-							<li>сбор, обработка, анализ, объединение данных, полученных из разных источников;</li>
-							<li>визуализация данных в удобном для восприятия виде;</li>
-							<li>прогнозирование и моделирование процессов;</li>
-							<li>планирование работ, в том числе формирование т. н. аппликационных карт (карт дифференцированного внесения материалов), карт заданий и т. д.</li>
-						</ul>
-						<p>Таким образом, информационно-аналитическая система объединяет все подсистемы точного земледелия в единое целое. У Ростсельмаш эта задача возложена на платформу агроменеджмента РСМ Агротроник.</p>
-
-						<h3>Системы картографирования</h3>
-						<p>Задача: получить первичные данные о сельхозугодьях:</p>
-						<ul>
-							<li>конфигурация и размер полей,</li>
-							<li>рельеф,</li>
-							<li>урожайность,</li>
-							<li>влажность зерна,</li>
-							<li>агротехнические характеристики,</li>
-							<li>инсоляция,</li>
-							<li>севооборот</li>
-							<li>количество осадков и т. д.</li>
-						</ul>
-						<p>Все это — с привязкой к навигационным координатам.</p>
-						<p>Для сбора исходных данных используют один из методов:</p>
-						<ul>
-							<li>обработка аэрокосмических снимков (дистанционное зондирование земли) — самый дешевый и наименее точный способ;</li>
-							<li>
-								обмер, уточнение границ и конфигурации полей и элементарных участков в ходе работы агромашин, укомплектованных высокоточными ГНСС-приемниками (дистанционное сканирование земли), — наиболее точный
-								и корректный метод;
-							</li>
-							<li>уточнение данных электронных карт, полученных методом дистанционного зондирования, с помощью технологий дистанционного сканирования — комбинированная технология.</li>
-						</ul>
-						<p>
-							Картографирование — основа методологии точного земледелия. Именно эта технология позволяет выделять элементарные (учетные) участки поля. Как правило, первым шагом становится картирование урожайности и
-							влажности зерна. Далее к первичной карте привязывается постоянно пополняемая база данных, которая может содержать самые разные сведения.
-						</p>
-						<p>
-							Например, в ходе работы уборочной техники мы выделили элементарные участки с одинаковым признаком — урожайностью. Затем при работе почвообрабатывающей техники мы (опосредствованно, через изменение
-							загрузки двигателя трактора, расхода топлива) получаем дополнительные данные о твердости грунта в каждой точке. Впоследствии мы выполняем агротехническое обследование и привязываем пробы и результаты
-							к навигационным координатам.
-						</p>
-						<p>
-							Все полученные данные мы можем наложить на элементарные участки поля, создавая новые «слои». Так формируется массив данных, который обеспечивает нас информацией для выбора схемы обработки каждого
-							участка, подбора количества и видов удобрений, СЗР, извести, семенного материала и т. п., которые нужно в него внести.
-						</p>
-						<p>
-							И главное, мы можем формировать карты заданий для наших машин, и они будут безошибочно узнавать элементарные участки и работать по заданным схемам точно в их границах. В этой категории Ростсельмаш
-							предлагает систему <a href="https://rostselmash.com/electronic-systems/agrotronik-i-agronomicheskie-servisy/rsm-karta-urozhaynosti-zuk/">РСМ Карта урожайности</a> для зерноуборочных и кормоуборочных
-							комбайнов.
-						</p>
-
-						<h3>Системы телеметрии</h3>
-						<p>
-							Задача: получить объективные данные о параметрах работы узлов и агрегатов сельскохозяйственной техники и транспорта; их местонахождении и скорости движения; выполняемых технологических операциях и т.
-							д.
-						</p>
-						<p>Анализ собранных сведений позволяет:</p>
-						<ul>
-							<li>делать выводы о состоянии машин и наработке;</li>
-							<li>оптимизировать логистику;</li>
-							<li>усовершенствовать процесс пополнения запасов запчастей и расходных материалов и т. д.</li>
-						</ul>
-						<p>
-							Для этого, помимо платформы РСМ Агротроник, которая обладает широчайшим функционалом контроля агромашин, Ростсельмаш также предлагает системы
-							<a href="https://rostselmash.com/electronic-systems/agrotronik-i-agronomicheskie-servisy/rsm-uvedomleniya/">РСМ Уведомления</a> и РСМ Умная метка.
-						</p>
-
-						<h3>Системы управления движением агромашин</h3>
-						<p>Задачи: контроль и автоматизация управления траекторией движения сельскохозяйственной самоходной техники с использованием данных глобальных навигационных систем об их текущем положении.</p>
-						<p>
-							Информация о местоположении объекта, которую предоставляет навигационный сигнал ГНСС стандартной точности, доступна любому потребителю на бесплатной основе. Точность такого сигнала составляет около
-							2…5 м. Этого, конечно, недостаточно для «ведения» агромашины с минимизацией перекрытий и пропусков.
-						</p>
-						<p>
-							Для корректировки погрешности навигационных данных, как правило, используют кинематический режим определения координат в реальном времени (Real Time Kinematics, RTK). Суть заключается в следующем. В
-							удобном месте устанавливают контрольно-корректирующую станцию дифференциальной подсистемы ГНСС (иначе — базовую станцию), которая передает поправки ГНСС-положения на ГНСС-приемник агромашины на
-							радиочастоте или через GSM-модем. Используя такие системы, можно увеличить точность координат до 2,5 см.
-						</p>
-						<p>В отличие от большинства производителей систем параллельного вождения и автопилотировния, Ростсельмаш предоставляет своим пользователям RTK-сигнал бесплатно.</p>
-						<br />
-						<p>
-							В эту категорию входят системы параллельного вождения и системы автоматического вождения. На большинство агромашин Ростсельмаш можно установить электрические или гидравлические подруливающие
-							устройства для реализации функции параллельного вождения. Во многих моделях самоходных машин предусмотрена функция автоматического разворота, которая органично дополняет систему параллельного вождения
-							и значительно облегчает работу механизатора. Еще большую степень эффективности и комфорта предлагает система РСМ Агротроник Пилот 1.0 Электроруль, которая совмещает функционал
-						</p>
+	<% if (feedData.catalog.sections[targetSectionId].videos.length > 0) { %>
+		<div class="pb-2-fixed wrapper wrap-pl-1 wrap-pr-1 bg-white bg-wings">
+			<div class="video-block js-video-block" data-animate>
+				<div class="video-block__wrap">
+					<div class="video-block-video">
+						<div class="video-block-video__content js-swiper swiper-container">
+							<div class="swiper-wrapper">
+								<% feedData.catalog.sections[targetSectionId].videos.forEach(video => { %>
+									<div class="video-block-video__player loader--skeleton swiper-slide js-swiper-slide">
+										<div class="js-plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled"
+											 data-id="<%= video.src %>"
+											 data-plyr-provider="youtube"
+											 data-plyr-embed-id="<%= video.src %>"
+											 data-poster="https://rostselmash.com<%= video.poster %>"></div>
+									</div>
+								<% }); %>
+							</div>
+						</div>
+						<div class="video-block-video__desc">
+							<span class="js-desc"></span>
+						</div>
 					</div>
 
-					<div class="tabs-content__el user-text" data-content data-hash="tb-n-4" data-animate-repeat>
-						<h3>Системы точного земледелия Ростсельмаш</h3>
-						<p>
-							Ростсельмаш предлагает инновационные решения в каждой из перечисленных выше категорий. Более того, линейка электронных систем марки РСМ включает и другие, порой не имеющие аналогов, инструменты,
-							значительно повышающие эффективность сельскохозяйственных операций, учет и контроль сельхозпроизводства.
-						</p>
-						<br />
-						<p>
-							<a href="https://rostselmash.com/agrotronic/">РСМ Агротроник</a>. Информационно-аналитическая система с более широким, чем у большинства аналогов, функционалом. Это инновационная платформа
-							агроменеджмента, на базе которой каждое хозяйство может выстроить свою конфигурацию систем точного земледелия, в зависимости от решаемых задач. Одновременно РСМ Агротроник выполняет и множество
-							функций систем телеметрии.
-						</p>
-						<br />
-						<p>
-							<a href="https://rostselmash.com/electronic-systems/agrotronik-i-agronomicheskie-servisy/rsm-router/">РСМ Роутер</a> — система диспетчеризации уборочной логистики. Используя инструменты ГНСС и
-							межмашинного взаимодействия, она отправляет задания каждому транспортному средству; принимает данные от уборочной техники; корректирует маршруты транспортных средств при изменении скорости уборочных
-							работ. Т. е. облегчает планирование, мониторинг и оптимизацию логистики.
-						</p>
-						<br />
-						<p>
-							<a href="https://rostselmash.com/electronic-systems/agrotronik-i-agronomicheskie-servisy/rsm-karta-urozhaynosti-zuk/">РСМ Карта урожайности</a>. Система картографирования полей с выделением на них
-							учетных участков с разными показателями урожайности и влажности зерна — основы, на которой строятся дальнейшие тактика и стратегия хозяйствования. РСМ Карта урожайности работает совместно с платформой
-							РСМ Агротроник. Предлагается в вариантах для зерноуборочных и кормоуборочных комбайнов.
-						</p>
-						<br />
-						<p>
-							<a href="https://rostselmash.com/electronic-systems/agrotronik-i-agronomicheskie-servisy/rsm-uvedomleniya/">РСМ Уведомления</a>. Это система телеметрии с функцией оповещения пользователя и
-							технического центра о нарушении режимов работы сельскохозяйственной техники. Интегрируется в систему РСМ Агротроник.
-						</p>
-						<br />
-						<p>
-							<a href="https://rostselmash.com/electronic-systems/sistemy-avtoupravleniya-mashin/">Системы автоуправления РСМ</a> Агротроник Пилот 1.0, РСМ Агротроник Пилот 1.0 Электроруль, РСМ Агротроник Пилот
-							2.0, РСМ Агротроник Пилот 2.1. Как и РСМ Агротроник, в интеграции с которой они работают, эти системы обладают расширенными возможностями и совмещают функции автоуправления движением и
-							технологическими операциями сельхозтехники. Они освобождают механизатора от процесса руления в поле. А также, в зависимости от типа техники и варианта системы, управляют тем или иным набором
-							технологических процессов.
-						</p>
-						<br />
-						<p>В категории управления агромашинами и технологическими процессами Ростсельмаш предоставляет также множество специфических инструментов, которые значимо повышают качество и производительность работ:</p>
-						<ul>
-							<li><a href="https://rostselmash.com/electronic-systems/sistemy-povysheniya-effektivnosti-zernouborochnykh-kombaynov/"> системы повышения эффективности работы зерноуборочных комбайнов;</a></li>
-							<li><a href="https://rostselmash.com/electronic-systems/povysheniya-effektivnosti-kormouborochnykh-kombaynov/">системы повышения эффективности кормоуборочных комбайнов;</a></li>
-							<li><a href="https://rostselmash.com/electronic-systems/sistemy-povysheniya-effektivnosti-traktorov/">системы повышения эффективности тракторов.</a></li>
-						</ul>
-						<p>
-							Из других электронных инструментов, не имеющих аналогов, можно отметить систему обнаружения объектов, которые трудноразличимы или не видны механизатору в темное время суток,
-							<a href="https://rostselmash.com/electronic-systems/electronic-systems/rsm-nochnoe-videnie/">РСМ Ночное видение</a>. Она повышает безопасность труда и позволяет увеличить производительность работ до
-							30%. А также <a href="https://rostselmash.com/electronic-systems/sistemy-identifikatsii-i-kontrolya/">системы идентификации</a>, верификации и контроля, облегчающие учет и контроль.
-						</p>
-						<br />
-						<p>
-							Технологии и системы точного земледелия могут применяться самостоятельно. И даже по отдельности они приносят существенную выгоду предприятию, что давно доказано практикой. Напомним, что платформа
-							агроменеджмента РСМ Агротроник доступна всем владельцам самоходных агромашин Ростсельмаш по умолчанию. Бортовая аппаратная часть либо устанавливается в базовой комплектации, либо предлагается
-							опционально почти для всех новых и части находящихся в эксплуатации моделей. А это уже дает преимущества в плане контроля над техникой.
-						</p>
-						<p>
-							Развивать же концепцию координатного земледелия можно, постепенно добавляя наиболее выгодные на каждом этапе деятельности предприятия инструменты. Специалисты компании Ростсельмаш готовы вместе с вами
-							разработать индивидуальный план освоения современной концепции для повышения рентабельности вашего хозяйства.
-						</p>
+					<div class="video-block-list">
+						<div class="video-block-list__wrap">
+							<div class="video-block-list__head h5">Смотрите также</div>
+							<div class="video-block-list__content js-perfect-scrollbar">
+								<div class="video-block-list__content-wrap js-pagination">
+									<% feedData.catalog.sections[targetSectionId].videos.forEach(video => { %>
+										<div data-id="<%= video.src %>"
+											 data-poster="https://rostselmash.com<%= video.poster %>"
+											 class="video-block-list__el js-pagination-item">
+											<div class="video-block-list__img">
+												<div class="image is-lazy is-cover" role="img" aria-label="<%= video.description %>"
+													 data-bg="https://rostselmash.com<%= video.poster %>"></div>
+											</div>
+											<div class="video-block-list__desc js-pagination-item-desc"><%= video.description %></div>
+										</div>
+									<% }); %>
+								</div>
+							</div>
+							<button type="button" class="text-link text-default video-block-list__link text-link--underline"
+									data-opener data-toggle-text="Свернуть">Показать еще</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</div> -->
-<div class="wrapper wrap-pl-1 wrap-pr-1 mb-lg-128 mb-md-96 mb-80">
+	<% } %>
+
+	<% if (sectionDescriptionFooter.description_2 &&
+			sectionDescriptionFooter.description_2.title &&
+			sectionDescriptionFooter.description_2.description &&
+			sectionDescriptionFooter.description_2.fullDescription) { %>
+		<div class="pb-2-fixed wrapper wrap-pl-1 wrap-pr-1 bg-white bg-wings">
+			<div class="wrapper b-reviews" style="padding-bottom: 0">
+				<div class="block-slider wrapper">
+					<div class="block-slider__slide-content-wrap">
+						<div class="product-description__title h2 animate">
+							<h4 class="block-slider__slide-content-title"><%= sectionDescriptionFooter.description_2.title %></h4>
+						</div>
+						<div class="block-slider__slide-content-text animate" data-animate="">
+							<h5 class="text user-text"><%= sectionDescriptionFooter.description_2.description %></h5>
+							<div class="full-text"><%- sectionDescriptionFooter.description_2.fullDescription %></div>
+							<div class="block-slider__slide-content-link">
+								<a href="#modal--case-3340" class="text-link reviews_detail text-default text-link--underline user-text" data-modal="" data-effect="mfp-move-from-left">Читать полностью</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<style>
+				.wrapper .b-reviews{
+					padding-bottom: 50px;
+				}
+				.tabs-content {
+					padding-top: 5rem;
+					padding-bottom: 4rem;
+				}
+				.tabs__head {
+					margin-bottom: 2.7rem;
+				}
+				.block-slider__slide-content-wrap {
+					width: 100%;
+					min-height: unset;
+					padding-top: 0;
+				}
+				.product-description__head .product-description__title {
+					max-width: 31.25rem;
+				}
+				.product-description__title {
+					flex: 1;
+					max-width: 100%;
+					width: 100%;
+				}
+				.block-slider__slide-content-text {
+					max-width: 50%;
+					width: 100%;
+				}
+				.b-reviews h4 {
+					max-width: 31.25rem;
+					width: 100%;
+					font-size: 52.5px;
+					line-height: 70px;
+					color: #101010;
+				}
+
+				.b-reviews h5 {
+					font-weight: normal;
+					/*font-size: 21px;
+                    line-height: 31px;*/
+					color: #101010;
+				}
+
+				.block-slider__slide-content-wrap {
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					justify-content: space-between;
+				}
+
+				.block-slider__slide-content-text .text p:not(:last-child) {
+					margin-bottom: 20px;
+				}
+				@media(max-width: 1550px){
+					.product-description__title,
+					.b-reviews h4 {
+						font-size: 36px;
+						line-height: 45px;
+					}
+				}
+				@media(max-width: 1300px){
+					.product-description__title, .b-reviews h4 {
+						font-size: 28px;
+						line-height: 32px;
+					}
+				}
+				@media(max-width: 700px){
+					.tabs-content {
+						padding-top: 2.5rem;
+						padding-bottom: 2.5rem;
+					}
+					.block-slider__slide-content-wrap{
+						flex-direction: column;
+					}
+					.block-slider__slide-content-text {
+						max-width: 100%;
+						margin-top: 1rem;
+					}
+				}
+				@media(max-width: 400px){
+					.product-description__title, .b-reviews h4 {
+						font-size: 20px;
+						line-height: 24px;
+					}
+				}
+			</style>
+		</div>
+	<% } %>
+
+<div class="pb-2-fixed wrapper wrap-pl-1 wrap-pr-1 bg-white bg-wings">
 	<div class="slider-tech">
 		<div class="slider-tech__wrap">
 			<div class="slider-tech__head" data-animate>
@@ -1744,15 +2078,17 @@
 				<div class="slider-tech__swiper-container swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<div class="slider-tech__card" id="bx_3218110189_36" data-animate data-animate-delay="1">
-								<a href="/finance/" class="card-link">
+							<div class="slider-tech__card" data-animate data-animate-delay="1">
+								<a href="/electronic-systems/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Программы финансирования</div>
+											<div class="card-link__text h5">Точное земледелие</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-														<path d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
 													</svg>
 												</i>
 											</div>
@@ -1760,15 +2096,17 @@
 									</div>
 								</a>
 							</div>
-							<div class="slider-tech__card" id="bx_3218110189_34" data-animate data-animate-delay="1">
-								<a href="/electronic-systems/agrotronik-i-agronomicheskie-servisy/" class="card-link">
+							<div class="slider-tech__card" data-animate data-animate-delay="2">
+								<a href="/services/request/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Агротроник</div>
+											<div class="card-link__text h5">Заявка на сервис</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-														<path d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
 													</svg>
 												</i>
 											</div>
@@ -1778,15 +2116,17 @@
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="slider-tech__card" id="bx_3218110189_34" data-animate data-animate-delay="1">
-								<a href="/services/request/" class="card-link">
+							<div class="slider-tech__card" data-animate data-animate-delay="1">
+								<a href="/electronic-systems/agrotronik-i-agronomicheskie-servisy/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Заявка на сервис</div>
+											<div class="card-link__text h5">Агротроник</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-														<path d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
 													</svg>
 												</i>
 											</div>
@@ -1794,15 +2134,17 @@
 									</div>
 								</a>
 							</div>
-							<div class="slider-tech__card" id="bx_3218110189_33" data-animate data-animate-delay="2">
-								<a href="/products/" class="card-link">
+							<div class="slider-tech__card" data-animate data-animate-delay="2">
+								<a href="/finance/" class="card-link">
 									<div class="card-link__wrap">
 										<div class="card-link__content">
-											<div class="card-link__text h5">Сельхозтехника</div>
+											<div class="card-link__text h5">Программы финансирования</div>
 											<div class="card-link__icon">
 												<i class="icon is-small" aria-hidden="true">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-														<path d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
 													</svg>
 												</i>
 											</div>
@@ -1814,74 +2156,89 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="slider-tech__bottom">
-				<div class="slider-tech__bottom-wrap"></div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="mb-lg-144 mb-md-96 mb-80">
-	<div class="block-slider wrapper wrap-pr-1 wrap-pl-1">
-		<div class="block-slider__wrap block-slider__wrap--tall" data-slider-wrap>
-			<canvas class="block-slider__canvas"> </canvas>
-			<div data-id="0" data-src="/dist/tmp/slides/1.jpg" class="block-slider__image"></div>
-			<div class="swiper-container" data-slider>
-				<div class="swiper-wrapper">
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">Ростсельмаш сегодня</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate>
-									<div class="text-lead">
-										Ростсельмаш – ключевой российский разработчик и производитель сельскохозяйственной техники и цифровых решений. Реализация техники Ростсельмаш, ее предпродажная подготовка и сервисное
-										обслуживание осуществляется через развернутую дилерскую сеть компании.
-									</div>
-									<div class="block-slider__slide-content-link">
-										<a href="https://rostselmash.com/company/about" class="text-link text-default text-link--underline">О компании</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="block-slider-m" data-slider-m-wrap>
-			<div class="swiper-container" data-slider>
-				<div class="swiper-wrapper">
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-img block-slider__slide-img-tall">
-							<div class="image is-lazy is-cover" role="img" aria-label="image" data-bg="/dist/tmp/slides/1.jpg"></div>
-						</div>
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">Ростсельмаш сегодня</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate>
-									<div class="text-lead">
-										Ростсельмаш – ключевой российский разработчик и производитель сельскохозяйственной техники и цифровых решений. Реализация техники Ростсельмаш, ее предпродажная подготовка и сервисное
-										обслуживание осуществляется через развернутую дилерскую сеть компании.
-									</div>
-									<div class="block-slider__slide-content-link">
-										<a href="https://rostselmash.com/company/about" class="text-link text-default text-link--underline">О компании</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div class="slider-tech__bottom-wrap">
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+	<% if (sectionDescriptionFooter.description_footer &&
+			sectionDescriptionFooter.description_footer.title &&
+			sectionDescriptionFooter.description_footer.description) { %>
+		<div class="pb-2-fixed wrapper wrap-pl-1 wrap-pr-1 bg-white bg-wings">
+			<div class="product-description">
+				<div class="product-description__wrap">
+					<div class="product-description__head">
+						<div class="product-description__title h2"
+							 data-animate><%= sectionDescriptionFooter.description_footer.title %></div>
+					</div>
+					<div class="product-description__content">
+						<div class="product-description__desc user-text text-default"><%- sectionDescriptionFooter.description_footer.description %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% } %>
+<div class="modal mfp-with-anim modal--card mfp-hide review_popup" id="modal--case-3340">
+	<button title="Close (Esc)" type="button" class="mfp-close">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+			xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 18L18.7279 5.27211" stroke-width="2"></path>
+			<path d="M6 5L18.7279 17.7279" stroke-width="2"></path>
+		</svg>
+	</button>
+	<div class="modal__content bg-white">
+		<div class="modal-card js-perfect-scrollbar ps">
+			<div class="modal__scroll-wrapper js-perfect-scrollbar ps">
+				<h3 style="margin-bottom: 40px" class=" review_name block-slider__slide-content-title"></h3>
+				<div class="modal__body">
+					<div class="modal__left">
+						<div class="full-modal review__text user-text">
+						</div>
+					</div>
+				</div>
+				<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+					<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+				</div>
+				<div class="ps__rail-y" style="top: 0px; right: 0px;">
+					<div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+				</div>
+				<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+					<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+				</div>
+				<div class="ps__rail-y" style="top: 0px; right: 0px;">
+					<div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$(document).ready(function () {
+		$(document).on('click', '.reviews_detail', function () {
+			var text = $(this).parent().parent().parent().parent().find('.full-text').html()
+			var name = $(this).parent().parent().parent().parent().find('h4').text()
 
+			var pos = $(this).parent().parent().parent().parent().find('.pos').text()
+			$('.review__text').html(text);
+			$('.review_name').text(name);
+		})
+	})
 
+</script>
+<style>
+	@media (min-width: 640px) {
+		.configurator-btn-mobile {
+			display: none !important;
+		}
+	}
+
+	.tabs-list__wrap>.btn.btn--primary {
+		margin-right: 10px;
+	}
+</style>
 
 
 	<footer class="footer">
@@ -2063,6 +2420,7 @@ h4.16l4.12,6.25v0.04H19.958z M9.448,10.69h-3.99V4.9h3.99c2.06,0,3.7,1.09,3.7,2.8
 			</div>
 		</div>
 	</footer>
+
 
 
 			<script>
@@ -2564,7 +2922,7 @@ h4.16l4.12,6.25v0.04H19.958z M9.448,10.69h-3.99V4.9h3.99c2.06,0,3.7,1.09,3.7,2.8
 				</div>
 			</div>
 
-			
+
 
 		<!-- test -->
 		<div itemscope="" itemtype="https://schema.org/Organization">
@@ -2627,6 +2985,6 @@ h4.16l4.12,6.25v0.04H19.958z M9.448,10.69h-3.99V4.9h3.99c2.06,0,3.7,1.09,3.7,2.8
 			}
 		</script>
 
-		
+
 	</body>
 </html>

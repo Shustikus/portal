@@ -8,6 +8,8 @@ const cheerio = require('cheerio');
 const app = express();
 const PORT = 3000;
 
+const sectionsData = require('./sectionsData');  // Импортируем файл с данными
+
 // Включаем CORS для всех маршрутов
 app.use(cors());
 
@@ -195,6 +197,41 @@ app.get('/terms-of-use', (req, res) => {
         rootPath: '/',
         apiUrl: req.apiUrl
     });
+});
+
+// Динамическая страница для любого раздела продуктов
+app.get('/products/:sectionCode', (req, res) => {
+    const sectionCode = req.params.sectionCode;  // Получаем динамическую часть URL
+
+    // Проверяем, что feedData доступен
+    if (req.feedData && req.feedData.catalog && req.feedData.catalog.sections) {
+        // Найдем раздел с таким кодом в feedData
+        const section = Object.values(req.feedData.catalog.sections).find(s => s.code === sectionCode);
+
+        if (section) {
+            // Используем данные из sectionsData.js
+            const sectionData = sectionsData[sectionCode];
+
+            // Рендерим страницу с заголовком, описанием и таблицей
+            res.render('combine', {
+                section: section,  // Передаем найденный раздел на страницу
+                sectionCode: sectionCode, // код секции
+                sectionTitle: sectionData.title,  // Заголовок
+                sectionDescription: sectionData.description,  // Описание
+                sectionFullDescription: sectionData.fullDescription,  // Полное описание
+                sectionDescriptionFooter: sectionData.descriptionFooter, // Еще одно описание
+                feedData: req.feedData,
+                rootPath: '/',
+                apiUrl: req.apiUrl
+            });
+        } else {
+            // Если раздел не найден, отправляем 404
+            res.status(404).send('Страница не найдена');
+        }
+    } else {
+        // Если feedData не доступен, отправляем 500 или другую ошибку
+        res.status(500).send('Данные недоступны');
+    }
 });
 
 // Прокси-маршрут для поиска по запросу
