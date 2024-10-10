@@ -233,6 +233,14 @@ app.get(['/:category(products|electronic-systems)/:sectionCode'], (req, res) => 
     }
 });
 
+// Страница "Агротроник"
+app.get('/products/models-zuk/torum-785', (req, res) => {
+    res.render('tractor-single', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
 
 // Страница "Агротроник"
 app.get('/electronic-systems/agrotronik-i-agronomicheskie-servisy/agrotronik', (req, res) => {
