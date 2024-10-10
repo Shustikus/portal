@@ -448,93 +448,101 @@
 					<div class="header-nav__dropdown">
 						<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="1">
 							<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-							<% let counter = 2; %>
-							<% Object.values(feedData.catalog.sections).forEach((section) => { %>
-							<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
-							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="/products/<%= section.code %>/"
-								   class="header-nav__submenu-link header-nav__submenu-link--level-1"
-								   data-submenu-id="<%= counter %>">
-									<%= section.name %>
-								</a>
-							</li>
-							<% counter++; %>
-							<% } %>
-							<% }); %>
+								<% let counter = 2; %>
+								<%
+									// Получаем массив секций и сортируем его по полю sort
+									const sortedSections = Object.values(feedData.catalog.sections).sort((a, b) => a.sort - b.sort);
+								%>
+								<% sortedSections.forEach((section) => { %>
+									<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
+										<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
+											<a href="/products/<%= section.code %>/"
+											   class="header-nav__submenu-link header-nav__submenu-link--level-1"
+											   data-submenu-id="<%= counter %>">
+												<%= section.name %>
+											</a>
+										</li>
+										<% counter++; %>
+									<% } %>
+								<% }); %>
 							<% } %>
 						</ul>
 						<%
 						const sectionIds = ["15", "105", "164", "166", "171", "221", "173", "168", "174", "175", "176"];
 						%>
 						<% sectionIds.forEach((sectionId, index) => { %>
-						<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 2 %>"
-							data-animate="">
-							<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-							<%
-							const section = feedData.catalog.sections[sectionId];
-							const sectionCode = section ? section.code : '';
-							%>
-							<% if (feedData.catalog.elements) { %>
-							<%
-							const elements = Object.values(feedData.catalog.elements).filter(element => element.section_id === sectionId);
-							%>
-							<% if (elements.length > 0) { %>
-							<% elements.forEach((element) => { %>
-							<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-								<a href="/products/<%= sectionCode %>/<%= element.code %>/"
-								   class="header-nav__submenu-link header-nav__submenu-link--level-2">
-									<%= element.name %>
-								</a>
-							</li>
-							<% }); %>
-							<% } %>
-							<% } %>
-							<% } %>
-						</ul>
+							<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 2 %>"
+								data-animate="">
+								<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
+									<%
+										const section = feedData.catalog.sections[sectionId];
+										const sectionCode = section ? section.code : '';
+									%>
+									<% if (feedData.catalog.elements) { %>
+										<%
+											const elements = Object.values(feedData.catalog.elements).filter(element => element.section_id === sectionId);
+										%>
+										<% if (elements.length > 0) { %>
+											<% elements.forEach((element) => { %>
+												<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
+													<a href="/products/<%= sectionCode %>/<%= element.code %>/"
+													   class="header-nav__submenu-link header-nav__submenu-link--level-2">
+														<%= element.name %>
+													</a>
+												</li>
+											<% }); %>
+										<% } %>
+									<% } %>
+								<% } %>
+							</ul>
 						<% }); %>
 						<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="13">
 							<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-							<% let counter = 14; %>
-							<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
-							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-								<a href="/electronic-systems/<%= section.code %>/"
-								   class="header-nav__submenu-link header-nav__submenu-link--level-1"
-								   data-submenu-id="<%= counter %>">
-									<%= section.name %>
-								</a>
-							</li>
-							<% counter++; %>
-							<% }); %>
+								<% let counter = 14; %>
+								<%
+									// Получаем массив секций и сортируем его по полю sort
+									const sortedSections = Object.values(feedData['electronic-systems'].sections).sort((a, b) => a.sort - b.sort);
+								%>
+								<% sortedSections.forEach((section) => { %>
+									<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
+										<a href="/electronic-systems/<%= section.code %>/"
+										   class="header-nav__submenu-link header-nav__submenu-link--level-1"
+										   data-submenu-id="<%= counter %>">
+											<%= section.name %>
+										</a>
+									</li>
+									<% counter++; %>
+								<% }); %>
 							<% } %>
 						</ul>
 						<%
 						const secondSectionIds = ["185", "186", "187", "188", "740", "741"];
 						%>
 						<% secondSectionIds.forEach((sectionId, index) => { %>
-						<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 14 %>"
-							data-animate="">
-							<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-							<%
-							const section = feedData['electronic-systems'].sections[sectionId];
-							const sectionCode = section ? section.code : '';
-							%>
-							<% if (feedData['electronic-systems'].elements) { %>
-							<%
-							const elements = Object.values(feedData['electronic-systems'].elements).filter(element => element.section_id === sectionId);
-							%>
-							<% if (elements.length > 0) { %>
-							<% elements.forEach((element) => { %>
-							<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-								<a href="/electronic-systems/<%= sectionCode %>/<%= element.code %>/"
-								   class="header-nav__submenu-link header-nav__submenu-link--level-2">
-									<%= element.name %>
-								</a>
-							</li>
-							<% }); %>
-							<% } %>
-							<% } %>
-							<% } %>
-						</ul>
+							<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 14 %>"
+								data-animate="">
+								<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
+									<%
+										const section = feedData['electronic-systems'].sections[sectionId];
+										const sectionCode = section ? section.code : '';
+									%>
+									<% if (feedData['electronic-systems'].elements) { %>
+										<%
+											const elements = Object.values(feedData['electronic-systems'].elements).filter(element => element.section_id === sectionId);
+										%>
+										<% if (elements.length > 0) { %>
+											<% elements.forEach((element) => { %>
+												<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
+													<a href="/electronic-systems/<%= sectionCode %>/<%= element.code %>/"
+													   class="header-nav__submenu-link header-nav__submenu-link--level-2">
+														<%= element.name %>
+													</a>
+												</li>
+											<% }); %>
+										<% } %>
+									<% } %>
+								<% } %>
+							</ul>
 						<% }); %>
 						<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="20">
 							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
@@ -1209,16 +1217,20 @@
 												<a href="/products/" class="menu__link menu__link--heading h4">Техника</a>
 											</li>
 											<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-											<% Object.values(feedData.catalog.sections).forEach((section) => { %>
-											<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
-											<li class="menu__item menu__item--level-1">
-												<a href="/products/<%= section.code %>/"
-												   class="menu__link menu__link--level-1 text-default">
-													<%= section.name %>
-												</a>
-											</li>
-											<% } %>
-											<% }); %>
+												<%
+													// Получаем массив секций и сортируем его по полю sort
+													const sortedSections = Object.values(feedData.catalog.sections).sort((a, b) => a.sort - b.sort);
+												%>
+												<% sortedSections.forEach((section) => { %>
+													<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
+														<li class="menu__item menu__item--level-1">
+															<a href="/products/<%= section.code %>/"
+															   class="menu__link menu__link--level-1 text-default">
+																<%= section.name %>
+															</a>
+														</li>
+													<% } %>
+												<% }); %>
 											<% } %>
 										</ul>
 									</li>
@@ -1234,14 +1246,18 @@
 													земледелие</a>
 											</li>
 											<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-											<% Object.values(feedData['electronic-systems'].sections).forEach((section) => { %>
-											<li class="menu__item menu__item--level-1">
-												<a href="/electronic-systems/<%= section.code %>/"
-												   class="menu__link menu__link--level-1 text-default">
-													<%= section.name %>
-												</a>
-											</li>
-											<% }); %>
+												<%
+													// Получаем массив секций и сортируем его по полю sort
+													const sortedSections = Object.values(feedData['electronic-systems'].sections).sort((a, b) => a.sort - b.sort);
+												%>
+												<% sortedSections.forEach((section) => { %>
+													<li class="menu__item menu__item--level-1">
+														<a href="/electronic-systems/<%= section.code %>/"
+														   class="menu__link menu__link--level-1 text-default">
+															<%= section.name %>
+														</a>
+													</li>
+												<% }); %>
 											<% } %>
 										</ul>
 									</li>
