@@ -651,9 +651,9 @@
 }
 @media (max-width: 991px) {
     .main-plashka {
-        width: 118px;
-        height: 56px;
-        top: 84px;
+        width: 90px;
+        height: 45px;
+        top: 230px;
     }
     .main-plashka img {
         max-height: 90%;

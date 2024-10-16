@@ -233,17 +233,66 @@ app.get(['/:category(products|electronic-systems)/:sectionCode'], (req, res) => 
     }
 });
 
-// Страница "Агротроник"
-app.get('/products/models-zuk/torum-785', (req, res) => {
-    res.render('tractor-single', {
-        feedData: req.feedData,
-        rootPath: '/',
-        apiUrl: req.apiUrl
-    });
+// Динамическая страница для карточки товара по пути вида /:category/:sectionCode/:productCode
+app.get('/:category(products|electronic-systems)/:sectionCode/:productCode?', (req, res) => {
+    const { category, sectionCode, productCode } = req.params;
+
+    const sectionDataPath = category === 'products' ? req.feedData?.catalog?.sections : req.feedData?.['electronic-systems']?.sections;
+    const section = sectionDataPath ? Object.values(sectionDataPath).find(s => s.code === sectionCode) : null;
+
+    // Функция для поиска родительской цепочки секций
+    function getParentSections(section, allSections) {
+        let parentSections = [];
+        let currentSection = section;
+
+        while (currentSection && currentSection.parent_id) {
+            const parentSection = allSections.find(s => s.id === currentSection.parent_id);
+            if (parentSection) {
+                parentSections.unshift(parentSection); // Добавляем в начало массива
+                currentSection = parentSection;
+            } else {
+                break; // Выход из цикла, если родительская секция не найдена
+            }
+        }
+        return parentSections;
+    }
+
+    if (section) {
+        const elements = req.feedData?.catalog?.elements ? Object.values(req.feedData.catalog.elements) : [];
+
+        if (elements.length === 0) {
+            console.log('Нет доступных элементов.');
+            return res.status(404).send('Нет доступных товаров.');
+        }
+
+        const product = elements.find(e => e.code === productCode && e.section_id === section.id);
+
+        if (product) {
+            const allSections = Object.values(sectionDataPath);
+            const parentSections = getParentSections(section, allSections);
+
+            return res.render('tractor-single', {
+                category,
+                product,
+                section,
+                sectionCode,
+                parentSections,
+                feedData: req.feedData,
+                rootPath: '/',
+                apiUrl: req.apiUrl
+            });
+        } else {
+            console.log('Товар не найден для productCode:', productCode, 'в секции:', section.id);
+            return res.status(404).redirect('/');
+        }
+    } else {
+        console.log('Секция не найдена для sectionCode:', sectionCode);
+        return res.status(404).redirect('/');
+    }
 });
 
 // Страница "Агротроник"
-app.get('/electronic-systems/agrotronik-i-agronomicheskie-servisy/agrotronik', (req, res) => {
+app.get('/agrotronik', (req, res) => {
     res.render('agrotronik', {
         feedData: req.feedData,
         rootPath: '/',
@@ -305,6 +354,17 @@ async function saveImage(url) {
         console.error(`Ошибка при загрузке изображения: ${url}`, error.message);
     }
 }
+
+// Обработка ошибок 404
+app.use((req, res, next) => {
+    res.status(404).redirect('/'); // Перенаправляем на главную страницу
+});
+
+// Обработка других ошибок (например, 500)
+app.use((err, req, res, next) => {
+    console.error(err.stack); // Логируем ошибку на сервере
+    res.status(500).send('Что-то пошло не так!'); // Можно настроить это сообщение по вашему усмотрению
+});
 
 // Запуск сервера
 app.listen(PORT, () => {
