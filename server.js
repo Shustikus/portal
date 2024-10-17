@@ -356,12 +356,12 @@ async function saveImage(url) {
 }
 
 // Обработка ошибок 404
-app.use((req, res, next) => {
+app.use((req, res) => {
     res.status(404).redirect('/'); // Перенаправляем на главную страницу
 });
 
 // Обработка других ошибок (например, 500)
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
     console.error(err.stack); // Логируем ошибку на сервере
     res.status(500).send('Что-то пошло не так!'); // Можно настроить это сообщение по вашему усмотрению
 });
