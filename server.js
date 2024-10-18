@@ -237,6 +237,12 @@ app.get(['/:category(products|electronic-systems)/:sectionCode'], (req, res) => 
 app.get('/:category(products|electronic-systems)/:sectionCode/:productCode?', (req, res) => {
     const { category, sectionCode, productCode } = req.params;
 
+    // Проверка для редиректа
+    if (category === 'electronic-systems' && sectionCode === 'agrotronik-i-agronomicheskie-servisy' && productCode === 'agrotronik') {
+        return res.redirect('/agrotronic/');
+    }
+
+    // Определяем путь к секциям в зависимости от категории
     const sectionDataPath = category === 'products' ? req.feedData?.catalog?.sections : req.feedData?.['electronic-systems']?.sections;
     const section = sectionDataPath ? Object.values(sectionDataPath).find(s => s.code === sectionCode) : null;
 
@@ -258,20 +264,27 @@ app.get('/:category(products|electronic-systems)/:sectionCode/:productCode?', (r
     }
 
     if (section) {
-        const elements = req.feedData?.catalog?.elements ? Object.values(req.feedData.catalog.elements) : [];
+
+        // Изменяем доступ к элементам для категории "electronic-systems"
+        const elements = category === 'products'
+            ? (req.feedData?.catalog?.elements ? Object.values(req.feedData.catalog.elements) : [])
+            : (req.feedData?.['electronic-systems']?.elements ? Object.values(req.feedData['electronic-systems'].elements) : []);
 
         if (elements.length === 0) {
             console.log('Нет доступных элементов.');
             return res.status(404).send('Нет доступных товаров.');
         }
 
+        // Поиск продукта по section_id и productCode
         const product = elements.find(e => e.code === productCode && e.section_id === section.id);
 
         if (product) {
             const allSections = Object.values(sectionDataPath);
             const parentSections = getParentSections(section, allSections);
 
-            return res.render('tractor-single', {
+            const template = category === 'products' ? 'tractor-single' : 'agrotronik';
+
+            return res.render(template, {
                 category,
                 product,
                 section,
@@ -291,9 +304,9 @@ app.get('/:category(products|electronic-systems)/:sectionCode/:productCode?', (r
     }
 });
 
-// Страница "Агротроник"
-app.get('/agrotronik', (req, res) => {
-    res.render('agrotronik', {
+// Редирект на rsm_agrotronic по пути /agrotronik/
+app.get('/agrotronic/', (req, res) => {
+    res.render('rsm_agrotronik', {
         feedData: req.feedData,
         rootPath: '/',
         apiUrl: req.apiUrl

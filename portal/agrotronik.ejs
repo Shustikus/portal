@@ -255,7 +255,7 @@
 		}
 	</style>
 
-	<title>СмолАгроСнаб — Агротроник</title>
+	<title>СмолАгроСнаб — <%- product.name %></title>
 
 	<script type="text/javascript" data-skip-moving="true">
 		// global JS params
@@ -1460,348 +1460,335 @@
 		</div>
 	</div>
 
-<div class="hero-main">
-	<div class="hero-main__wrap">
-	   <div
-		  class="main-slider main-slider--not-slider">
-		  <canvas class="main-slider__canvas"></canvas>
-		  <div class="main-slider__slides">
-			 <div class="main-slider__slides-overlay"></div>
-			 <div
-				data-id="0"
-				data-src="/images/p7rqpvr3jfycxfkhemjmrii01is5rzsl.jpg"
-				class="main-slider-slide active has-overlay"
-				title="РСМ Агротроник пилот 1.0"
-				>
-				<div class="main-slider-slide__content">
-				   <div class="main-slider-slide__main">
-					  <div class="main-slider-slide__subtitle">
-						 <a href="/electronic-systems/sistemy-avtoupravleniya-mashin/" class="main-slider-slide__subtitle-text">Системы автоуправления</a>
-					  </div>
-					  <div class="main-slider-slide__title h2">РСМ Агротроник пилот 1.0</div>
-					  <div class="main-slider-slide__text">Система автоуправления на основе ГНСС- и RTK-сигналов</div>
-					  <div class="main-slider-slide__actions">
-						 <div class="main-slider-slide__action ">
-							<a href="#technic-invite"
-							   class="btn btn--primary btn--hover-primary has-icon		   "
-							   data-modal data-effect='mfp-move-from-left'>
-							   <span class="btn__icon">
-								  <i class="icon is-small"
-									 aria-hidden="true">
-									 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-										<path d="M12 4V12M12 12H20M12 12H4M12 12V20" stroke-width="2" stroke-linejoin="round"/>
-									 </svg>
-								  </i>
-							   </span>
-							   <span class="btn__text ">Заявка на опцию</span>
-							</a>
-						 </div>
-						 <div class="main-slider-slide__action ">
-							<a href="/upload/Автоуправление_для сайта.pdf"
-							   class="btn btn--white btn--hover-primary		   "
-							   >
-							<span class="btn__text ">Буклет автоуправление</span>
-							</a>
-						 </div>
-					  </div>
-				   </div>
-				   <div class="main-slider-slide__fact">
-					  <div class="main-slider-slide__fact-wrap">
-						 <div class="factor" data-viewport-trigger data-animate>
-							<div class="factor__text text-default "
-							   data-animate="fade-in-up"
-							   data-animate-delay="1">Точность позиционирования до</div>
-							<div class="factor__head">
-							   <span class="factor__number">
-							   <span
-								  class="factor__number-value" data-counter data-counter-separator=" ">
-							   2.5
-							   </span>
-							   </span>
-							   <span
-								  class="factor__suffix"
-								  >
-							   <span style="display: none">2.5</span>
-							   см
-							   </span>
-							</div>
-						 </div>
-					  </div>
-				   </div>
-				</div>
-			 </div>
-		  </div>
-		  <div class="main-slider-controls">
-			 <div class="main-slider-info">
-				<div class="main-slider-info__title text-default">Агротехника профессионалов</div>
-			 </div>
-			 <div class="main-slider-nav hidden  hidden					 main-slider-nav--autoplay					">
-				<div
-				   class="nav-arrows nav-arrows--default">
-				   <button type="button" class="nav-arrows__button" data-nav-arrow-prev
-					  title="Назад" aria-label="Назад"></button>
-				   <button type="button" class="nav-arrows__button" data-nav-arrow-next
-					  title="Вперёд" aria-label="Вперёд"></button>
-				   <button class="nav-arrows__pause">
+    <div class="hero-main">
+        <div class="hero-main__wrap">
+            <div
+                    class="main-slider main-slider--not-slider">
+                <canvas class="main-slider__canvas"></canvas>
+                <div class="main-slider__slides">
+                    <div class="main-slider__slides-overlay"></div>
+                    <% product.slides.forEach((slide, index) => { %>
+                        <div
+                                data-id="<%= index %>"
+                                data-src="<%= slide.image %>"
+                                class="main-slider-slide <%= slide.active ? 'active' : '' %> <%= slide.overlay ? 'has-overlay' : '' %>"
+                                title="<%- slide.title %>"
+                                alt="<%- slide.title %>"
+                        >
+                            <div class="main-slider-slide__content">
+                                <div class="main-slider-slide__main">
+                                    <div class="main-slider-slide__subtitle">
+                                        <ul class="breadcrumbs__list text-default" itemscope=""
+                                            itemtype="https://schema.org/BreadcrumbList">
+                                            <li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope=""
+                                                itemtype="http://schema.org/ListItem">
+                                                <a class="breadcrumbs__text text-lead" href="/" title="Главная"
+                                                   itemprop="item">
+                                                    <span itemprop="name">Главная</span>
+                                                </a>
+                                            </li>
+                                            <li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope=""
+                                                itemtype="http://schema.org/ListItem">
+                                                <a class="breadcrumbs__text text-lead" href="/<%= category %>/"
+                                                   title="<%= category === 'products' ? 'Сельхозтехника' : 'Электронные системы' %>"
+                                                   itemprop="item">
+                                                    <span itemprop="name"><%= category === 'products' ? 'Сельхозтехника' : 'Электронные системы' %></span>
+                                                </a>
+                                            </li>
+                                            <li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope=""
+                                                itemtype="http://schema.org/ListItem">
+                                                <a class="breadcrumbs__text text-lead" href="<%= slide.subtitle.href %>"
+                                                   title="<%= slide.subtitle.text %>" itemprop="item">
+                                                    <span itemprop="name"><%= slide.subtitle.text %></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="main-slider-slide__title h2"><%- slide.title %></div>
+									<div class="main-slider-slide__text"><%= slide.text %></div>
+									<div class="main-slider-slide__actions">
+										<% slide.actions.items.forEach((action) => { %>
+											<div class="main-slider-slide__action ">
+												<% if (action.href === '#technic-invite') { %>
+													<a href="#technic-invite"
+													   class="btn btn--primary btn--hover-primary has-icon"
+													   data-modal data-effect='mfp-move-from-left'>
+														                <span class="btn__icon">
+                    <i class="icon is-small" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+							 xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4V12M12 12H20M12 12H4M12 12V20" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </i>
+                </span>
+														<span class="btn__text">Заявка на технику</span>
+													</a>
+												<% } else { %>
+													<a href="<%= action.href %>"
+													   class="btn <%= action.theme === 'white' ? 'btn--white' : 'btn--primary' %> btn--hover-primary"
+													   target="_blank">
+														<span class="btn__text "><%= action.text %></span>
+													</a>
+												<% } %>
+											</div>
+										<% }); %>
+									</div>
+                                </div>
+                                <div class="main-slider-slide__fact">
+                                    <% if (slide.factor_list && slide.factor_list.items && slide.factor_list.items.length > 0) { %>
+                                        <% slide.factor_list.items.forEach(factor => { %>
+                                            <div class="main-slider-slide__fact-wrap">
+                                                <% if (factor.heading !== '') { %>
+                                                    <div class="factor" data-viewport-trigger data-animate>
+                                                        <div class="factor__text text-default" data-animate="fade-in-up"
+                                                             data-animate-delay="1">
+                                                            <%= factor.text %>
+                                                        </div>
+                                                        <div class="factor__head">
+                        <span class="factor__number">
+                            <span class="factor__number-value" data-counter
+                                  data-counter-separator="<%= factor.separator %>">
+                                <%= factor.heading %>
+                            </span>
+                        </span>
+                                                            <span class="factor__suffix">
+                            <span style="display: none"><%= factor.heading %></span>
+                            <%= factor.suffix %>
+                        </span>
+                                                        </div>
+                                                    </div>
+                                                <% } %>
+                                            </div>
+                                        <% }); %>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+                <div class="main-slider-controls">
+                    <div class="main-slider-info">
+                        <div class="main-slider-info__title text-default">Агротехника профессионалов</div>
+                    </div>
+                    <div class="main-slider-nav hidden  hidden					 main-slider-nav--autoplay					">
+                        <div
+                                class="nav-arrows nav-arrows--default">
+                            <button type="button" class="nav-arrows__button" data-nav-arrow-prev
+                                    title="Назад" aria-label="Назад"></button>
+                            <button type="button" class="nav-arrows__button" data-nav-arrow-next
+                                    title="Вперёд" aria-label="Вперёд"></button>
+                            <button class="nav-arrows__pause">
+                                <i class="icon is-small"
+                                   aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 12L9 20L9 4L17 12Z" fill="currentColor"/>
+                                    </svg>
+                                </i>
+                            </button>
+                            <span class="nav-arrows__arrow">
 					  <i class="icon is-small"
-						 aria-hidden="true">
-						 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M17 12L9 20L9 4L17 12Z" fill="currentColor"/>
-						 </svg>
-					  </i>
-				   </button>
-				   <span class="nav-arrows__arrow">
-					  <i class="icon is-small"
-						 aria-hidden="true">
-						 <svg width="24" height="24" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         aria-hidden="true">
+						 <svg width="24" height="24" stroke="currentColor" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
 							<path d="M16 19L9 12L16 5" stroke-width="2" stroke-linecap="square"/>
 						 </svg>
 					  </i>
 				   </span>
-				   <span class="nav-arrows__arrow">
+                            <span class="nav-arrows__arrow">
 					  <i class="icon is-small"
-						 aria-hidden="true">
-						 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                         aria-hidden="true">
+						 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              xmlns="http://www.w3.org/2000/svg">
 							<path d="M9.00012 5L16.0001 12L9.00012 19" stroke-width="2" stroke-linecap="square"/>
 						 </svg>
 					  </i>
 				   </span>
-				</div>
-			 </div>
-		  </div>
-	   </div>
-	</div>
- </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
  <div id="general-description" class="wrapper wrap-pl-1 wrap-pr-1  mt-80  ">
 	<div class="general-description">
 	   <div class="general-description__wrap">
 		  <div
 			 class="general-description__content general-description__content--factor ">
-			 <div class="general-description__title h2" data-animate-lines>Общее описание</div>
-			 <div class="general-description__left">
-				<ul class="general-description__factor-list">
-				   <li class="general-description__factor">
-					  <div class="factor" data-viewport-trigger data-animate>
-						 <div class="factor__text text-default "
-							data-animate="fade-in-up"
-							data-animate-delay="1">сокращение агросроков для комбайнов</div>
-						 <div class="factor__head">
-							<span class="factor__number">
-							<span
-							   class="factor__number-value" data-counter>
-							23
-							</span>
-							</span>
-							<span
-							   class="factor__suffix"
-							   >
-							<span style="display: none">23</span>
-							%
-							</span>
-						 </div>
+			 <div class="general-description__title h2" data-animate-lines><%= product.general_description.title %></div>
+			  <div class="general-description__left">
+				  <ul class="general-description__factor-list">
+					  <% let hasValidFactor = false; %>
+					  <% if (product.general_description && product.general_description.factor_list && product.general_description.factor_list.length > 0) { %>
+						  <% product.general_description.factor_list.forEach(factor => { %>
+							  <% if (factor.text && factor.heading && factor.suffix) { %>
+								  <li class="general-description__factor">
+									  <div class="factor" data-viewport-trigger data-animate>
+										  <div class="factor__text text-default" data-animate="fade-in-up"
+											   data-animate-delay="1"><%= factor.text %></div>
+										  <div class="factor__head">
+                                <span class="factor__number">
+                                    <span class="factor__number-value" data-counter><%= factor.heading %></span>
+                                </span>
+											  <span class="factor__suffix">
+                                    <span style="display: none"><%= factor.heading %></span><%= factor.suffix %>
+                                </span>
+										  </div>
+									  </div>
+								  </li>
+								  <% hasValidFactor = true; %>
+								  <!-- Если найден валидный фактор, то устанавливаем флаг -->
+							  <% } %>
+						  <% }); %>
+					  <% } %>
+
+					  <% if (!hasValidFactor) { %>
+						  <!-- Если валидных факторов нет, помещаем lead и description в левую колонку -->
+						  <p class="general-description__lead h5" data-animate-lines
+							 data-delay="0.2"><%= product.general_description.lead %></p>
+					  <% } %>
+				  </ul>
+			  </div>
+
+			  <!-- Правую колонку делаем пустой, если валидных факторов не найдено -->
+			  <div class="general-description__right">
+				  <% if (hasValidFactor) { %>
+					  <p class="general-description__lead h5" data-animate-lines
+						 data-delay="0.2"><%= product.general_description.lead %></p>
+					  <div class="general-description__description user-text">
+						  <%- product.general_description.description.replace(/https:\/\/rostselmash\.com\//g, '/') %>
 					  </div>
-				   </li>
-				   <li class="general-description__factor">
-					  <div class="factor" data-viewport-trigger data-animate>
-						 <div class="factor__text text-default "
-							data-animate="fade-in-up"
-							data-animate-delay="1">сокращение агросроков для тракторов</div>
-						 <div class="factor__head">
-							<span class="factor__number">
-							<span
-							   class="factor__number-value" data-counter>
-							37
-							</span>
-							</span>
-							<span
-							   class="factor__suffix"
-							   >
-							<span style="display: none">37</span>
-							%
-							</span>
-						 </div>
+				  <% } else { %>
+					  <div class="general-description__description user-text">
+						  <%- product.general_description.description.replace(/https:\/\/rostselmash\.com\//g, '/') %>
 					  </div>
-				   </li>
-				   <li class="general-description__factor">
-					  <div class="factor" data-viewport-trigger data-animate>
-						 <div class="factor__text text-default "
-							data-animate="fade-in-up"
-							data-animate-delay="1">увеличение производительности для комбайнов</div>
-						 <div class="factor__head">
-							<span class="factor__number">
-							<span
-							   class="factor__number-value" data-counter>
-							30
-							</span>
-							</span>
-							<span
-							   class="factor__suffix"
-							   >
-							<span style="display: none">30</span>
-							%
-							</span>
-						 </div>
-					  </div>
-				   </li>
-				   <li class="general-description__factor">
-					  <div class="factor" data-viewport-trigger data-animate>
-						 <div class="factor__text text-default "
-							data-animate="fade-in-up"
-							data-animate-delay="1">увеличение производительности для тракторов</div>
-						 <div class="factor__head">
-							<span class="factor__number">
-							<span
-							   class="factor__number-value" data-counter>
-							60
-							</span>
-							</span>
-							<span
-							   class="factor__suffix"
-							   >
-							<span style="display: none">60</span>
-							%
-							</span>
-						 </div>
-					  </div>
-				   </li>
-				</ul>
-			 </div>
-			 <div
-				class="general-description__right ">
-				<p class="general-description__lead h5" data-animate-lines
-				   data-delay="0.2">Система увеличивает производительность и снижает трудоемкость полевых операций.</p>
-				<div class="general-description__description user-text">
-				   Система РСМ Агротроник Пилот 1.0 позволяет управлять траекторией движения техники и вести ее параллельно предыдущему гону. Система увеличивает производительность и снижает трудоемкость полевых операций. <br>
-				   Благодаря снижению количества пропусков и перекрытий <a href="https://rostselmash.com/electronic-systems/">система точного земледелия</a> увеличивает производительность зерноу-
-				   борочных комбайнов до 30 %. На тракторах за счет снижения перекрытий и увеличения эффективности работы
-				   в условиях плохой видимости и в темное время суток суточная выработка увеличивается до 60%.
+				  <% } %>
+			  </div>
+		  </div>
+	   </div>
+	</div>
+ </div>
+	<% if (product.description && product.description.length > 0) { %>
+		<div class="overflow-hidden">
+			<div class="content-wrapper wrap-pl-1 wrap-pr-1 content-wrapper--no-photo">
+				<div class="content">
+					<div class="content__user-text-wrap">
+						<div class="content__user-text user-text text-default">
+							<div class="user-table-wrapper"><%- product.description %></div>
+						</div>
+					</div>
 				</div>
-			 </div>
-		  </div>
-	   </div>
-	</div>
- </div>
- 
- <div class=" pt-md-48 pt-40 wrapper wrap-pl-1 wrap-pr-1 bg-white bg-wings">
-	<div class="main-features__heading mb-32 mb-md-48 mb-lg-56 animate" data-animate="">
-	   <div class="main-features__title mb-md-24 mb-lg-0">
-		  <h2 class="h2 animate" data-animate=""></h2>
-	   </div>
-	</div>
-	<div class="video-block js-video-block video-custom-block-js" data-animate>
-	   <div class="video-block__wrap">
-		  <div class="video-block-video  video-block-video__full ">
-			 <div class="video-block-video__content js-swiper swiper-container">
-				<div class="swiper-wrapper">
-				   <div class="video-block-video__player loader--skeleton swiper-slide js-swiper-slide"
-					  data-id="https://youtu.be/Vq0nmE86bUE"
-					  >
-					  <div
-						 class="js-plyr"
-						 data-id="https://youtu.be/Vq0nmE86bUE"
-						 data-plyr-provider="youtube"
-						 data-plyr-embed-id="https://youtu.be/Vq0nmE86bUE"
-						 data-poster="/images/b4f/b4f5e5f25b1a151fa798ec99bd99fbb0.png"
-						 >
-					  </div>
-				   </div>
+			</div>
+		</div>
+	<% } %>
+	<% if (product.videos && product.videos.length > 0) { %>
+		<div class="pt-md-48 pt-40 wrapper wrap-pl-1 wrap-pr-1 bg-white bg-wings">
+			<div class="main-features__heading mb-32 mb-md-48 mb-lg-56 animate" data-animate="">
+				<div class="main-features__title mb-md-24 mb-lg-0">
+					<h2 class="h2 animate" data-animate=""></h2>
 				</div>
-			 </div>
-			 <div class="video-block-video__desc">
-				<span class="js-desc">РСМ Агротроник Пилот 1.0</span>
-			 </div>
-		  </div>
-	   </div>
-	</div>
- </div>
- <div class="wrapper wrap-pl-1 wrap-pr-1 mt-80 mb-24 my-2-fixed">
-	<div class="general-description">
-	   <div class="general-description__wrap">
-		  <div
-			 class="general-description__content  general-description__content--second">
-			 <div class="general-description__description user-text" data-animate-user-text style="grid-column-start: 1; grid-column-end: 3;">
-				<h2>Типовой комплект оснащения: </h2>
-				<ul>
-				   <li> Приемник</li>
-				   <li>Управляющий механизм</li>
-				   <li>Планшет</li>
-				   <li>Датчики обратной связи </li>
-				</ul>
-			 </div>
-			 <div class="general-description__title h2" data-animate-lines>Как это работает?</div>
-			 <div class="general-description__subtitle user-text"
-				data-animate-user-text>&nbsp;</div>
-			 <div class="general-description__left">
-				<ul class="general-description__list">
-				   <li class="general-description__list-item user-text" data-animate>Антенна приемника принимает сигналы в многочастотном режиме.</li>
-				   <li class="general-description__list-item user-text" data-animate>На дисплее планшета отображается весь процесс автоуправления – задаются рабочие параметры, имеется возможность загружать и выгружать необходимые диагностические данные, настраивать и калибровать исполнительные механизмы.</li>
-				</ul>
-			 </div>
-			 <div
-				class="general-description__right ">
-				<ul class="general-description__list">
-				   <li class="general-description__list-item user-text" data-animate>Инструментом повышения точности позиционирования является базовая станция RТК.</li>
-				   <li class="general-description__list-item user-text" data-animate>Она обеспечивает сигнал дифференциальной коррекции, непрерывно передавая сигналы RTK с точностью до 2,5 см посредством радиооборудования.</li>
-				</ul>
-			 </div>
-		  </div>
-	   </div>
-	</div>
- </div>
- <div class="pt-32 pt-lg-96">
-	<div class="task-list">
-	   <div class="task-list__head wrapper wrap-pl-1 wrap-pr-1" data-animate>
-		  <div class="task-list__title h2">Преимущества системы:</div>
-	   </div>
-	   <div class="bg-light">
-		  <div class="task-list__content wrapper">
-			 <div class="task-list__left">
-				<div class="task-list__picture">
-				   <img class="image is-lazy"
-					  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-					  data-src="/images/5dh8f91jwsut3iz69u0c0ghzj5ww4wkk.jpg"
-					  alt="image"
-					  >
+			</div>
+			<div class="video-block js-video-block video-custom-block-js" data-animate>
+				<div class="video-block__wrap">
+					<div class="video-block-video video-block-video__full">
+						<div class="video-block-video__content js-swiper swiper-container">
+							<div class="swiper-wrapper">
+								<% product.videos.forEach(video => { %>
+									<div class="video-block-video__player loader--skeleton swiper-slide js-swiper-slide"
+										 data-id="<%= video.src %>">
+										<div
+												class="js-plyr"
+												data-id="<%= video.src %>"
+												data-plyr-provider="youtube"
+												data-plyr-embed-id="<%= video.src %>"
+												data-poster="<%= video.poster %>">
+										</div>
+									</div>
+								<% }); %>
+							</div>
+						</div>
+						<div class="video-block-video__desc">
+							<% product.videos.forEach(video => { %>
+								<span class="js-desc"><%= video.description %></span>
+							<% }); %>
+						</div>
+					</div>
 				</div>
-			 </div>
-			 <div class="task-list__right">
-				<ul class="task-list__list wrap-pl-1 wrap-pr-1">
-				   <li class="task-list__item" data-animate data-animate-delay="1">
-					  <div class="list-item">
-						 <div class="list-item__number h3">01</div>
-						 <div class="list-item__title text-lead">Автоматическое управление траекторией движения с точностью до 2,5 см*<br><span style="font-size:10px">*точность определения положения и сигнала RTK</span></div>
-					  </div>
-				   </li>
-				   <li class="task-list__item" data-animate data-animate-delay="2">
-					  <div class="list-item">
-						 <div class="list-item__number h3">02</div>
-						 <div class="list-item__title text-lead">Автоматические развороты</div>
-					  </div>
-				   </li>
-				   <li class="task-list__item" data-animate data-animate-delay="3">
-					  <div class="list-item">
-						 <div class="list-item__number h3">03</div>
-						 <div class="list-item__title text-lead">Автоматическое поднятие/опускание адаптера или прицепного оборудования в конце и начале гона*<br><span style="font-size:10px">* Для моделей тракторов и орудий, оборудованных электрогидравликой и функцией разворотной полосы.</span></div>
-					  </div>
-				   </li>
-				   <li class="task-list__item" data-animate data-animate-delay="4">
-					  <div class="list-item">
-						 <div class="list-item__number h3">04</div>
-						 <div class="list-item__title text-lead">Автоматическое управление скоростью**<br><span style="font-size:10px">** Доступно для машин, оснащенных опцией РСМ Адаптивный круиз-контроль.</span></div>
-					  </div>
-				   </li>
-				   <li class="task-list__item" data-animate data-animate-delay="5">
-					  <div class="list-item">
-						 <div class="list-item__number h3">05</div>
-						 <div class="list-item__title text-lead">Отправка карты-задания дистанционно через РСМ Роутер</div>
-					  </div>
-				   </li>
-				</ul>
-			 </div>
-		  </div>
-	   </div>
+			</div>
+		</div>
+	<% } %>
+	<% if (product.description_list && Object.keys(product.description_list).length > 0) {%>
+	<div class="wrapper wrap-pl-1 wrap-pr-1 mt-80 mb-24 my-2-fixed">
+		<div class="general-description">
+			<div class="general-description__wrap">
+				<div class="general-description__content general-description__content--second">
+					<% if (product.description_list.bottom_list) { %>
+						<div class="general-description__description user-text" data-animate-user-text style="grid-column-start: 1; grid-column-end: 3;">
+							<%- product.description_list.bottom_list %>
+						</div>
+					<% } %>
+					<div class="general-description__title h2" data-animate-lines><%= product.description_list.title %></div>
+					<div class="general-description__subtitle user-text" data-animate-user-text><%- product.description_list.head_text%></div>
+					<div class="general-description__left">
+						<ul class="general-description__list">
+							<% if (product.description_list.left_list && product.description_list.left_list.length > 0) { %>
+								<% product.description_list.left_list.forEach(item => { %>
+									<li class="general-description__list-item user-text" data-animate><%-  item.replace(/https:\/\/rostselmash\.com\//g, '/') %></li>
+								<% }); %>
+							<% } %>
+						</ul>
+					</div>
+					<div class="general-description__right">
+						<ul class="general-description__list">
+							<% if (product.description_list.right_list && product.description_list.right_list.length > 0) { %>
+								<% product.description_list.right_list.forEach(item => { %>
+									<li class="general-description__list-item user-text" data-animate><%- item.replace(/https:\/\/rostselmash\.com\//g, '/') %></li>
+								<% }); %>
+							<% } %>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
- </div>
+	<%}%>
+	<% if (product.task_list && Object.keys(product.task_list).length > 0) { %>
+	<div class="pt-32 pt-lg-96">
+		<div class="task-list">
+			<div class="task-list__head wrapper wrap-pl-1 wrap-pr-1" data-animate>
+				<div class="task-list__title h2"><%= product.task_list.title %></div>
+			</div>
+			<div class="bg-light">
+				<div class="task-list__content wrapper">
+					<div class="task-list__left">
+						<% if (product.task_list.picture && product.task_list.picture.src) { %>
+							<div class="task-list__picture">
+								<img class="image is-lazy"
+									 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+									 data-src="<%= product.task_list.picture.src %>"
+									 alt="<%= product.task_list.picture.alt || 'image' %>">
+							</div>
+						<% } %>
+					</div>
+					<div class="task-list__right">
+						<ul class="task-list__list wrap-pl-1 wrap-pr-1">
+							<% if (product.task_list.list && product.task_list.list.length > 0) { %>
+								<% product.task_list.list.forEach(item => { %>
+									<li class="task-list__item" data-animate data-animate-delay="<%= item.number %>">
+										<div class="list-item">
+											<div class="list-item__number h3"><%= item.number < 10 ? '0' + item.number : item.number %></div>
+											<div class="list-item__title text-lead"><%- item.text %></div>
+										</div>
+									</li>
+								<% }); %>
+							<% } %>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%}%>
  <!-- start -->
  <div class="wrapper">
 	<div class="new-work-interactive">
@@ -1821,7 +1808,7 @@
 				Для выхода нажмите на клавиатуре клавишу Esc.                    
 			 </div>
 			 <div class="new-work-interactive__btn">
-				<a href="/interactive/" class="btn btn--primary btn--hover-primary">
+				<a href="https://rostselmash.com/interactive/" class="btn btn--primary btn--hover-primary">
 				<span class="btn__text">
 				Запустить цифровую ферму                            </span>
 				</a>

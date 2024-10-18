@@ -1532,26 +1532,28 @@
 								  </div>
 							  </div>
 							  <div class="main-slider-slide__fact">
-								  <% slide.factor_list.items.forEach(factor => { %>
-									  <div class="main-slider-slide__fact-wrap">
-										  <% if (factor.heading !== '') { %>
-											  <div class="factor" data-viewport-trigger data-animate>
-												  <div class="factor__text text-default" data-animate="fade-in-up"
-													   data-animate-delay="1">
-													  <%= factor.text %>
-												  </div>
-												  <div class="factor__head">
+								  <% if (slide.factor_list && Object.keys(slide.factor_list).length > 0) { %>
+									  <% slide.factor_list.items.forEach(factor => { %>
+										  <div class="main-slider-slide__fact-wrap">
+											  <% if (factor.heading !== '') { %>
+												  <div class="factor" data-viewport-trigger data-animate>
+													  <div class="factor__text text-default" data-animate="fade-in-up"
+														   data-animate-delay="1">
+														  <%= factor.text %>
+													  </div>
+													  <div class="factor__head">
             <span class="factor__number">
                 <span class="factor__number-value" data-counter data-counter-separator="<%= factor.separator %>">
                     <%= factor.heading %>
                 </span>
             </span>
-													  <span class="factor__suffix"><%= factor.suffix %></span>
+														  <span class="factor__suffix"><%= factor.suffix %></span>
+													  </div>
 												  </div>
-											  </div>
-										  <% } %>
-									  </div>
-								  <% }); %>
+											  <% } %>
+										  </div>
+									  <% }); %>
+								  <% } %>
 							  </div>
 						  </div>
 					  </div>
