@@ -462,102 +462,111 @@
 			<div class="header-nav__dropdown">
 				<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="1">
 					<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-					<% let counter = 2; %>
-					<%
-					// Получаем массив секций и сортируем его по полю sort
-					const sortedSections = Object.values(feedData.catalog.sections).sort((a, b) => a.sort - b.sort);
-					%>
-					<% sortedSections.forEach((section) => { %>
-					<% if ((section.id >= 5 && section.id <= 14) || section.id == 220) { %>
-					<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-						<a href="/products/<%= section.code %>/"
-						   class="header-nav__submenu-link header-nav__submenu-link--level-1"
-						   data-submenu-id="<%= counter %>">
-							<%= section.name %>
-						</a>
-					</li>
-					<% counter++; %>
-					<% } %>
-					<% }); %>
-					<% } %>
-				</ul>
-				<%
-				const sectionIds = ["15", "105", "164", "166", "171", "221", "173", "168", "174", "175", "176"];
-				%>
-				<% sectionIds.forEach((sectionId, index) => { %>
-				<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 2 %>"
-					data-animate="">
-					<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-					<%
-					const section = feedData.catalog.sections[sectionId];
-					const sectionCode = section ? section.code : '';
-					%>
-					<% if (feedData.catalog.elements) { %>
-					<%
-					const elements = Object.values(feedData.catalog.elements).filter(element => element.section_id === sectionId);
-					%>
-					<% if (elements.length > 0) { %>
-					<% elements.forEach((element) => { %>
-					<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-						<a href="/products/<%= sectionCode %>/<%= element.code %>/"
-						   class="header-nav__submenu-link header-nav__submenu-link--level-2">
-							<%= element.name %>
-						</a>
-					</li>
-					<% }); %>
-					<% } %>
-					<% } %>
+						<% let counter = 2; %>
+						<%
+							// Получаем массив секций и сортируем его по полю sort
+							const sortedSections = Object.values(feedData.catalog.sections).sort((a, b) => a.sort - b.sort);
+						%>
+						<% sortedSections.forEach((section) => { %>
+							<% if (!section.parent_id && section.id !== "1305") { %>
+								<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
+									<a href="/products/<%= section.code %>/"
+									   class="header-nav__submenu-link header-nav__submenu-link--level-1"
+									   data-submenu-id="<%= counter %>">
+										<%= section.name %>
+									</a>
+								</li>
+								<% counter++; %>
+							<% } %>
+						<% }); %>
 					<% } %>
 				</ul>
-				<% }); %>
+				<% if (feedData && feedData.catalog && feedData.catalog.sections && feedData.catalog.elements) { %>
+					<%
+						// Получаем и сортируем секции
+						const sortedSections = Object.values(feedData.catalog.sections).sort((a, b) => a.sort - b.sort);
+						let counter = 2; // Инициализируем счётчик
+					%>
+					<% sortedSections.forEach((parentSection) => { %>
+						<% if (!parentSection.parent_id && parentSection.id !== "1305") { %>
+							<!-- Отображаем родительские секции, кроме 1305 -->
+							<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead"
+								data-id="<%= counter %>" data-animate="">
+								<%
+									// Находим дочерние секции
+									const subSections = sortedSections.filter(subSection => subSection.parent_id === parentSection.id);
+								%>
+								<% subSections.forEach((subSection) => { %>
+									<% if (subSection.name === "Модели" || subSection.name === "Валкообразование") { %>
+										<!-- Проверяем имя подсекции -->
+										<%
+											// Находим элементы, принадлежащие подсекции
+											const elements = Object.values(feedData.catalog.elements).filter(element =>
+													element.section_id === subSection.id
+											);
+										%>
+										<% if (elements.length > 0) { %>
+											<% elements.forEach((element) => { %>
+												<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
+													<a href="/products/<%= subSection.code %>/<%= element.code %>/"
+													   class="header-nav__submenu-link header-nav__submenu-link--level-2">
+														<%= element.name %>
+													</a>
+												</li>
+											<% }); %>
+										<% } %>
+									<% } %>
+								<% }); %>
+							</ul>
+							<% counter++; %> <!-- Увеличиваем счётчик после отображения секции -->
+						<% } %>
+					<% }); %>
+				<% } %>
 				<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="13">
 					<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
-					<% let counter = 14; %>
-					<%
-					// Получаем массив секций и сортируем его по полю sort
-					const sortedSections = Object.values(feedData['electronic-systems'].sections).sort((a, b) => a.sort - b.sort);
-					%>
-					<% sortedSections.forEach((section) => { %>
-					<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
-						<a href="/electronic-systems/<%= section.code %>/"
-						   class="header-nav__submenu-link header-nav__submenu-link--level-1"
-						   data-submenu-id="<%= counter %>">
-							<%= section.name %>
-						</a>
-					</li>
-					<% counter++; %>
-					<% }); %>
+						<% let counter = 14; %>
+						<%
+							// Получаем массив секций и сортируем его по полю sort
+							const sortedSections = Object.values(feedData['electronic-systems'].sections).sort((a, b) => a.sort - b.sort);
+						%>
+						<% sortedSections.forEach((section) => { %>
+							<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
+								<a href="/electronic-systems/<%= section.code %>/"
+								   class="header-nav__submenu-link header-nav__submenu-link--level-1"
+								   data-submenu-id="<%= counter %>">
+									<%= section.name %>
+								</a>
+							</li>
+							<% counter++; %>
+						<% }); %>
 					<% } %>
 				</ul>
-				<%
-				const secondSectionIds = ["185", "186", "187", "188", "740", "741"];
-				%>
-				<% secondSectionIds.forEach((sectionId, index) => { %>
-				<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead" data-id="<%= index + 14 %>"
-					data-animate="">
-					<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
+				<% if (feedData && feedData['electronic-systems'] && feedData['electronic-systems'].sections) { %>
 					<%
-					const section = feedData['electronic-systems'].sections[sectionId];
-					const sectionCode = section ? section.code : '';
+						const sections = Object.values(feedData['electronic-systems'].sections).sort((a, b) => a.sort - b.sort);
+					sections.forEach((section, index) => {
 					%>
-					<% if (feedData['electronic-systems'].elements) { %>
-					<%
-					const elements = Object.values(feedData['electronic-systems'].elements).filter(element => element.section_id === sectionId);
-					%>
-					<% if (elements.length > 0) { %>
-					<% elements.forEach((element) => { %>
-					<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
-						<a href="/electronic-systems/<%= sectionCode %>/<%= element.code %>/"
-						   class="header-nav__submenu-link header-nav__submenu-link--level-2">
-							<%= element.name %>
-						</a>
-					</li>
+						<ul class="header-nav__submenu header-nav__submenu--level-2 text-lead"
+							data-id="<%= index + 14 %>" data-animate="">
+							<% if (feedData['electronic-systems'].elements) { %>
+								<%
+									// Получаем элементы, которые принадлежат текущей секции
+									const elements = Object.values(feedData['electronic-systems'].elements).filter(element => element.section_id == section.id);
+								%>
+								<% if (elements.length > 0) { %>
+									<% elements.forEach((element) => { %>
+										<li class="header-nav__submenu-item header-nav__submenu-item--level-2">
+											<a href="/electronic-systems/<%= section.code %>/<%= element.code %>/"
+											   class="header-nav__submenu-link header-nav__submenu-link--level-2">
+												<%= element.name %>
+											</a>
+										</li>
+									<% }); %>
+								<% } %>
+							<% } %>
+						</ul>
 					<% }); %>
-					<% } %>
-					<% } %>
-					<% } %>
-				</ul>
-				<% }); %>
+				<% } %>
 				<ul class="header-nav__submenu header-nav__submenu--level-1" data-id="20">
 					<li class="header-nav__submenu-item header-nav__submenu-item--level-1 text-default">
 						<a href="/services/spares/" class="header-nav__submenu-link header-nav__submenu-link--level-1">
