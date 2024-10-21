@@ -1500,7 +1500,7 @@
                                     <button type="button" class="tabs-list__el active" data-tab="" data-hash="models-zuk">
                                     Оформление
                                     </button>
-                                    <button type="button" class="tabs-list__el" data-tab="" data-hash="adapters">
+                                    <button type="button" hidden="" class="tabs-list__el" data-tab="" data-hash="adapters">
                                     Проверка
                                     </button>
                                  </div>
@@ -1509,7 +1509,7 @@
                            <div class="tabs-content-wrap">
                               <div class="tabs-content">
                                  <div class="tabs-content__el active" data-content="" data-hash="models-zuk" data-animate-repeat="">
-                                    <form action="/services/request/" method="post" class="form form_dark">
+                                    <form id="requestForm" action="/services/request/" method="post" class="form form_dark">
                                        <div class="row">
                                           <div class="col col--lg-4">
                                              <div class="control control_b-offset">
@@ -1584,8 +1584,35 @@
                                           </div>
                                        </div>
                                        <button class="btn form-btn form-btn_gray form-btn_t">Отправить заявку</button>
-                                    </form>
-                                 </div>
+									</form>
+									 <!-- Контейнер для отображения результата отправки -->
+									 <div id="resultMessage" class="result-message form_dark"></div>
+									 <script>
+										 document.getElementById('requestForm').onsubmit = async function (event) {
+											 event.preventDefault();
+
+											 const formData = new URLSearchParams(new FormData(this));
+											 const resultMessageDiv = document.getElementById('resultMessage');
+
+											 try {
+												 const response = await fetch(this.action, {
+													 method: 'POST',
+													 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+													 body: formData.toString()
+												 });
+
+												 resultMessageDiv.innerHTML = `<p class="${response.ok ? 'success-message' : 'error-message'}">
+            									${response.ok ? 'Заявка успешно отправлена!' : 'Ошибка при отправке. Попробуйте снова.'}
+        										 </p>`;
+												 resultMessageDiv.style.display = 'block';
+												 if (response.ok) this.style.display = 'none';
+											 } catch {
+												 resultMessageDiv.innerHTML = '<p class="error-message">Не удалось отправить заявку. Проверьте подключение.</p>';
+												 resultMessageDiv.style.display = 'block';
+											 }
+										 };
+									 </script>
+								 </div>
                                  <div class="tabs-content__el" data-content="" data-hash="adapters" data-animate-repeat="">
                                     <form action="/services/request/" method="post" class="form form_dark">
                                        <div class="row">
@@ -1840,7 +1867,7 @@ h4.16l4.12,6.25v0.04H19.958z M9.448,10.69h-3.99V4.9h3.99c2.06,0,3.7,1.09,3.7,2.8
 						<div class="modal__description text-default">Оставьте свои контакты и мы перезвоним вам в ближайшее время</div>
 						<div class="modal__body">
 							<div class="modal__left">
-								<form name="contact-us-form" action="#" method="POST" class="form-layout js-validate" id="contact-us-form" data-parsley-validate="">
+								<form name="contact-us-form" action="/write_us/" method="POST" class="form-layout js-validate" id="contact-us-form" data-parsley-validate="">
 									<div class="form-layout__items">
 										<div class="form-layout__item hidden">
 											<div class="form-layout__field">

@@ -4,6 +4,8 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 const cheerio = require('cheerio');
+const bodyParser = require('body-parser');
+const sendMail = require('./mailer');  // Импортируем функцию отправки почты
 
 const app = express();
 const PORT = 3000;
@@ -12,6 +14,7 @@ const sectionsData = require('./sectionsData');  // Импортируем фа�
 
 // Включаем CORS для всех маршрутов
 app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));  // Парсинг данных формы
 
 // Настраиваем шаблонизатор EJS
 app.set('view engine', 'ejs');
@@ -312,6 +315,35 @@ app.get('/agrotronic/', (req, res) => {
         apiUrl: req.apiUrl
     });
 });
+
+// Маршрут для обработки формы
+app.post('/services/request/', async (req, res) => {
+    const { SERIAL_NUM, PHONE, FIO, EMAIL, DESCRIPTION } = req.body;
+
+    // Используем функцию для отправки почты
+    const result = await sendMail.serviceRequest(SERIAL_NUM, PHONE, FIO, EMAIL, DESCRIPTION);
+
+    if (result.success) {
+        return res.status(200).send(result.message);
+    } else {
+        return res.status(500).send(result.message);
+    }
+});
+
+// Маршрут для обработки формы
+app.post('/write_us/', async (req, res) => {
+    const { PROP_NAME, PROP_EMAIL, PROP_PHONE, PROP_DIRECTION, PROP_QUESTION } = req.body;
+
+    // Используем функцию для отправки почты
+    const result = await sendMail.writeUs(PROP_NAME, PROP_EMAIL, PROP_PHONE, PROP_DIRECTION, PROP_QUESTION);
+
+    if (result.success) {
+        return res.status(200).send(result.message);
+    } else {
+        return res.status(500).send(result.message);
+    }
+});
+
 // Прокси-маршрут для поиска по запросу
 app.get('/api/search', async (req, res) => {
     const query = req.query.q;
