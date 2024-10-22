@@ -14,7 +14,7 @@ const sectionsData = require('./sectionsData');  // Импортируем фа�
 
 // Включаем CORS для всех маршрутов
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));  // Парсинг данных формы
+app.use(bodyParser.urlencoded({extended: true}));  // Парсинг данных формы
 
 // Настраиваем шаблонизатор EJS
 app.set('view engine', 'ejs');
@@ -238,7 +238,7 @@ app.get(['/:category(products|electronic-systems)/:sectionCode'], (req, res) => 
 
 // Динамическая страница для карточки товара по пути вида /:category/:sectionCode/:productCode
 app.get('/:category(products|electronic-systems)/:sectionCode/:productCode?', (req, res) => {
-    const { category, sectionCode, productCode } = req.params;
+    const {category, sectionCode, productCode} = req.params;
 
     // Проверка для редиректа
     if (category === 'electronic-systems' && sectionCode === 'agrotronik-i-agronomicheskie-servisy' && productCode === 'agrotronik') {
@@ -318,7 +318,7 @@ app.get('/agrotronic/', (req, res) => {
 
 // Маршрут для обработки формы
 app.post('/services/request/', async (req, res) => {
-    const { SERIAL_NUM, PHONE, FIO, EMAIL, DESCRIPTION } = req.body;
+    const {SERIAL_NUM, PHONE, FIO, EMAIL, DESCRIPTION} = req.body;
 
     // Используем функцию для отправки почты
     const result = await sendMail.serviceRequest(SERIAL_NUM, PHONE, FIO, EMAIL, DESCRIPTION);
@@ -330,12 +330,91 @@ app.post('/services/request/', async (req, res) => {
     }
 });
 
-// Маршрут для обработки формы
+// Маршрут для обработки формы c id = contact-us-form
 app.post('/write_us/', async (req, res) => {
-    const { PROP_NAME, PROP_EMAIL, PROP_PHONE, PROP_DIRECTION, PROP_QUESTION } = req.body;
+    const {PROP_NAME, PROP_EMAIL, PROP_PHONE, PROP_DIRECTION, PROP_QUESTION} = req.body;
 
     // Используем функцию для отправки почты
     const result = await sendMail.writeUs(PROP_NAME, PROP_EMAIL, PROP_PHONE, PROP_DIRECTION, PROP_QUESTION);
+
+    if (result.success) {
+        return res.status(200).send(result.message);
+    } else {
+        return res.status(500).send(result.message);
+    }
+});
+
+// Маршрут для обработки формы c id = technic-invite
+app.post('/technic_invite/', async (req, res) => {
+    const {PROP_NAME, PROP_PHONE, PROP_PRODUCT_NAME} = req.body;
+
+    // Используем функцию для отправки почты
+    const result = await sendMail.technicInvite(PROP_NAME, PROP_PHONE, PROP_PRODUCT_NAME);
+
+    if (result.success) {
+        return res.status(200).send(result.message);
+    } else {
+        return res.status(500).send(result.message);
+    }
+});
+
+// Маршрут для обработки формы c id = leasing
+app.post('/credit/', async (req, res) => {
+    const {
+        FORM_NAME,
+        PROP_TYPE,
+        PROP_NAME,
+        PROP_PHONE,
+        PROP_BANK,
+        PROP_EMAIL,
+        PROP_MESSAGE,
+        PROP_PRODUCT_NAME
+    } = req.body;
+
+    // Используем функцию для отправки почты
+    const result = await sendMail.credit(FORM_NAME, PROP_TYPE, PROP_NAME, PROP_PHONE, PROP_BANK, PROP_EMAIL, PROP_MESSAGE, PROP_PRODUCT_NAME);
+
+    if (result.success) {
+        return res.status(200).send(result.message);
+    } else {
+        return res.status(500).send(result.message);
+    }
+});
+
+// Маршрут для обработки формы c id = leasing
+app.post('/dem_pokaz/', async (req, res) => {
+    const {PROP_NAME, PROP_PHONE, PROP_DEM_POKAZ} = req.body;
+
+    // Используем функцию для отправки почты
+    const result = await sendMail.demoEvent(PROP_NAME, PROP_PHONE, PROP_DEM_POKAZ);
+
+    if (result.success) {
+        return res.status(200).send(result.message);
+    } else {
+        return res.status(500).send(result.message);
+    }
+});
+
+// Маршрут для обработки формы c id = leasing
+app.post('/request/', async (req, res) => {
+    const {PROP_NAME, PROP_PHONE, PROP_MAIL, PROP_PRODUCT_NAME} = req.body;
+
+    // Используем функцию для отправки почты
+    const result = await sendMail.requestForTo(PROP_NAME, PROP_PHONE, PROP_MAIL, PROP_PRODUCT_NAME);
+
+    if (result.success) {
+        return res.status(200).send(result.message);
+    } else {
+        return res.status(500).send(result.message);
+    }
+});
+
+// Маршрут для обработки формы c id = leasing
+app.post('/support/', async (req, res) => {
+    const {PROP_NAME, PROP_PHONE, PROP_QUESTION, PROP_PRODUCT_NAME} = req.body;
+
+    // Используем функцию для отправки почты
+    const result = await sendMail.technicalSupport(PROP_NAME, PROP_PHONE, PROP_QUESTION, PROP_PRODUCT_NAME);
 
     if (result.success) {
         return res.status(200).send(result.message);
