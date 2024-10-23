@@ -1814,143 +1814,43 @@
 			<div class="events-list__head" data-animate="">
 				<div class="events-list__title h2">Новости</div>
 				<div class="events-list__link">
-					<a href="media/news/index.htm" class="text-link text-default text-link--underline">Все события</a>
+					<a href="/media/news/" class="text-link text-default text-link--underline">Все события</a>
 				</div>
 			</div>
-
 			<div class="events-list__content">
 				<div class="events-list__row">
-					<div class="events-list__col">
-						<div class="card" itemscope="" itemtype="http://schema.org/ImageObject">
-							<a href="media/news/start-novogo-proizvodstva-v-taganroge/index.htm" class="card__inner">
-								<div class="card__img">
-									<div class="image is-lazy isItemProp" role="img"
-										aria-label="Старт нового производства в Таганроге"
-										data-bg="images/9eylrpl93l6nqs4domls9bc1o7s90tn0.jpg"></div>
-								</div>
-
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__date" data-animate-lines="">14.02.2024</div>
-
-										<div class="card__title text-lead" data-animate-lines="" itemprop="name">Старт
-											нового производства в Таганроге</div>
+					<% newsData.slice(0, 6).forEach(news => { %>
+						<div class="events-list__col">
+							<div class="card" itemscope="" itemtype="http://schema.org/ImageObject">
+								<a href="/media/news/<%= news.link %>" class="card__inner">
+									<div class="card__img">
+										<div class="image is-lazy isItemProp" role="img"
+											 aria-label="<%= news.title %>"
+											 data-bg="<%= news.imageUrl %>"></div>
 									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="events-list__col">
-						<div class="card" itemscope="" itemtype="http://schema.org/ImageObject">
-							<a href="media/news/novyy-traktornyy-zavod-rossii-otkryt/index.htm" class="card__inner">
-								<div class="card__img">
-									<div class="image is-lazy isItemProp" role="img"
-										aria-label="Новый тракторный завод России открыт!"
-										data-bg="images/clug5j395mxlo77rm8hsxmgty6tae8m0.jpeg"></div>
-								</div>
-
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__date" data-animate-lines="">05.03.2024</div>
-
-										<div class="card__title text-lead" data-animate-lines="" itemprop="name">Новый
-											тракторный завод России открыт!</div>
+									<div class="card__info">
+										<div class="card__info-wrap">
+											<div class="card__date" data-animate-lines="">
+												<%= news.date.number %> <%= news.date.month %> <%= news.date.year %>
+											</div>
+											<div class="card__title text-lead" data-animate-lines="" itemprop="name">
+												<%= news.title %>
+											</div>
+										</div>
 									</div>
-								</div>
-							</a>
+								</a>
+							</div>
 						</div>
-					</div>
-					<div class="events-list__col">
-						<div class="card" itemscope="" itemtype="http://schema.org/ImageObject">
-							<a href="media/news/rostselmash-dobavil-transmissii/index.htm" class="card__inner">
-								<div class="card__img">
-									<div class="image is-lazy isItemProp" role="img"
-										aria-label="Ростсельмаш добавил трансмиссии"
-										data-bg="images/7zb2p15xiomdwszxc1ew4xss133hr64o.jpeg"></div>
-								</div>
-
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__date" data-animate-lines="">21.02.2024</div>
-
-										<div class="card__title text-lead" data-animate-lines="" itemprop="name">
-											Ростсельмаш добавил трансмиссии</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="events-list__col">
-						<div class="card" itemscope="" itemtype="http://schema.org/ImageObject">
-							<a href="media/news/usilennaya-zashchita-i-derzkiy-vzglyad/index.htm" class="card__inner">
-								<div class="card__img">
-									<div class="image is-lazy isItemProp" role="img"
-										aria-label="Усиленная защита и дерзкий «взгляд»"
-										data-bg="images/nel9ctxzb2riaxcdxi7geho4ikzqrcrx.jpeg"></div>
-								</div>
-
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__date" data-animate-lines="">11.03.2024</div>
-
-										<div class="card__title text-lead" data-animate-lines="" itemprop="name">
-											Усиленная защита и дерзкий «взгляд»</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="events-list__col">
-						<div class="card" itemscope="" itemtype="http://schema.org/ImageObject">
-							<a href="media/news/dialog-s-fermerami-na-agroforume-yuga/index.htm" class="card__inner">
-								<div class="card__img">
-									<div class="image is-lazy isItemProp" role="img"
-										aria-label="Диалог с фермерами на агрофоруме Юга"
-										data-bg="images/z0p5bbq5w5yhy8ea5sc5qjn3lwo892vf.jpeg"></div>
-								</div>
-
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__date" data-animate-lines="">28.02.2024</div>
-
-										<div class="card__title text-lead" data-animate-lines="" itemprop="name">Диалог
-											с фермерами на агрофоруме Юга</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="events-list__col">
-						<div class="card" itemscope="" itemtype="http://schema.org/ImageObject">
-							<a href="media/news/rostselmash-gotovit-k-zapusku-novye-predpriyatiya/index.htm"
-								class="card__inner">
-								<div class="card__img">
-									<div class="image is-lazy isItemProp" role="img"
-										aria-label="Ростсельмаш готовит к запуску новые предприятия"
-										data-bg="images/des0per2rx47tzx4qaj51sh31q6ba6d7.jpg"></div>
-								</div>
-
-								<div class="card__info">
-									<div class="card__info-wrap">
-										<div class="card__date" data-animate-lines="">13.02.2024</div>
-
-										<div class="card__title text-lead" data-animate-lines="" itemprop="name">
-											Ростсельмаш готовит к запуску новые предприятия</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
+					<% }) %>
 				</div>
 			</div>
-
 			<div class="events-list__bottom" data-animate="" data-animate-delay="2">
-				<a href="media/news/index.htm" class="text-link text-default text-link--underline">Все события</a>
+				<a href="/media/news/" class="text-link text-default text-link--underline">Все события</a>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="pt-2-fixed mt-2-fixed-negative pb-40 wrapper">
+<!--<div class="pt-2-fixed mt-2-fixed-negative pb-40 wrapper">
 	<div class="block-slider wrapper wrap-pr-1 wrap-pl-1">
 		<div class="block-slider__head" data-animate="">
 			<h2 class="block-slider__title h2">Клиенты о нас</h2>
@@ -2216,7 +2116,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 	<div class="tabs-content">
 		<div class="tabs-content__el active ">

@@ -44,6 +44,7 @@ app.use(async (req, res, next) => {
 // Главная страница
 app.get('/', (req, res) => {
     res.render('index', {
+        newsData: newsData,
         feedData: req.feedData,
         rootPath: '/',
         apiUrl: req.apiUrl
