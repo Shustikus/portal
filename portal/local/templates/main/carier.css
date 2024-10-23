@@ -473,6 +473,8 @@ h2.b-quest__but {
   .card-link .card-link__icon {
     right: 10px;
   }
+
   .mfp-wrap {
-	  height:100vh!important;
+    height: 100vh !important;
+  }
 }

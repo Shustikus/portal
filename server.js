@@ -11,6 +11,7 @@ const app = express();
 const PORT = 3000;
 
 const sectionsData = require('./sectionsData');  // Импортируем файл с данными
+const newsData = require('./newsData'); // Импорт файла с новостями
 
 // Включаем CORS для всех маршрутов
 app.use(cors());
@@ -310,6 +311,38 @@ app.get('/:category(products|electronic-systems)/:sectionCode/:productCode?', (r
 // Редирект на rsm_agrotronic по пути /agrotronik/
 app.get('/agrotronic/', (req, res) => {
     res.render('rsm_agrotronik', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
+// Страница "Новости"
+app.get('/media/news/', (req, res) => {
+    res.render('news', {
+        newsData: newsData,
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
+// Редирект с медиа
+app.get('/media/', (req, res) => {
+    res.redirect('/media/news')
+});
+
+// Страница "Карточка новости"
+app.get('/media/news/:link', (req, res) => {
+    const newsLink = req.params.link;
+    const singleNews = newsData.find(news => news.link === newsLink);
+
+    if (!singleNews) {
+        return res.status(404).send('News not found');
+    }
+
+    res.render('single-new', {
+        newsData: singleNews,
         feedData: req.feedData,
         rootPath: '/',
         apiUrl: req.apiUrl
