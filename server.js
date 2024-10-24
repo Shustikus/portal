@@ -12,6 +12,7 @@ const PORT = 3000;
 
 const sectionsData = require('./sectionsData');  // Импортируем файл с данными
 const newsData = require('./newsData'); // Импорт файла с новостями
+const specialsData = require('./specialsData') // Импорт файла с акциями
 
 // Включаем CORS для всех маршрутов
 app.use(cors());
@@ -126,6 +127,7 @@ app.get('/services/g-profi-oil/', (req, res) => {
 // Страница "Акции"
 app.get('/specials', (req, res) => {
     res.render('specials', {
+        specialsData: specialsData,
         feedData: req.feedData,
         rootPath: '/',
         apiUrl: req.apiUrl
@@ -343,10 +345,29 @@ app.get('/media/news/:link', (req, res) => {
     }
 
     res.render('single-new', {
-        newsData: singleNews,
+        itemData: singleNews, // Use a unified data object
         feedData: req.feedData,
         rootPath: '/',
-        apiUrl: req.apiUrl
+        apiUrl: req.apiUrl,
+        currentPath: req.originalUrl // Pass the current URL to the template
+    });
+});
+
+// Route for Specials Card
+app.get('/specials/:link', (req, res) => {
+    const newsLink = req.params.link;
+    const singleSpecial = specialsData.find(news => news.link === newsLink);
+
+    if (!singleSpecial) {
+        return res.status(404).send('Special not found');
+    }
+
+    res.render('single-new', {
+        itemData: singleSpecial, // Use a unified data object
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl,
+        currentPath: req.originalUrl // Pass the current URL to the template
     });
 });
 

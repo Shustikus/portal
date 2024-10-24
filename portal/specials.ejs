@@ -1510,60 +1510,37 @@
 		   nEndPage: "1"
 	   };
 	</script>
-	<div class="py-80 wrap-pl-1 wrap-pr-1">
-	   <div class="universal-cards">
-		  <div class="universal-cards__item">
-			 <div class="card-universal">
-				<a href="/financing/specials/tekhnika-po-tsene-2023-goda/" class="card-universal__link">Подробнее</a>
-				<div class="card-universal__inner">
-				   <div class="card-universal__top">
-					  <div class="card-universal__image">
-						 <img class="image is-lazy"
-							src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-							data-src="/images/1p41bdg1bhnp25j3iulmf1mmtqreguen.jpg"
-							alt="Техника по цене 2023 года"
-							>
-					  </div>
-				   </div>
-				</div>
-				<div class="card-universal__bottom">
-				   <div class="card-universal__title">
-					  <h5 class="h5" data-animate-lines>Техника по цене 2023 года</h5>
-				   </div>
-				   <div class="card-universal__bottom-left">
-				   </div>
-				   <div class="card-universal__bottom-right">
-				   </div>
-				</div>
-			 </div>
-		  </div>
-		  <div class="universal-cards__item">
-			 <div class="card-universal">
-				<a href="/financing/specials/programma-plati-raz-v-god/" class="card-universal__link">Подробнее</a>
-				<div class="card-universal__inner">
-				   <div class="card-universal__top">
-					  <div class="card-universal__image">
-						 <img class="image is-lazy"
-							src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-							data-src="/images/fecfa66506f108908b33c599189c5f5b.png"
-							alt="Программа &quot;Плати раз в год&quot;"
-							>
-					  </div>
-				   </div>
-				</div>
-				<div class="card-universal__bottom">
-				   <div class="card-universal__title">
-					  <h5 class="h5" data-animate-lines>Программа &quot;Плати раз в год&quot;</h5>
-				   </div>
-				   <div class="card-universal__bottom-left">
-				   </div>
-				   <div class="card-universal__bottom-right">
-				   </div>
-				</div>
-			 </div>
-		  </div>
-	   </div>
-	</div>
+	 <div class="py-80 wrap-pl-1 wrap-pr-1">
+		 <div class="universal-cards">
+			 <% specialsData.forEach(specials => { %>
+				 <div class="universal-cards__item">
+					 <div class="card-universal">
+						 <a href="/specials/<%= specials.link %>" class="card-universal__link">Подробнее</a>
+						 <div class="card-universal__inner">
+							 <div class="card-universal__top">
+								 <div class="card-universal__image">
+									 <img class="image is-lazy"
+										  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+										  data-src="<%= specials.imageUrl %>"
+										  alt="<%= specials.title %>"
+									 >
+								 </div>
+							 </div>
+						 </div>
+						 <div class="card-universal__bottom">
+							 <div class="card-universal__title">
+								 <h5 class="h5" data-animate-lines><%= specials.title %></h5>
+							 </div>
+							 <div class="card-universal__bottom-left">
+							 </div>
+							 <div class="card-universal__bottom-right">
+							 </div>
+						 </div>
+					 </div>
+				 </div>
+			 <% }) %>
+		 </div>
+	 </div>
  </div>
  <div id="lazyload_check"></div>
  <div id="lazyload_case" style="display: none;">

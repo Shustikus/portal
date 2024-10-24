@@ -255,7 +255,7 @@
 		}
 	</style>
 
-	<title>СмолАгроСнаб — <%= newsData.title %></title>
+	<title>СмолАгроСнаб — <%= itemData.title %></title>
 
 	<script type="text/javascript" data-skip-moving="true">
 		// global JS params
@@ -1468,39 +1468,54 @@
 							</a>
 							<meta itemprop="position" content="1">
 						</li>
-						<li class="breadcrumbs__crumb" id="bx_breadcrumb_1" itemprop="itemListElement" itemscope=""
-							itemtype="http://schema.org/ListItem">
-							<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/media/" title="Медиа"
-							   itemprop="item">
-								<span itemprop="name">Медиа</span>
-							</a>
-							<meta itemprop="position" content="2">
-						</li>
-						<li class="breadcrumbs__crumb" id="bx_breadcrumb_2" itemprop="itemListElement" itemscope=""
-							itemtype="http://schema.org/ListItem">
-							<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/media/news/" title="Новости"
-							   itemprop="item">
-								<span itemprop="name">Новости</span>
-							</a>
-							<meta itemprop="position" content="3">
-						</li>
+
+						<% if (currentPath.startsWith("/media/news/")) { %>
+							<li class="breadcrumbs__crumb" id="bx_breadcrumb_2" itemprop="itemListElement" itemscope=""
+								itemtype="http://schema.org/ListItem">
+								<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/media/" title="Медиа" itemprop="item">
+									<span itemprop="name">Медиа</span>
+								</a>
+								<meta itemprop="position" content="2">
+							</li>
+							<li class="breadcrumbs__crumb" id="bx_breadcrumb_3" itemprop="itemListElement" itemscope=""
+								itemtype="http://schema.org/ListItem">
+								<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/media/news/" title="Новости" itemprop="item">
+									<span itemprop="name">Новости</span>
+								</a>
+								<meta itemprop="position" content="3">
+							</li>
+						<% } else if (currentPath.startsWith("/specials/")) { %>
+							<li class="breadcrumbs__crumb" id="bx_breadcrumb_2" itemprop="itemListElement" itemscope=""
+								itemtype="http://schema.org/ListItem">
+								<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/specials/" title="Спецпредложения" itemprop="item">
+									<span itemprop="name">Спецпредложения</span>
+								</a>
+								<meta itemprop="position" content="2">
+							</li>
+						<% } %>
+
 						<li class="breadcrumbs__crumb">
 							<div class="breadcrumbs__text text-lead">
-								<span itemprop="name"><%= newsData.title %></span>
+								<span itemprop="name"><%= itemData.title %></span>
 							</div>
 						</li>
 					</ul>
 				</nav>
-				<h1 class="hero__title h2"><%= newsData.title %></h1>
+				<h1 class="hero__title h2"><%= itemData.title %></h1>
 				<div class="hero__factoids">
 					<div class="factor" data-viewport-trigger data-animate>
 						<div class="factor__text text-default ">
-							<%= newsData.date.month %>, <%= newsData.date.year %>
+							<% if (itemData.date) { %>
+								<%= itemData.date.month %>, <%= itemData.date.year %>
+							<% } %>
 						</div>
 						<div class="factor__head">
 				<span class="factor__number">
 					<span class="factor__number-value">
-						<%= newsData.date.number %>			</span>
+						<% if (itemData.date && itemData.date.number) { %>
+							<%= itemData.date.number %>
+						<% } %>
+					</span>
 				</span>
 						</div>
 					</div>
@@ -1512,7 +1527,7 @@
 			<div class="content">
 				<div class="content__user-text-wrap">
 					<div class="content__user-text user-text text-default">
-						<%- newsData.text %>
+						<%- itemData.text %>
 					</div>
 				</div>
 			</div>
