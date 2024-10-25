@@ -255,7 +255,7 @@
 		}
 	</style>
 
-	<title>СмолАгроСнаб — Сельхозтехника</title>
+	<title>СмолАгроСнаб — Точное земледелие</title>
 
 	<script type="text/javascript" data-skip-moving="true">
 		// global JS params
@@ -1455,564 +1455,381 @@
 		</div>
 	</div>
 
-	<div class="pt-md-160 pt-96 wrapper wrap-pl-1 wrap-pr-1 pb-lg-160 pb-96 bg-gray">
-		<nav class="breadcrumbs" aria-label="breadcrumb" data-animate>
-			<ul class="breadcrumbs__list text-default"
-				itemscope itemtype="https://schema.org/BreadcrumbList">
-				<li class="breadcrumbs__crumb" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-					<a class="breadcrumbs__text breadcrumbs__link text-lead" href="/" title="Главная" itemprop="item">
-						<span itemprop="name">Главная</span>
-					</a>
-					<meta itemprop="position" content="1"/>
-				</li>
-				<li class="breadcrumbs__crumb">
-					<div class="breadcrumbs__text text-lead">
-						<span itemprop="name">Сельхозтехника</span>
-					</div>
-				</li>
-			</ul>
-		</nav>
-		<h1 class="h2">Сельхозтехника</h1>
+<div class="hero " style="padding-bottom: 70px;">
+	<div class="hero__inner wrapper wrap-pl-1 wrap-pr-1">
+	   <nav class="breadcrumbs" aria-label="breadcrumb" data-animate>
+		  <ul class="breadcrumbs__list text-default"
+			 itemscope itemtype="https://schema.org/BreadcrumbList">
+			 <li class="breadcrumbs__crumb"                itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+				<a href="/" class="breadcrumbs__text breadcrumbs__link text-lead"
+				   itemprop="item">
+				<span itemprop="name">Главная</span>
+				</a>
+				<meta itemprop="position" content="1"/>
+			 </li>
+			  <li class="breadcrumbs__crumb">
+				  <div class="breadcrumbs__text text-lead">
+					  <span itemprop="name">Клиенты о нас</span>
+				  </div>
+			  </li>
+		  </ul>
+	   </nav>
+	   <h1 class="hero__title h2">Клиенты о нас</h1>
 	</div>
-
-<div class="mb-lg-128 mb-md-96 mb-80 wrapper wrap-pl-1 wrap-pr-1">
-	<div class="mt-lg-96-negative mt-56-negative">
-		<div class="tech-cards-list">
-			<div class="tech-cards-list__wrap">
-				<div class="tech-cards-list__content">
-					<div class="tech-cards-list__row">
-						<% if (feedData && feedData.catalog && feedData.catalog.sections) { %>
-							<%
-								// Преобразуем объект секций в массив и сортируем его по полю "sort"
-								const sortedSections = Object.values(feedData.catalog.sections)
-										.filter(section => (section.id >= 5 && section.id <= 14) || section.id == 220) // Фильтруем секции по id
-										.sort((a, b) => a.sort - b.sort); // Сортируем по полю "sort"
-							%>
-							<% sortedSections.forEach((section) => { %>
-								<div class="tech-cards-list__col">
-									<div class="card" itemscope itemtype="http://schema.org/ImageObject">
-										<a href="/products/<%= section.code %>/" class="card__inner">
-											<div class="card__img">
-												<img
-														class="image is-lazy isItemProp"
-														src="<%= section.image %>"
-														data-src="<%= section.image %>"
-														itemprop="contentUrl"
-														alt="<%= section.name %>"
-												/>
-											</div>
-											<div class="card__info">
-												<div class="card__info-wrap">
-													<div class="card__title h5" data-animate-lines itemprop="name"><%= section.name %></div>
-												</div>
-											</div>
-										</a>
-									</div>
-								</div>
-							<% }); %>
-						<% } %>
-					</div>
-				</div>
-			</div>
-		</div>
+ </div>
+ <!-- <div class="tabs-link wrapper wrap-pl-1 wrap-pr-1" data-link-tabs>
+	<div class="tabs-link__wrap">
+	   <div class="tabs-list">
+		  <div class="tabs-list__wrap">
+			 <a href="#all" class="tabs-list__el active"
+				data-href="#all" data-tab>Все</a>
+			 <a href="#case" class="tabs-list__el "
+				data-href="#case" data-tab>Кейсы</a>
+			 <a href="#review" class="tabs-list__el "
+				data-href="#review" data-tab>Отзывы</a>
+		  </div>
+	   </div>
 	</div>
-</div>
-<div class="wrapper wrap-pl-1 wrap-pr-1 mb-lg-128 mb-md-96 mb-80">
-	<div class="slider-tech">
-		<div class="slider-tech__wrap">
-			<div class="slider-tech__head" data-animate>
-				<div class="slider-tech__title h2">Возможно, вас заинтересует</div>
-			</div>
-			<div class="slider-tech__content">
-				<div class="slider-tech__swiper-container swiper-container">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="slider-tech__card" id="bx_3218110189_36" data-animate data-animate-delay="1">
-								<a href="/finance/" class="card-link">
-									<div class="card-link__wrap">
-										<div class="card-link__content">
-											<div class="card-link__text h5">Программы финансирования</div>
-											<div class="card-link__icon">
-												<i class="icon is-small" aria-hidden="true">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-														<path d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
-													</svg>
-												</i>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="slider-tech__card" id="bx_3218110189_35" data-animate data-animate-delay="2">
-								<a href="/electronic-systems/agrotronik-i-agronomicheskie-servisy/" class="card-link">
-									<div class="card-link__wrap">
-										<div class="card-link__content">
-											<div class="card-link__text h5">Агротроник</div>
-											<div class="card-link__icon">
-												<i class="icon is-small" aria-hidden="true">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-														<path d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
-													</svg>
-												</i>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="slider-tech__card" id="bx_3218110189_34" data-animate data-animate-delay="1">
-								<a href="/services/request/" class="card-link">
-									<div class="card-link__wrap">
-										<div class="card-link__content">
-											<div class="card-link__text h5">Заявка на сервис</div>
-											<div class="card-link__icon">
-												<i class="icon is-small" aria-hidden="true">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-														<path d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
-													</svg>
-												</i>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="slider-tech__card" id="bx_3218110189_33" data-animate data-animate-delay="2">
-								<a href="/electronic-systems/" class="card-link">
-									<div class="card-link__wrap">
-										<div class="card-link__content">
-											<div class="card-link__text h5">Точное земледелие</div>
-											<div class="card-link__icon">
-												<i class="icon is-small" aria-hidden="true">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-														<path d="M21.5931 12.0811L12.2682 21.406L10.854 19.9918L17.7647 13.0811H4.02054V11.0811H17.7647L10.854 4.17044L12.2682 2.75623L21.5931 12.0811Z" />
-													</svg>
-												</i>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+ </div> -->
+	<!--<div class="">
+       <div class="filter wrapper">
+          <div class="d-lg-none">
+             <a href="#filters"
+                class="btn btn--primary btn--hover-primary has-icon		   "
+                data-modal data-effect='mfp-move-from-left'>
+                <span class="btn__icon">
+                   <i class="icon is-small"
+                      aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path fill-rule="evenodd" clip-rule="evenodd" d="M13.8816 10.969C13.7533 11.0974 13.6645 11.3095 13.6645 11.4909V18.5175L11.3545 16.1987C11.3521 16.1963 11.3346 16.154 11.3346 16.1505V11.4901C11.3346 11.309 11.247 11.0985 11.1174 10.969L5.80947 5.66569H19.1886L13.8816 10.969ZM5.67348 5C5.0123 5 4.77668 5.56966 5.24534 6.03831L10.6467 11.4397C10.6517 11.4447 10.6689 11.486 10.6689 11.4901V16.1505C10.6689 16.3305 10.7565 16.5422 10.8838 16.6694L13.762 19.5476C13.9716 19.7573 14.3302 19.6088 14.3302 19.3122V11.4909C14.3302 11.4869 14.3482 11.4438 14.3524 11.4397L19.7537 6.03831C20.2232 5.56882 19.9891 5 19.3256 5H5.67348Z" fill="currentColor" stroke="currentColor"/>
+                      </svg>
+                   </i>
+                </span>
+                <span class="btn__text ">Фильтр</span>
+             </a>
+          </div>
+          <div
+             class="modal mfp-hide mfp-with-anim modal--filter"
+             id="filters">
+             <button title="Close (Esc)" type="button" class="mfp-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M6 18L18.7279 5.27211" stroke-width="2"/>
+                   <path d="M6 5L18.7279 17.7279" stroke-width="2"/>
+                </svg>
+             </button>
+             <!-- <div class="modal__content bg-white">
+                <h3 class="modal__head h3">Фильтр</h3>
+                <div class="modal__body">
+                   <div class="modal__left">
+                      <form name="form-case-filter" action="/"
+                         method="POST"
+                         class="form-layout js-validate" 	 id="form-case-filter"	  data-parsley-validate>
+                         <div class="form-layout__items">
+                            <div
+                               class="form-layout__item ">
+                               <div
+                                  class="form-layout__field">
+                                  <div
+                                     class="field theme-light">
+                                     <div class="control">
+                                        <select id="PROPERTY_DIRECTION"		class="select"
+                                           name="PROPERTY_DIRECTION"
+                                           data-select
+                                           data-select-size="default"
+                                           data-select-theme="light"
+                                           data-select-placeholder="Выберите направление"				 multiple			 test >
+                                           <option value="45"
+                                              >
+                                              Растениеводство
+                                           </option>
+                                           <option value="47"
+                                              >
+                                              Сельскохозяйственное производство
+                                           </option>
+                                        </select>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <div
+                               class="form-layout__item ">
+                               <div
+                                  class="form-layout__field">
+                                  <div
+                                     class="field theme-light">
+                                     <div class="control">
+                                        <select id="PROPERTY_TECHNIC_TYPE"		class="select"
+                                           name="PROPERTY_TECHNIC_TYPE"
+                                           data-select
+                                           data-select-size="default"
+                                           data-select-theme="light"
+                                           data-select-placeholder="Выберите тип техники"				 multiple			>
+                                           <option value="16"
+                                              >
+                                           </option>
+                                           <option value="5"
+                                              >
+                                              Зерноуборочные комбайны
+                                           </option>
+                                           <option value="6"
+                                              >
+                                              Тракторы
+                                           </option>
+                                           <option value="7"
+                                              >
+                                              Кормоуборочные комбайны
+                                           </option>
+                                           <option value="8"
+                                              >
+                                              Самоходные косилки
+                                           </option>
+                                        </select>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <div
+                               class="form-layout__item ">
+                               <div
+                                  class="form-layout__field">
+                                  <div
+                                     class="field theme-light">
+                                     <div class="control">
+                                        <select id="PROPERTY_REGIONS"		class="select"
+                                           name="PROPERTY_REGIONS"
+                                           data-select
+                                           data-select-size="default"
+                                           data-select-theme="light"
+                                           data-texts='["\u0440\u0435\u0433\u0438\u043e\u043d\u0430","\u0440\u0435\u0433\u0438\u043e\u043d\u043e\u0432","\u0440\u0435\u0433\u0438\u043e\u043d\u044b"]'
+                                           data-select-placeholder="Выберите регион"				 multiple			>
+                                           <option value="1593"
+                                              >
+                                              Тамбовская область
+                                           </option>
+                                           <option value="1596"
+                                              >
+                                              Воронежская область
+                                           </option>
+                                           <option value="1604"
+                                              >
+                                              Орловская область
+                                           </option>
+                                           <option value="1610"
+                                              >
+                                              Ростовская область
+                                           </option>
+                                           <option value="1846"
+                                              >
+                                              Республика Башкортостан
+                                           </option>
+                                           <option value="2028"
+                                              >
+                                              Челябинская область
+                                           </option>
+                                           <option value="2033"
+                                              >
+                                              Амурская область
+                                           </option>
+                                           <option value="2036"
+                                              >
+                                              Волгоградская область
+                                           </option>
+                                           <option value="2527"
+                                              >
+                                              Калининградская область
+                                           </option>
+                                           <option value="2648"
+                                              >
+                                              Ульяновская область
+                                           </option>
+                                        </select>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="filter-tag-list">
+                         </div>
+                         <div class="form-layout__actions">
+                            <div class="form-layout__action">
+                               <button
+                                  type="submit"
+                                  class="btn btn--primary btn--hover-primary d-lg-none			"
+                                  onclick='jsFilterCase.closeModal();return false;'>
+                               <span class="btn__text ">Применить</span>
+                               </button>
+                            </div>
+                            <div class="form-layout__action">
+                               <button
+                                  type="button"
+                                  class="link-action"
+                                  data-form-clear>
+                                  <i class="icon is-small link-action__icon"
+                                     aria-hidden="true">
+                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 18L18.7279 5.27211" stroke-width="2"/>
+                                        <path d="M6 5L18.7279 17.7279" stroke-width="2"/>
+                                     </svg>
+                                  </i>
+                                  <span class="link-action__text">Сбросить фильтр</span>
+                               </button>
+                            </div>
+                         </div>
+                      </form>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="filter__tag-list d-lg-none">
+             <div class="filter-tag-list">
+             </div>
+          </div>
+       </div>
+    </div> -->
 
-			<div class="slider-tech__bottom">
-				<div class="slider-tech__bottom-wrap"></div>
-			</div>
-		</div>
+    <div class="case_reload_area" style="padding-top: 60px;">
+        <% reviewsData.forEach((review, index) => { %>
+            <% if (index % 2 === 0) { %>
+            <div class="wrapper wrap-pl-1 wrap-pr-1 pb-md-80 pb-64">
+                <div class="card-about-list">
+                    <div class="card-about-list__items animate" data-animate="">
+                        <% } %>
+                        <div class="card-about-list__item">
+                            <div class="card-about">
+                                <a href="#<%= review.link %>" class="card-about__main-link" data-modal=""
+                                   data-effect="mfp-move-from-left"></a>
+                                <div class="card-about__inner">
+                                    <div class="card-about__top">
+                                        <div class="card-about__image">
+                                            <img class="image is-lazy is-loaded" src="<%= review.imageUrl %>"
+                                                 data-src="<%= review.imageUrl %>" alt="<%= review.title %>"
+                                                 data-ll-status="loaded">
+                                        </div>
+                                        <div class="card-about__label">Отзывы</div>
+                                    </div>
+                                    <div class="card-about__bottom">
+                                        <div class="card-about__bottom-left">
+                                            <h5 class="card-about__title h5"><%= review.title %></h5>
+                                            <div class="card-about__text">
+                                                <p><%- review.description %></p>
+                                            </div>
+                                            <div class="card-about__link">
+                                                <a href="#<%= review.link %>"
+                                                   class="text-link text-default text-link--underline" data-modal=""
+                                                   data-effect="mfp-move-from-left">Подробнее</a>
+                                            </div>
+                                        </div>
+                                        <div class="card-about__bottom-right">
+                                            <div class="card-about__info"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% if (index % 2 === 1 || index === reviewsData.length - 1) { %>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        <% }); %>
+        <% reviewsData.forEach((review, index) => { %>
+            <div class="modal mfp-hide mfp-with-anim modal--card" id="<%= review.link %>">
+                <button title="Close (Esc)" type="button" class="mfp-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 18L18.7279 5.27211" stroke-width="2"></path>
+                        <path d="M6 5L18.7279 17.7279" stroke-width="2"></path>
+                    </svg>
+                </button>
+                <div class="modal__content bg-white">
+                    <div class="modal-card js-perfect-scrollbar ps">
+                        <div class="modal-card__head">
+                            <div class="modal-card__title h2"><%= review.title %></div>
+                        </div>
+                        <div class="modal-card__img">
+                            <img class="image" src="<%= review.imageUrl %>" alt="image">
+                        </div>
+                        <div class="modal-card__content">
+                            <div class="modal-card__content-text user-text">
+                                <%- review.text %>
+                            </div>
+                            <div class="modal-card__content-fact">
+                                <div class="factor" data-viewport-trigger="" data-animate="">
+                                    <div class="factor__head">
+						 <span class="factor__number">
+						 </span>
+                                    </div>
+                                </div>
+                                <div class="factor" data-viewport-trigger="" data-animate="">
+                                    <div class="factor__head">
+						 <span class="factor__number">
+						 </span>
+                                    </div>
+                                </div>
+                                <div class="factor" data-viewport-trigger="" data-animate="">
+                                    <div class="factor__head">
+						 <span class="factor__number">
+						 </span>
+                                    </div>
+                                </div>
+                                <div class="factor" data-viewport-trigger="" data-animate="">
+                                    <div class="factor__head">
+						 <span class="factor__number">
+						 </span>
+                                    </div>
+                                </div>
+                                <div class="factor" data-viewport-trigger="" data-animate="">
+                                    <div class="factor__head">
+						 <span class="factor__number">
+						 </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                            <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                        </div>
+                        <div class="ps__rail-y" style="top: 0px; right: 0px;">
+                            <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+	<script>
+		// функция для перехода по айди с любых страниц
+		$(document).ready(function () {
+			const hash = window.location.hash;
+
+			if (hash) {
+				const modalElement = $(hash);
+				if (modalElement.length) {
+					$.magnificPopup.open({
+						items: {
+							src: modalElement
+						},
+						type: 'inline',
+						mainClass: 'mfp-move-from-left'
+					});
+				}
+			}
+		});
+	</script>
+ <div id="lazyload_check"></div>
+ <div id="lazyload_case"  style="display: none;">
+	<div class="preloader-dotline is-active">
+	   <div class="dot"></div>
+	   <div class="dot"></div>
+	   <div class="dot"></div>
+	   <div class="dot"></div>
+	   <div class="dot"></div>
+	   <div class="dot"></div>
+	   <div class="dot"></div>
+	   <div class="dot"></div>
 	</div>
-</div>
-
-
-<style>
-	.seo-cat-text .wrapper .b-reviews {
-		padding-bottom: 50px;
-	}
-
-	.seo-cat-text .tabs-content {
-		padding-top: 5rem;
-		padding-bottom: 4rem;
-	}
-
-	.seo-cat-text .tabs__head {
-		margin-bottom: 0 !important;
-	}
-
-	.seo-cat-text .block-slider__slide-content-wrap {
-		width: 100%;
-		min-height: unset;
-		padding-top: 0;
-	}
-
-	.seo-cat-text .product-description__head .product-description__title {
-		max-width: 31.25rem;
-	}
-
-	.seo-cat-text .product-description__title {
-		flex: 1;
-		max-width: 100%;
-		width: 100%;
-	}
-
-	.seo-cat-text .block-slider__slide-content-text {
-		max-width: 50%;
-		width: 100%;
-	}
-
-	.seo-cat-text .b-reviews h4 {
-		max-width: 31.25rem;
-		width: 100%;
-		font-size: 52.5px;
-		line-height: 70px;
-		color: #101010;
-	}
-
-	.seo-cat-text .b-reviews h5 {
-		font-weight: normal;
-		/*font-size: 21px;
-		line-height: 31px;*/
-		color: #101010;
-	}
-
-	.seo-cat-text .block-slider__slide-content-wrap {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.seo-cat-text .block-slider__slide-content-text .text p:not(:last-child) {
-		margin-bottom: 20px;
-	}
-
-	@media (max-width: 1550px) {
-		.seo-cat-text .product-description__title,
-		.seo-cat-text .b-reviews h4 {
-			font-size: 36px;
-			line-height: 45px;
-		}
-	}
-
-	@media (max-width: 1300px) {
-		.seo-cat-text .product-description__title, .seo-cat-text .b-reviews h4 {
-			font-size: 28px;
-			line-height: 32px;
-		}
-	}
-
-	@media (max-width: 700px) {
-		.seo-cat-text .tabs-content {
-			padding-top: 2.5rem;
-			padding-bottom: 2.5rem;
-		}
-
-		.seo-cat-text .block-slider__slide-content-wrap {
-			flex-direction: column;
-		}
-
-		.seo-cat-text .block-slider__slide-content-text {
-			max-width: 100%;
-			margin-top: 1rem;
-		}
-	}
-
-	@media (max-width: 400px) {
-		.seo-cat-text .product-description__title, .b-reviews h4 {
-			font-size: 20px;
-			line-height: 24px;
-		}
-	}
-</style>
-
-<div class="modal mfp-with-anim modal--card mfp-hide review_popup" id="modal-proudcts-all">
-	<button title="Close (Esc)" type="button" class="mfp-close">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-			<path d="M6 18L18.7279 5.27211" stroke-width="2"></path>
-			<path d="M6 5L18.7279 17.7279" stroke-width="2"></path>
-		</svg>
-	</button>
-	<div class="modal__content bg-white">
-		<div class="modal-card js-perfect-scrollbar ps">
-			<div class="modal__scroll-wrapper js-perfect-scrollbar ps">
-				<h3 style="margin-bottom: 40px" class="review_name block-slider__slide-content-title">Сельхозтехника Ростсельмаш — твердые гаранти</h3>
-				<div class="modal__body">
-					<div class="modal__left">
-						<div class="full-modal review__text user-text">
-							<!--### КОНТЕНТ: НАЧАЛО ###-->
-							<p class="western" style="margin-bottom: 0.35cm">
-								Сельхозтехника Ростсельмаш — это современные высокопроизводительные агромашины и орудия, разработанные для эксплуатации в любых условиях. Продуктовая линейка позволяет закрыть большую часть
-								потребностей растениеводческих предприятий, а также хозяйств, самостоятельно выращивающих корма для животноводческих комплексов.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								В разделе «Сельхозтехника» вы можете предварительно ознакомиться с ассортиментом агромашин и орудий, их характеристиками и особенностями, подать заявку на интересующую вас модель или выбрать
-								машину в конфигураторе.
-							</p>
-							<h4 class="western" style="margin-bottom: 0.35cm">
-								Комбайны
-							</h4>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Бренд Ростсельмаш по праву ассоциируется с надежной и высокопроизводительной техникой для уборки урожая. Линейка самоходных комбайнов позволяет подобрать машину под любые условия и потребности как
-								небольшого хозяйства, так и крупного предприятия.
-							</p>
-							<h5 class="western" style="margin-bottom: 0.35cm">
-								Зерноуборочные комбайны и адаптеры
-							</h5>
-							<p class="western" style="margin-bottom: 0.35cm">
-								В линейке Ростсельмаш представлены зерноуборочные комбайны 3–8 классов с различными типами МСУ и производительностью на нормированном хлебостое от 10 до 45 т/ч:
-							</p>
-							<ul>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										однобарабанные — <span lang="en-US">NOVA</span> (3 класс), <span lang="en-US">VECTOR</span> (4 класс), <span lang="en-US">ACROS</span> 550/585 (5 класс), <span lang="en-US">ACROS</span>
-										595 (6 класс);
-									</p>
-								</li>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										двухбарабанные — <span lang="en-US">T</span> 500 (6 класс) и <span lang="en-US">RSM</span>
-										161 (7 класс);
-									</p>
-								</li>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										роторный — <span lang="en-US">TORUM</span>
-										(8 класс).
-									</p>
-								</li>
-							</ul>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Главное преимущество всех машин Ростсельмаш – при правильных настройках любой зерноуборочный комбайн способен качественно работать с любой культурой, включая легкотравмируемые. Двухбарабанные
-								комбайны Ростсельмаш могут вести уборку даже на переувлажненных фонах. Машины с роторным МСУ стабильнее ведут себя на засоренных зеленой сорной растительностью фонах. Однобарабанные зерноуборочные
-								комбайны обеспечивают первичную сепарацию (т.е. в молотилке) порядка 95 %.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								В линейке продуктов представлены адаптеры для работы на различных культурах как прямым, так и раздельным способом. Это подборщики и большая линейка жаток:
-							</p>
-							<ul>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										универсальные зерновые шнековые и полотняные (транспортерные);
-									</p>
-								</li>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										соевые (низкого среза);
-									</p>
-								</li>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										кукурузные;
-									</p>
-								</li>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										рядковые и сплошного среза — для уборки подсолнечника.
-									</p>
-								</li>
-							</ul>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Ростсельмаш предусмотрел возможность снизить затраты на приобретение специальных жаток и предлагает комплекты для адаптации жаток под уборку специфических культур. Например, кукурузную жатку можно
-								переоборудовать для уборки подсолнечника, соевую или универсальную зерновую — для уборки рапса.
-							</p>
-							<h5 class="western" style="margin-bottom: 0.35cm">
-								Кормоуборочные комбайны и адаптеры
-							</h5>
-
-							<p class="western" style="margin-bottom: 0.35cm">
-								Кормоуборочные комбайны марки Ростсельмаш представлены несколькими сериями, что позволяет выбрать машину под нужды конкретного хозяйства. Так, машины разных моделей способны показать следующую
-								производительность:
-							</p>
-							<ul>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										<span lang="en-US">DON</span>
-										680<span lang="en-US">M</span>
-										— до 108 т/ч;
-									</p>
-								</li>
-								<li>
-									<p style="margin-bottom: 0.35cm"><span lang="en-US">F </span>1300 — до 120 т/ч;</p>
-								</li>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										F 1500 — до 160 т/ч;
-									</p>
-								</li>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										F 2000 — до 200 т/ч.
-									</p>
-								</li>
-							</ul>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Комбайны в базовой комплектации могут заготовить как листовой, так и зерновой силос. Различаются они по диапазону длин резки, уровню автоматизации, оснащению рабочего места, приспосабливаемости к
-								заготовке специфических видов кормов типа корнажа. Для агрегатирования кормоуборочных комбайнов Ростсельмаш производит жатки для уборки пропашных культур, трав, корнажа, а также подборщики для
-								трав.
-							</p>
-							<h4 class="western" style="margin-bottom: 0.35cm">
-								Машины и агрегаты для почвообработки
-							</h4>
-							<h5 class="western" style="margin-bottom: 0.35cm">
-								Тракторы
-							</h5>
-							<p class="western" style="margin-bottom: 0.35cm">
-								В разделе «Тракторы» представлены полноприводные машины номинальной мощностью от 380 до 583 л.с. с шарнирно-сочлененной рамой. Их общие особенности — усиленные мосты (с блокируемыми
-								дифференциалами) и бортовые редукторы; высокая проходимость и маневренность; возможность выбора комплектации узла агрегатирования и колес (спаренные или одинарные); отличные тяговые характеристики
-								и производительная гидросистема, позволяющие работать с энергоемкими широкозахватными агрегатами.
-							</p>
-							<h5 class="western" style="margin-bottom: 0.35cm">
-								Почвообрабатывающие орудия и посевные комплексы
-							</h5>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Для агрегатирования с сельхозтракторами рекомендуем почвообрабатывающие орудия и посевные комплексы марки Ростсельмаш. В первую очередь это офсетные (4,3 или 6,0 м) и тандемные (8,8 м, 9,7 м и
-								10,8 м) дисковые бороны тяжелого класса, которые справляются с самыми тяжелыми и твердыми грунтами, обеспечивая нормативное качество работы (крошение почвы, измельчение и заделка растительных
-								остатков, гребнистость и т. д.). А также борона-мульчировщик с индивидуальным креплением рабочих органов и прикатывающим катком с шириной захвата 6 и 8 м. Одна из главных особенностей всех борон
-								Ростсельмаш — отсутствие эффекта забивания междисковых промежутков.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Культиваторы для сплошной обработки почвы серии <span lang="en-US">R</span>
-								шириной захвата от 8,2 до 18,3 м с комбинированным шлейфом дополнительных рабочих органов обеспечивают качественный уход за парами, поверхностную или предпосевную почвообработку.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Для посева Ростсельмаш производит посевные комплексы:
-							</p>
-							<ul>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										пневматический бункер-раздатчик (2 или 3 отсека) с точностью подачи материала, не зависящей от скорости трактора;
-									</p>
-								</li>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										серия <span lang="en-US">SC</span>
-										— посев под лапу с одновременным внесением удобрений;
-									</p>
-								</li>
-								<li>
-									<p style="margin-bottom: 0.35cm">
-										серия <span lang="en-US">SH</span>
-										— посев двухдисковым сошником с одновременным внесением удобрений под лапу глубже семенного ложа.
-									</p>
-								</li>
-							</ul>
-							<h4 class="western" style="margin-bottom: 0.35cm">
-								Агрегаты для внесения удобрений и СЗР
-							</h4>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Разбрасыватели твердых минеральных удобрений серий <span lang="en-US">GRACH</span> (1000 л) и <span lang="en-US">GRACH</span> <span lang="en-US">MAX</span>
-								(3000 л). Для внутрипочвенных подкормок жидкими минеральными удобрениями пропашных и культур сплошного сева создан аппликатор-растениепитатель RSM AP-3000/4000 шириной захвата 9,1–9,6 м
-								производительностью до 260 л/мин.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Для обработки против вредителей и заболеваний, а также подкормок жидкими минеральными удобрениями по листу или по почве всех низкорослых и высокорослых культур в начальных стадиях развития
-								Ростсельмаш производит прицепные опрыскиватели серий RSM TS-3200/4500 Satellite и RSM TS-6200 <span lang="en-US">SPUTNIK</span>. Объективные преимущества агрегатов: высокая точность внесения за
-								счет устойчивости штанг и эффективной системы управления; ширина захвата до 36 м и скорость работы до 18 км/ч; возможность выполнять операции в ветреную погоду.
-							</p>
-							<h4 class="western" style="margin-bottom: 0.35cm">
-								Агрегаты для заготовки кормов
-							</h4>
-							<p class="western" style="margin-bottom: 0.35cm">
-								В разделе «Оборудование для кормозаготовки» представлены навесные и прицепные роторные косилки серий STRIGE, SAPSUN, BERKUT и <span lang="en-US">BERKUT</span>
-								MAX, в том числе с кондиционирующим (SAPSUN) или плющильным аппаратом (BERKUT). Все агрегаты обеспечивают высокую производительность за счет способности работать на скорости до 15 км/ч на любых
-								фонах, включая полеглые.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Для валкообразования скошенных трав — грабли: двухроторные KOLIBRI DUO, роторные KOLIBRI и пальцевые KOLIBRI <span lang="en-US">V</span>
-								— для ворошения и валкообразования. Эти агрегаты работают быстро и обращаются с травами бережно.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Здесь также представлено несколько моделей пресс-подборщиков, которые обеспечивают аккуратный подбор из валков сена или соломы и формирование их в удобные для транспортировки и хранения тюки
-								(серия Tukan) или рулоны (серия Pelikan). Все модели отличают высокая плотность прессования, экономичный расход шпагата, надежная обмотка.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Многофункциональный прицепной кормоуборочный комбайн STERH может скосить, подобрать из валка травы с высотой стебля до 1,5 м (или ботву), измельчить и погрузить в ТС или накопитель. За счет
-								производительности порядка 20 т/ч с минимальными затратами обеспечит зеленым кормом большое стадо или позволит заготовить сенаж и незерновой силос в небольшом хозяйстве.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Все агрегаты для кормозаготовки укомплектованы различными защитными механизмами, предупреждающими возможность серьезных поломок.
-							</p>
-							<h5 class="western" style="margin-bottom: 0.35cm">
-								Самоходные косилки и адаптеры
-							</h5>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Для предприятий, в которых объемы заготовки кормов велики, а также для хозяйств, практикующих раздельную уборку зерновых, большой интерес представляют самоходные косилки KSU 1 и KSU 2. Эти машины
-								способны нести широкозахватные адаптеры, работая на высоких скоростях, и при этом отличаются маневренностью и устойчивостью. KSU 1 может за один час скосить и уложить в валок травы на площади до
-								10,5 га. А KSU 2 — порядка 25 га/ч. В качестве адаптеров к этим энергосредствам предлагаются транспортерные валковые косилки Draper Flow, косилки-плющилки Grass Mower (в т. ч. с плющильным
-								аппаратом).
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Из других типов сельскохозяйственной техники Ростсельмаш стоит отметить оборудование для переработки зерна — протравливатели и зернометатели; дорожную краевую косилку; столбостав; навесной бур.
-								Это оборудование обеспечит и доуборочную/послеуборочную обработку зерна, и уход за угодьями.
-							</p>
-							<h5 class="western" style="margin-bottom: 0.35cm">
-								Сельхозтехника российского производителя
-							</h5>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Купить сельхозтехнику Ростсельмаш можно с использованием федеральных и региональных программ софинансирования и субсидирования модернизации парка машин и оборудования. Потому что все машины и
-								агрегаты производятся в России, как и бо́льшая часть комплектующих.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Кроме того, машины и орудия можно приобрести в рамках программ от Ростсельмаш Финанс. Это удобные инструменты — от лизинга непосредственно в компании Ростсельмаш или в сторонней организации до
-								кредитования и страхования в банках-партнерах.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								Напомним, что только в России действуют 78 дилерских и технических центров Ростсельмаш. Именно через эту сеть реализуются все оригинальные запасные части и расходные материалы для машин и
-								оборудования. Также через нее выполняется гарантийное и, при желании клиента, послегарантийное обслуживание техники.
-							</p>
-							<p class="western" style="margin-bottom: 0.35cm">
-								В течение сезона полевых работ сервисная служба на оборудованных для выполнения диагностики, ТО и мелкого ремонта автомобилях в любое время суток выезжает в хозяйства для проведения обслуживания и
-								оказания помощи.
-							</p>
-							<!--### КОНТЕНТ: КОНЕЦ ###-->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="mb-lg-144 mb-md-96 mb-80">
-	<div class="block-slider wrapper wrap-pr-1 wrap-pl-1">
-		<div class="block-slider__wrap block-slider__wrap--tall" data-slider-wrap>
-			<canvas class="block-slider__canvas"> </canvas>
-			<div data-id="0" data-src="/dist/tmp/slides/1.jpg" class="block-slider__image"></div>
-			<div class="swiper-container" data-slider>
-				<div class="swiper-wrapper">
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">Ростсельмаш сегодня</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate>
-									<div class="text-lead">
-										Ростсельмаш – ключевой российский разработчик и производитель сельскохозяйственной техники и цифровых решений. Реализация техники Ростсельмаш, ее предпродажная подготовка и сервисное
-										обслуживание осуществляется через развернутую дилерскую сеть компании.
-									</div>
-									<div class="block-slider__slide-content-link">
-										<a href="https://rostselmash.com/company/about" class="text-link text-default text-link--underline">О компании</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="block-slider-m" data-slider-m-wrap>
-			<div class="swiper-container" data-slider>
-				<div class="swiper-wrapper">
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-img block-slider__slide-img-tall">
-							<div class="image is-lazy is-cover" role="img" aria-label="image" data-bg="/dist/tmp/slides/1.jpg"></div>
-						</div>
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">Ростсельмаш сегодня</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate>
-									<div class="text-lead">
-										Ростсельмаш – ключевой российский разработчик и производитель сельскохозяйственной техники и цифровых решений. Реализация техники Ростсельмаш, ее предпродажная подготовка и сервисное
-										обслуживание осуществляется через развернутую дилерскую сеть компании.
-									</div>
-									<div class="block-slider__slide-content-link">
-										<a href="https://rostselmash.com/company/about" class="text-link text-default text-link--underline">О компании</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
+	<br>
+ </div>
 
 
 	<footer class="footer">

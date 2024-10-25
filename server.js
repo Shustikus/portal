@@ -13,6 +13,7 @@ const PORT = 3000;
 const sectionsData = require('./sectionsData');  // Импортируем файл с данными
 const newsData = require('./newsData'); // Импорт файла с новостями
 const specialsData = require('./specialsData') // Импорт файла с акциями
+const reviewsData = require('./reviewsData') // Импорт файла с отзывами
 
 // Включаем CORS для всех маршрутов
 app.use(cors());
@@ -45,6 +46,7 @@ app.use(async (req, res, next) => {
 // Главная страница
 app.get('/', (req, res) => {
     res.render('index', {
+        reviewsData: reviewsData,
         newsData: newsData,
         feedData: req.feedData,
         rootPath: '/',
@@ -325,6 +327,16 @@ app.get('/media/news/', (req, res) => {
     res.render('news', {
         newsData: newsData,
         feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
+// Страница "Клиенты о нас"
+app.get('/company/clients-about-us/', (req, res) => {
+    res.render('clients-about-us', {
+        feedData: req.feedData,
+        reviewsData: reviewsData,
         rootPath: '/',
         apiUrl: req.apiUrl
     });

@@ -1392,11 +1392,11 @@
 									<li class="menu__item menu__item--level-1">
 										<a href="/contacts/" class="menu__link menu__link--level-1 text-default">Контакты</a>
 									</li>
+                                    <li class="menu__item menu__item--level-1">
+                                        <a href="/company/clients-about-us/" class="menu__link menu__link--level-1 text-default">Клиенты о нас</a>
+                                    </li>
 									<!-- <li class="menu__item menu__item--level-1">
                                         <a href="company/rostselmash-book-of-records/index.htm" class="menu__link menu__link--level-1 text-default">Книга рекордов Ростсельмаш</a>
-                                    </li>
-                                    <li class="menu__item menu__item--level-1">
-                                        <a href="company/clients-about-us/index.htm" class="menu__link menu__link--level-1 text-default">Клиенты о нас</a>
                                     </li>
                                     <li class="menu__item menu__item--level-1">
                                         <a href="company/question-answer/index.htm" class="menu__link menu__link--level-1 text-default">Вопрос-ответ</a>
@@ -1436,14 +1436,14 @@
 								<a href="/about/" class="menu__bottom-link text-lead" data-bottom-item="">О
 									компании</a>
 							</li>
+							 <li class="menu__bottom-item">
+                                <a href="/company/clients-about-us/" class="menu__bottom-link text-lead" data-bottom-item="">Клиенты о нас</a>
+                           </li>
 							<li class="menu__bottom-item">
 								<a href="/where-buy/" class="menu__bottom-link text-lead" data-bottom-item="">Где
 									купить</a>
 							</li>
-							<!-- <li class="menu__bottom-item">
-                                <a href="company/clients-about-us/index.htm" class="menu__bottom-link text-lead" data-bottom-item="">Клиенты о нас</a>
-                            </li>
-                             <li class="menu__bottom-item">
+                           <!--   <li class="menu__bottom-item">
                                 <a href="dealer/index.htm" class="menu__bottom-link text-lead" data-bottom-item="">Как стать дилером?</a>
                             </li>
                             <li class="menu__bottom-item">
@@ -1850,119 +1850,43 @@
 		</div>
 	</div>
 </div>
-<!--<div class="pt-2-fixed mt-2-fixed-negative pb-40 wrapper">
+<div class="pt-2-fixed mt-2-fixed-negative pb-40 wrapper">
 	<div class="block-slider wrapper wrap-pr-1 wrap-pl-1">
 		<div class="block-slider__head" data-animate="">
 			<h2 class="block-slider__title h2">Клиенты о нас</h2>
 
 			<div class="block-slider__link">
-				<a href="company/clients-about-us/index.htm" class="text-link text-default text-link--underline">Все
+				<a href="/company/clients-about-us/" class="text-link text-default text-link--underline">Все
 					отзывы</a>
 			</div>
 		</div>
 
 		<div class="block-slider__wrap" data-slider-wrap="">
 			<canvas class="block-slider__canvas"> </canvas>
-			<div data-id="0" data-src="/images/ng0o7x71phjzc5h0khi9zhvowpoz3cja.jpg" class="block-slider__image"></div>
-			<div data-id="1" data-src="/images/4otcx0lenxdz3wpt2dtjqb9f39b63tb2.jpg" class="block-slider__image"></div>
-			<div data-id="2" data-src="/images/zljvtub5g37sloh9yos0p8wz44zn00k8.jpg" class="block-slider__image"></div>
-			<div data-id="3" data-src="/images/jurm7fc1p3pum3z64xwqzzui16otdhpc.jpg" class="block-slider__image"></div>
-			<div data-id="4" data-src="/images/sa4k9xdnrpeaghp4urdspsguvy2wyhmj.jpg" class="block-slider__image"></div>
+			<% reviewsData.forEach((review, index) => { %>
+				<div data-id="<%= index %>" data-src="<%= review.imageUrl %>" class="block-slider__image"></div>
+			<% }) %>
 			<div class="swiper-container" data-slider="">
 				<div class="swiper-wrapper">
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">ООО «Рассвет», самоходная косилка KSU
-										2</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate="">
-									<h4>Основной вид деятельности — растениеводство</h4>
-									<div class="block-slider__slide-content-link">
-										<a href="company/clients-about-us/ooo-rassvet-samokhodnaya-kosilka-ksu-2/index.htm"
-											class="text-link text-default text-link--underline">Читать полностью</a>
+					<% reviewsData.forEach((review, index) => { %>
+						<div class="block-slider__slide swiper-slide">
+							<div class="block-slider__slide-content">
+								<div class="block-slider__slide-content-wrap">
+									<div class="block-slider__slide-content-head">
+										<h4 class="block-slider__slide-content-title"><%= review.title %></h4>
+									</div>
+									<div class="block-slider__slide-content-text" data-animate="">
+										<h4><%- review.description %></h4>
+										<div class="block-slider__slide-content-link">
+											<a href="/company/clients-about-us/#<%= review.link %>"
+											   class="text-link text-default text-link--underline">Читать полностью</a>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">ООО «Рассвет», трактор Ростсельмаш
-										2375</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate="">
-									<h4>Основные направления деятельности — выращивание зерновых и масличных культур,
-										заготовка кукурузы на силос, животноводство.</h4>
-									<div class="block-slider__slide-content-link">
-										<a href="company/clients-about-us/ooo-rassvet-traktor-rsm-2375/index.htm"
-											class="text-link text-default text-link--underline">Читать полностью</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">КФХ Онуприенко Сергей Васильевич,
-										зерноуборочный комбайн T500</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate="">
-									<h4>Основной вид деятельности — выращивание зерновых и пропашных культур.</h4>
-									<div class="block-slider__slide-content-link">
-										<a href="company/clients-about-us/kfkh-onuprienko-sergey-vasilevich-zernouborochnyy-kombayn-t500-/index.htm"
-											class="text-link text-default text-link--underline">Читать полностью</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">КФХ Паламарчук, точное земледелие в
-										деле</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate="">
-									<h4>
-										Основной вид деятельности — растениеводство<br />
-										<br />
-									</h4>
-
-									<div class="block-slider__slide-content-link">
-										<a href="company/clients-about-us/kfkh-palamarchuk-tochnoe-zemledelie-v-dele/index.htm"
-											class="text-link text-default text-link--underline">Читать полностью</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">ООО «Дубовицкое», зерноуборочный
-										комбайн TORUM 785</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate="">
-									<h4>Основное направление деятельности — опытная площадка и семеноводческий центр,
-										где организовано высокорентабельное сельскохозяйственное производство.</h4>
-									<div class="block-slider__slide-content-link">
-										<a href="company/clients-about-us/ooo-dubovitskoe-zernouborochnyy-kombayn-torum-785/index.htm"
-											class="text-link text-default text-link--underline">Читать полностью</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					<% }) %>
 				</div>
-
 				<div class="block-slider__pagination"></div>
 				<div class="nav-arrows nav-arrows--default">
 					<button type="button" class="nav-arrows__button" data-nav-arrow-prev="" title="Назад"
@@ -2001,122 +1925,33 @@
 		<div class="block-slider-m" data-slider-m-wrap="">
 			<div class="swiper-container" data-slider="">
 				<div class="swiper-wrapper">
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-img">
-							<div class="image is-cover swiper-lazy" role="img" aria-label="image"
-								data-background="/images/ng0o7x71phjzc5h0khi9zhvowpoz3cja.jpg"></div>
-						</div>
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">ООО «Рассвет», самоходная косилка KSU
-										2</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate="">
-									<h4>Основной вид деятельности — растениеводство</h4>
-									<div class="block-slider__slide-content-link">
-										<a href="company/clients-about-us/ooo-rassvet-samokhodnaya-kosilka-ksu-2/index.htm"
-											class="text-link text-default text-link--underline">Читать полностью</a>
+					<% reviewsData.forEach((review, index) => { %>
+						<div class="block-slider__slide swiper-slide">
+							<div class="block-slider__slide-img">
+								<div class="image is-cover swiper-lazy" role="img" aria-label="image"
+									 data-background="<%= review.imageUrl %>"></div>
+							</div>
+							<div class="block-slider__slide-content">
+								<div class="block-slider__slide-content-wrap">
+									<div class="block-slider__slide-content-head">
+										<h4 class="block-slider__slide-content-title"><%= review.title %></h4>
+									</div>
+									<div class="block-slider__slide-content-text" data-animate="">
+										<h4><%- review.description %></h4>
+										<div class="block-slider__slide-content-link">
+											<a href="/company/clients-about-us/#<%= review.link %>"
+											   class="text-link text-default text-link--underline">Читать полностью</a>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-img">
-							<div class="image is-cover swiper-lazy" role="img" aria-label="image"
-								data-background="/images/4otcx0lenxdz3wpt2dtjqb9f39b63tb2.jpg"></div>
-						</div>
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">ООО «Рассвет», трактор Ростсельмаш
-										2375</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate="">
-									<h4>Основные направления деятельности — выращивание зерновых и масличных культур,
-										заготовка кукурузы на силос, животноводство.</h4>
-									<div class="block-slider__slide-content-link">
-										<a href="company/clients-about-us/ooo-rassvet-traktor-rsm-2375/index.htm"
-											class="text-link text-default text-link--underline">Читать полностью</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-img">
-							<div class="image is-cover swiper-lazy" role="img" aria-label="image"
-								data-background="/upload/iblock/37e/zljvtub5g37sloh9yos0p8wz44zn00k8.jpg"></div>
-						</div>
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">КФХ Онуприенко Сергей Васильевич,
-										зерноуборочный комбайн T500</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate="">
-									<h4>Основной вид деятельности — выращивание зерновых и пропашных культур.</h4>
-									<div class="block-slider__slide-content-link">
-										<a href="company/clients-about-us/kfkh-onuprienko-sergey-vasilevich-zernouborochnyy-kombayn-t500-/index.htm"
-											class="text-link text-default text-link--underline">Читать полностью</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-img">
-							<div class="image is-cover swiper-lazy" role="img" aria-label="image"
-								data-background="/images/jurm7fc1p3pum3z64xwqzzui16otdhpc.jpg"></div>
-						</div>
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">КФХ Паламарчук, точное земледелие в
-										деле</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate="">
-									<h4>
-										Основной вид деятельности — растениеводство<br />
-										<br />
-									</h4>
-
-									<div class="block-slider__slide-content-link">
-										<a href="company/clients-about-us/kfkh-palamarchuk-tochnoe-zemledelie-v-dele/index.htm"
-											class="text-link text-default text-link--underline">Читать полностью</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="block-slider__slide swiper-slide">
-						<div class="block-slider__slide-img">
-							<div class="image is-cover swiper-lazy" role="img" aria-label="image"
-								data-background="/images/sa4k9xdnrpeaghp4urdspsguvy2wyhmj.jpg"></div>
-						</div>
-						<div class="block-slider__slide-content">
-							<div class="block-slider__slide-content-wrap">
-								<div class="block-slider__slide-content-head">
-									<h4 class="block-slider__slide-content-title">ООО «Дубовицкое», зерноуборочный
-										комбайн TORUM 785</h4>
-								</div>
-								<div class="block-slider__slide-content-text" data-animate="">
-									<h4>Основное направление деятельности — опытная площадка и семеноводческий центр,
-										где организовано высокорентабельное сельскохозяйственное производство.</h4>
-									<div class="block-slider__slide-content-link">
-										<a href="company/clients-about-us/ooo-dubovitskoe-zernouborochnyy-kombayn-torum-785/index.htm"
-											class="text-link text-default text-link--underline">Читать полностью</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					<% }) %>
 				</div>
 			</div>
 		</div>
 	</div>
-</div> -->
+</div>
 
 	<div class="tabs-content">
 		<div class="tabs-content__el active ">
@@ -2830,7 +2665,7 @@
 									<a href="/contacts/" class="footer__nav-item-link" data-link-animate="primary">Контакты</a>
 								</li>
 								<li class="footer__nav-item">
-									<a href="/about/clients-about-us/" class="footer__nav-item-link" data-link-animate="primary">Клиенты о нас</a>
+									<a href="/company/clients-about-us/" class="footer__nav-item-link" data-link-animate="primary">Клиенты о нас</a>
 								</li>
 								<li class="footer__nav-item">
 									<a href="/specials/" class="footer__nav-item-link" data-link-animate="primary">Акции</a>
