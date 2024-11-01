@@ -1643,15 +1643,17 @@
 }
 
 .block-slider__slide-content-wrap {
+    margin-top: 7rem;
     padding-top: 1.5rem;
     background-color: #fff
 }
 
 @media (min-width: 990px) {
     .block-slider__slide-content-wrap {
-        padding-top: 4rem;
+        margin-top: 7rem;
+        padding-top: 1.5rem;
         width: 75%;
-        min-height: 15rem
+        min-height: 12rem
     }
 }
 
