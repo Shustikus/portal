@@ -6,16 +6,16 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: 'miska.channel@mail.ru', // Ваша почта
-        pass: 'haw7m2VKxfPpuz0uGiJM'   // Пароль от почты или пароль приложения
+        user: 'info@smolagrosnab.ru', // Ваша почта
+        pass: 'PXtSRhyXTrqsMmy5zn93'   // Пароль от почты или пароль приложения
     }
 });
 
 // Универсальная функция для отправки почты
 async function sendMail({subject, text}) {
     const mailOptions = {
-        from: 'miska.channel@mail.ru', // Отправитель
-        to: 'miska.channel@mail.ru',    // Адресат
+        from: 'info@smolagrosnab.ru', // Отправитель
+        to: 'info@smolagrosnab.ru',    // Адресат
         subject,
         text
     };
@@ -30,11 +30,13 @@ async function sendMail({subject, text}) {
     }
 }
 
+const site = 'с сайта smolagrosnab.ru';
+
 // Функция для отправки заявки на сервисное обслуживание
 async function serviceRequest(serialNum, phone, fio, email, description) {
     const text = `Серийный номер: ${serialNum}\nТелефон: ${phone}\nФИО: ${fio}\nE-mail: ${email}\nОписание проблемы: ${description}`;
     return await sendMail({
-        subject: 'Новая заявка на сервисное обслуживание',
+        subject: `Новая заявка на сервисное обслуживание ${site}`,
         text
     });
 }
@@ -43,7 +45,7 @@ async function serviceRequest(serialNum, phone, fio, email, description) {
 async function writeUs(name, email, phone, direction, question) {
     const text = `Имя: ${name}\nE-mail: ${email}\nТелефон: ${phone}\nНаправление: ${direction}\nВопрос: ${question}`;
     return await sendMail({
-        subject: 'Новый вопрос',
+        subject: `Новый вопрос ${site}`,
         text
     });
 }
@@ -52,7 +54,7 @@ async function writeUs(name, email, phone, direction, question) {
 async function technicInvite(name, phone, product) {
     const text = `Имя: ${name}\nТелефон: ${phone}\nПродукт: ${product}`;
     return await sendMail({
-        subject: 'Новая заявка',
+        subject: `Новая заявка ${site}`,
         text
     });
 }
@@ -69,7 +71,7 @@ async function credit(form_name, type, name, phone, bank, email, message, produc
         text += `\nБанк: ${bank}`
     }
     return await sendMail({
-        subject: `Новая заявка на ${form_name}`,
+        subject: `Новая заявка на ${form_name} ${site}`,
         text
     });
 }
@@ -78,7 +80,7 @@ async function credit(form_name, type, name, phone, bank, email, message, produc
 async function demoEvent(name, phone, dem_pokaz) {
     const text = `Имя: ${name}\nТелефон: ${phone}\nТип демопоказа: ${dem_pokaz}`;
     return await sendMail({
-        subject: `Новая заявка на демопоказ`,
+        subject: `Новая заявка на демопоказ ${site}`,
         text
     });
 }
@@ -87,7 +89,7 @@ async function demoEvent(name, phone, dem_pokaz) {
 async function requestForTo(phone, name, email, product) {
     const text = `\nТелефон: ${phone}\nИмя: ${name}\nE-mail: ${email}\nПродукт: ${product}`;
     return await sendMail({
-        subject: 'Новая заявка на сервисное обслуживание',
+        subject: `Новая заявка на сервисное обслуживание ${site}`,
         text
     });
 }
@@ -96,7 +98,7 @@ async function requestForTo(phone, name, email, product) {
 async function technicalSupport(phone, name, question, product) {
     const text = `\nТелефон: ${phone}\nИмя: ${name}\nВопрос: ${question}\nПродукт: ${product}`;
     return await sendMail({
-        subject: 'Новая заявка на техническое обслуживание',
+        subject: `Новая заявка на техническое обслуживание ${site}`,
         text
     });
 }
