@@ -342,6 +342,15 @@ app.get('/company/clients-about-us/', (req, res) => {
     });
 });
 
+// Страница "Сертификаты"
+app.get('/company/certificates/', (req, res) => {
+    res.render('certificates', {
+        feedData: req.feedData,
+        rootPath: '/',
+        apiUrl: req.apiUrl
+    });
+});
+
 // Редирект с медиа
 app.get('/media/', (req, res) => {
     res.redirect('/media/news')
