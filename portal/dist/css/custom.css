@@ -199,7 +199,7 @@
 /* Стрелки слайдера */
 .swiper-button-next, .swiper-button-prev {
     position: absolute;
-    top: 50%; /* Выравнивание по вертикали */
+    top: 50%;
     transform: translateY(-50%); /* Центровка стрелок */
     z-index: 10; /* Убедитесь, что стрелки выше фото */
     width: 44px; /* Размер стрелок */
