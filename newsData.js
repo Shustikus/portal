@@ -11,7 +11,31 @@ const newsData = [
 		description: 'Компания "СмолАгроСнаб" поздравила с 50-летием Смоленскую государственную сельскохозяйственную академию!',
 		imageUrl: '/images/c0e4847f-faa4-4aef-9dd3-d0d9068f792a.jpg',
 		link: 's-padarkami-ot-rostselmash',
-		text: '<img src="/images/c0e4847f-faa4-4aef-9dd3-d0d9068f792a.jpg" style="margin-bottom: 20px;"><p>Компания "СмолАгроСнаб" поздравила с 50-летием Смоленскую государственную сельскохозяйственную академию! <br> <br> \n' +
+		text: '        <div class="swiper-container">\n' +
+			'            <div class="swiper-wrapper">\n' +
+			'                <div class="swiper-slide">\n' +
+			'                    <img src="/images/c0e4847f-faa4-4aef-9dd3-d0d9068f792a.jpg" alt="Image 1">\n' +
+			'                </div>\n' +
+			'                <div class="swiper-slide">\n' +
+			'                    <img src="/images/6303daf7-f5af-44e4-a4ae-418997beeff1.jpg" alt="Image 2">\n' +
+			'                </div>\n' +
+			'                <div class="swiper-slide">\n' +
+			'                    <img src="/images/c70a51ee-99a8-41d6-871f-d92d67384ee6.jpg" alt="Image 3">\n' +
+			'                </div>\n' +
+			'            </div>\n' +
+			'            <div class="swiper-button-prev">\n' +
+			'    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">\n' +
+			'<path d="M338 419L175 256L338 93" stroke="black" stroke-width="24" stroke-linecap="round"/>\n' +
+			'</svg>\n' +
+			'</div>\n' +
+			'<div class="swiper-button-next">\n' +
+			'<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+			'<path d="M175 419L338 256L175 93" stroke="black" stroke-width="24" stroke-linecap="round"/>\n' +
+			'</svg>\n' +
+			'</div>' +
+			'<div class="swiper-pagination" style="display: flex;justify-content: center; margin-bottom: 15px;">\n' +
+			'</div>\n' +
+			'        </div><p>Компания "СмолАгроСнаб" поздравила с 50-летием Смоленскую государственную сельскохозяйственную академию! <br> <br> \n' +
 			'\n' +
 			'Торжественное мероприятие прошло в КДЦ "Губернском" и собрало около 900 гостей. Среди них: представители власти, партнеры Академии, включая представителей официального дилера Ростсельмаш - компании "СмолАгроСнаб", сотрудники, преподаватели, студенты и выпускники. <br><br> \n' +
 			'\n' +
