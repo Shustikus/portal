@@ -195,3 +195,43 @@
 .wrapper--gap-x {
     padding: 0rem 1.5rem;
 }
+
+/* Стрелки слайдера */
+.swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Центровка стрелок */
+    z-index: 10; /* Убедитесь, что стрелки выше фото */
+    width: 44px; /* Размер стрелок */
+    height: 44px;
+    border-radius: 50%; /* Круглая форма стрелок */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Стрелки расположены по бокам */
+.swiper-button-next {
+    right: 10px; /* Расстояние от правого края */
+}
+
+.swiper-button-prev {
+    left: 10px; /* Расстояние от левого края */
+}
+
+/* Контейнер слайдера */
+.swiper-container {
+    position: relative; /* Чтобы стрелки позиционировались относительно слайдера */
+}
+
+.swiper-wrapper {
+    position: relative; /* Слой для фотографий */
+    z-index: 1; /* Стрелки должны быть выше фотографий */
+}
+@media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none; /* Полностью скрываем стрелки */
+    }
+}

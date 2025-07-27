@@ -1526,6 +1526,25 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const sliders = document.querySelectorAll('.swiper-container');
+				sliders.forEach(slider => {
+					new Swiper(slider, {
+						loop: true,
+						navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						},
+						pagination: {
+							el: '.swiper-pagination',
+							clickable: true,
+						},
+						lazy: true,
+					});
+				});
+			});
+		</script>
 		<div class="content-wrapper wrap-pl-1 wrap-pr-1 content-wrapper--no-photo"
 			 data-share-area>
 			<div class="content">
